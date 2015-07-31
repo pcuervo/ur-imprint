@@ -56,27 +56,38 @@
 	================================================== -->
 	<section class="[ steps ]">
 		<div class="[ wrapper ]">
-			<h2 class="[ text-center ]">3 easy steps</h2>
-			<div class="[ row ][ relative ]">
-				<div class="[ column xmall-4 ]">
-					<div class="[ circle border--large bg-secondary ]">
-						<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/shirt.svg" alt="menu">
+			<div class="[ padding-top-bottom--large ]">
+				<h2 class="[ text-center ]">3 easy steps</h2>
+				<div class="[ row ][ relative ][ text-center ]">
+					<div class="[ column xmall-4 ][ relative ]">
+						<div class="[ z-index-2 ][ relative ]">
+							<div class="[ inline-block ][ circle ][ border border--light border--xlarge ][ bg-secondary ][ drop-shadow ][ margin-bottom ]">
+								<img class="[ svg icon icon--medium ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/shirt.svg" alt="shirt">
+							</div>
+							<p class="[ italic ]">Choose</p>
+						</div>
+						<hr class="[ connector connector--right ][ bg-dark ][ z-index-1 ]">
 					</div>
-					<p class="[ italic ]"><small>Choose</small></p>
-				</div>
-				<div class="[ column xmall-4 ]">
-					<div class="[ circle border--large bg-secondary ]">
-						<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/design.svg" alt="menu">
+					<div class="[ column xmall-4 ][ relative ]">
+						<div class="[ z-index-2 ][ relative ]">
+							<div class="[ inline-block ][ circle ][ border border--light border--xlarge ][ bg-secondary ][ drop-shadow ][ margin-bottom ]">
+								<img class="[ svg icon icon--medium ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/design.svg" alt="design">
+							</div>
+							<p class="[ italic ]">Customise</p>
+						</div>
+						<hr class="[ connector connector--left ][ bg-dark ][ z-index-1 ]">
+						<hr class="[ connector connector--right ][ bg-dark ][ z-index-1 ]">
 					</div>
-					<p class="[ italic ]"><small>Customise</small></p>
-				</div>
-				<div class="[ column xmall-4 ]">
-					<div class="[ circle border--large bg-secondary ]">
-						<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/shop.svg" alt="menu">
+					<div class="[ column xmall-4 ][ relative ]">
+						<div class="[ z-index-2 ][ relative ]">
+							<div class="[ inline-block ][ circle ][ border border--light border--xlarge ][ bg-secondary ][ drop-shadow ][ margin-bottom ]">
+								<img class="[ svg icon icon--medium ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/shop.svg" alt="shop">
+							</div>
+							<p class="[ italic ]">Checkout</p>
+						</div>
+						<hr class="[ connector connector--left ][ bg-dark ][ z-index-1 ]">
 					</div>
-					<p class="[ italic ]"><small>Checkout</small></p>
 				</div>
-				<hr class="[ connector ][ bg-dark ]">
 			</div>
 		</div><!-- wrapper -->
 	</section>
@@ -122,7 +133,7 @@
 	================================================== -->
 	<section class="[ product-categories ]">
 		<div class="[ row ]">
-			<?php 
+			<?php
 			$args = array(
 				'taxonomy'     => 'product_cat',
 				'hide_empty'   => 1
@@ -162,7 +173,7 @@
 			<div class="[ padding-top-bottom--large ]">
 				<div class="[ wrapper ]">
 					<?php
-					while ( $testimonials_query->have_posts() ) : $testimonials_query->the_post(); 
+					while ( $testimonials_query->have_posts() ) : $testimonials_query->the_post();
 						$company = get_post_meta($post->ID, '_company_meta', true);
 					?>
 						<div class="[ xmall-12 large-8 ][ center ]">

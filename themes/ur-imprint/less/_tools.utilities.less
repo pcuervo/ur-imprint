@@ -60,6 +60,14 @@
 .overflow-hidden{ overflow: hidden; }
 
 /**
+ * Shadow
+**/
+
+.drop-shadow{
+	.drop-shadow(0 2px 4px 1px rgba(0,0,0,.3));
+}
+
+/**
  * Geometric Forms
 **/
 .square{
@@ -85,6 +93,11 @@
 .square-content{
 	position: absolute; top: 10px; right: 10px; bottom: 10px; left: 10px;
 	.transition(all 0.1s ease);
+}
+
+.circle{
+	padding: 12px 7px; .border-radius(50%);
+	line-height: 1.1;
 }
 
 
@@ -154,13 +167,19 @@
 **/
 
 .border{
-	border-width: 1px !important;
-	border-style: solid !important;
-	border-color: @intermediate !important;
+	border-width: 1px;
+	border-style: solid;
+	border-color: @intermediate;
 }
-.border--grey{ border-color: @intermediate !important; }
+
+.border--light{ border-color: @light !important; }
+.border--intermediate{ border-color: @intermediate !important; }
 .border--primary{ border-color: @primary !important; }
 .border--secondary{ border-color: @secondary !important; }
+
+.border--medium{ border-width: 2px !important; }
+.border--large{ border-width: 3px !important; }
+.border--xlarge{ border-width: 4px !important; }
 
 
 /*------------------------------------*\

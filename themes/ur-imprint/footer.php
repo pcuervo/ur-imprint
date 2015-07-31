@@ -1,46 +1,38 @@
 		</div><!-- main -->
 
 		<section class="[ action-buttons action-buttons--right ]">
-			<a href="#" class="[ button button--primary button--circle ][ js-modal-opener ]" data-modal="nav"><i class="[ icon-menu ]"></i></a>
+			<a href="#" class="[ button button--secondary button--circle ][ border border--light border--large ][ js-modal-opener ]" data-modal="nav">
+				<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/hamburguer.svg" alt="menu">
+			</a>
 		</section><!-- action-buttons -->
 
 		<section class="[ modal-wrapper modal-nav ][ hide ]">
 			<div class="[ modal modal--full ]">
 				<div class="[ modal-content ]">
-					<article class="[ menu ]">
-						<div class="[ row ][ bg-dark ]">
-							<?php /*<a href="<?php echo site_url(''); ?>" class="[ span xmall-6 ][ border ][ button button--light button--ink ][ padding ]"><i class="[ icon-sillones ]"></i>quiero comprar</a>
-							<?php /* <a href="<?php echo site_url('');?>" class="[ span xmall-6 ][ border ][ button button--light button--ink ][ padding ]"><i class="[ icon-vender ]"></i>quiero vender</a> */ ?>
-							<a href="<?php echo site_url('como-funciona');?>" class="[ span xmall-6 ][ border ][ button button--light button--ink ][ padding--medium ]"><i class="[ icon-graph ]"></i>¿cómo funciona?</a>
-							<a href="<?php echo site_url('');?>" class="[ span xmall-6 ][ border ][ button button--light button--ink ][ padding--medium ]"><i class="[ icon-messages ]"></i>blog</a>
-							<?php if( is_user_logged_in() ) {  ?>
-								<a href="<?php echo site_url('mi-cuenta');?>" class="[ span xmall-12 ][ border ][ button button--light button--ink ][ bg-primary ][ padding--medium ]"><i class="[ icon-user ]"></i>mi cuenta</a>
-								<a href="<?php echo wp_logout_url( site_url() ) ?>" class="[ span xmall-12 ][ border ][ button button--light button--ink ][ bg-highlight ][ padding--medium ]"><i class="[ icon ]"></i>Logout</a>
-							<?php } else { ?>
-								<a href="<?php echo site_url('mi-cuenta');?>" class="[ span xmall-12 ][ border ][ button button--light button--ink ][ bg-primary ][ padding--medium ]"><i class="[ icon-user ]"></i>log in o registrate</a>
-							<?php } ?>
-						</div>
-					</article><!-- menu -->
 
-					<article class="[ search ]">
-						<div class="[ padding ][ border ]">
-							<?php get_product_search_form(); ?>
-						</div><!-- padding -->
-					</article><!-- search -->
+					<article class="[ center-full ][ text-center ]">
+						<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ][ margin-bottom--large ][ center ]">
+							<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="#"></a>
+						</div>
+						<nav class="[ hidden--large ]">
+							<a href="<?php echo site_url('nosotros'); ?>" class="[ button button--medium button--hollow button--light ][ uppercase ][ padding ]">Create</a>
+							<a href="<?php echo site_url('productos'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Catalogue</a>
+							<a href="<?php echo site_url('servicios'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Contact</a>
+							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Register</a>
+							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Login</a>
+							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">
+								<img class="[ svg icon icon--medium ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">
+							</a>
+						</nav><!-- categorias -->
+					</article>
 
-					<article class="[ categorias ]">
-						<div class="[ padding ]">
-							<h3 class="[ text-center ][ no-margin ]">Categorías</h3>
-						</div>
-						<div class="[ row ]">
-							<a href="#" class="[ span xmall-6 ][ border ][ button button--primary button--ink ][ padding ]"><img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/hamburguer.svg" alt="menu">category</a>
-						</div>
-					</article><!-- categorias -->
 					<artcile class="[ initial ]">
 						<div class="[ action-buttons action-buttons--right ][ always-opened ]">
-							<a href="#" class="[ button button--primary button--action ][ pull-right ][ js-modal-closer ]"><i class="[ icon-close ]"></i></a>
+							<a href="#" class="[ button button--secondary button--circle ][ border border--light border--large ][ js-modal-opener ]" data-modal="nav">
+								<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/close.svg" alt="close">
+							</a>
 						</div><!-- action-buttons -->
-					</artcile><!-- action-buttons -->
+					</artcile><!-- initial -->
 				</div><!-- modal-content -->
 			</div>
 		</section>

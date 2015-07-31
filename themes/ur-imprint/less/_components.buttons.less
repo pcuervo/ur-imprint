@@ -139,7 +139,7 @@
 \*------------------------------------*/
 
 .button--hollow{
-	border: 3px solid darken(@light, 10%);
+	border: 1px solid darken(@light, 10%);
 	background: transparent;
 }
 
@@ -173,8 +173,9 @@
 }
 
 .button--hollow.button--light{
-	border-color: darken(@light, 10%);
-	color: @dark;
+	border-color: @light;
+	color: @light;
+	background: fade(@light, 10%);
 
 	&:hover{
 		background-color: darken(@light, 10%);
@@ -247,8 +248,25 @@
 }
 
 /**
- * Hollow - Colors
+ * Rounded - Colors
 **/
+
+
+/**
+ * Ink - Colors
+**/
+
+.button--ink.button{ color: @dark; }
+.button--ink.button--light{ color: @light; }
+.button--ink.button--intermediate{ color: @intermediate; }
+.button--ink.button--dark{ color: @dark; }
+.button--ink.button--primary{ color: @primary; }
+.button--ink.button--secondary{ color: @secondary; }
+.button--ink.button--danger{ color: @danger; }
+.button--ink.button--success{ color: @success; }
+.button--ink.button--warning{ color: @warning; }
+
+
 
 /*------------------------------------*\
     #ACTION BUTTONS
@@ -260,12 +278,12 @@
 	.transition;
 }
 .action-buttons--left{
-	left: 20px;
+	left: 10px;
 }
 .action-buttons--right{
-	right: 20px;
+	right: 10px;
 }
 
 .action-buttons.opened, .action-buttons.always-opened{
-	bottom: 20px;
+	bottom: 10px;
 }
