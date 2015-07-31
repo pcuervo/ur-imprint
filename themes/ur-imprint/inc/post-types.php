@@ -6,34 +6,62 @@
 
 add_action('init', function(){
 
-	// PRODUCTS
-	// $labels = array(
-	// 	'name'          => 'Productos',
-	// 	'singular_name' => 'Productos',
-	// 	'add_new'       => 'Nuevo producto',
-	// 	'add_new_item'  => 'Nuevo producto',
-	// 	'edit_item'     => 'Editar producto',
-	// 	'new_item'      => 'Nuevo producto',
-	// 	'all_items'     => 'Todas',
-	// 	'view_item'     => 'Ver producto',
-	// 	'search_items'  => 'Buscar productos',
-	// 	'not_found'     => 'No se encontró',
-	// 	'menu_name'     => 'Productos'
-	// );
-	// $args = array(
-	// 	'labels'             => $labels,
-	// 	'public'             => true,
-	// 	'publicly_queryable' => true,
-	// 	'show_ui'            => true,
-	// 	'show_in_menu'       => true,
-	// 	'query_var'          => true,
-	// 	'rewrite'            => array( 'slug' => 'productos' ),
-	// 	'capability_type'    => 'post',
-	// 	'has_archive'        => true,
-	// 	'hierarchical'       => false,
-	// 	'menu_position'      => 6,
-	// 	'supports'           => array( 'title', 'editor', 'thumbnail' )
-	// );
-	// register_post_type( 'productos', $args );
+	// TESTIMONIALS
+	$labels = array(
+		'name'          => 'Testimonials',
+		'singular_name' => 'Testimonials',
+		'add_new'       => 'New Testimonial',
+		'add_new_item'  => 'New Testimonial',
+		'edit_item'     => 'Edit Testimonial',
+		'new_item'      => 'New Testimonial',
+		'all_items'     => 'All',
+		'view_item'     => 'View Testimonial',
+		'search_items'  => 'Search Testimonials',
+		'not_found'     => 'Not found',
+		'menu_name'     => 'Testimonials'
+	);
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'testimonials' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'supports'           => array( 'title', 'editor', 'thumbnail' )
+	);
+	register_post_type( 'testimonials', $args );
+
+	// DESIGNS
+	$labels = array(
+		'name'          => 'Designs',
+		'singular_name' => 'Designs',
+		'add_new'       => 'New Design',
+		'add_new_item'  => 'New Design',
+		'edit_item'     => 'Edit Design',
+		'new_item'      => 'New Design',
+		'all_items'     => 'All',
+		'view_item'     => 'View Design',
+		'search_items'  => 'Search Designs',
+		'not_found'     => 'Not found',
+		'menu_name'     => 'Designs'
+	);
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'designs' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'supports'           => array( 'title', 'editor', 'thumbnail' )
+	);
+	register_post_type( 'designs', $args );
 
 });

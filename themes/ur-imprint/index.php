@@ -122,36 +122,28 @@
 	================================================== -->
 	<section class="[ product-categories ]">
 		<div class="[ row ]">
-			<div class="[ xmall-12 ]">
-				<div class="[ row ]">
-					<div class="[ xmall-4 ]">
-						<img class="[ image-responsive ]" src="#" alt="">
-					</div>
-					<div class="[ xmall-8 ][ padding ][ bg-secondary ]">
-						<p class="[ text-center ]">Men</p>
-					</div>
-				</div>
-			</div>
-			<div class="[ xmall-12 ]">
-				<div class="[ row ]">
-					<div class="[ xmall-4 ]">
-						<img class="[ image-responsive ]" src="#" alt="">
-					</div>
-					<div class="[ xmall-8 ][ padding ][ bg-secondary--darken-10 ]">
-						<p class="[ text-center ]">Women</p>
-					</div>
-				</div>
-			</div>
-			<div class="[ xmall-12 ]">
-				<div class="[ row ]">
-					<div class="[ xmall-4 ]">
-						<img class="[ image-responsive ]" src="#" alt="">
-					</div>
-					<div class="[ xmall-8 ][ padding ][ bg-secondary--darken-20 ]">
-						<p class="[ text-center ]">Kids</p>
+			<?php 
+			$args = array(
+				'taxonomy'     => 'product_cat',
+				'hide_empty'   => 1
+				);
+			$all_categories = get_categories( $args );
+			foreach ( $all_categories as $cat ) :
+				$cat_thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+			    $cat_image_url = wp_get_attachment_url( $cat_thumbnail_id ); ?>
+				<div class="[ span xmall-12 ]">
+					<div class="[ row ]">
+						<a href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
+							<div class="[ span xmall-4 ]">
+								<img class="[ image-responsive ]" src="<?php echo $cat_image_url; ?>" alt="">
+							</div>
+							<div class="[ span xmall-8 ][ padding ][ bg-secondary ]">
+								<p class="[ text-center ]"><?php echo $cat->name ?></p>
+							</div>
+						</a>
 					</div>
 				</div>
-			</div>
+			<?php endforeach; wp_reset_query(); ?>
 		</div>
 	</section><!-- product-categories -->
 
@@ -159,18 +151,31 @@
 	<!-- =================================================
 	==== TESTIMONIALS
 	================================================== -->
-	<section class="[ testimonials ][ bg-primary ]">
-		<div class="[ padding-top-bottom--large ]">
-			<div class="[ wrapper ]">
-				<div class="[ xmall-12 large-8 ][ center ]">
-					<blockquote>"UR Imprint… you have been an absolute pleasure to deal with and I appreciate your assistance."</blockquote>
-					<div class="[ text-right ]">
-						<p><strong>Melissa</strong>,</p>
-						<p>Primer Technologies Pty Ltd</p>
-					</div>
+	<?php
+	$testimonials_args = array(
+		'post_type' => 'testimonials',
+		'posts_per_page' => -1,
+	);
+	$testimonials_query = new WP_Query( $testimonials_args );
+	if( $testimonials_query->have_posts() ) : ?>
+		<section class="[ testimonials ][ bg-primary ]">
+			<div class="[ padding-top-bottom--large ]">
+				<div class="[ wrapper ]">
+					<?php
+					while ( $testimonials_query->have_posts() ) : $testimonials_query->the_post(); 
+						$company = get_post_meta($post->ID, '_company_meta', true);
+					?>
+						<div class="[ xmall-12 large-8 ][ center ]">
+							<blockquote><?php echo $post->post_content; ?></blockquote>
+							<div class="[ text-right ]">
+								<p><strong><?php echo $post->post_title; ?></strong>,</p>
+								<p><?php echo $company; ?></p>
+							</div>
+						</div>
+					<?php endwhile; ?>
 				</div>
 			</div>
-		</div>
-	</section><!-- testimonials -->
+		</section><!-- testimonials -->
+	<?php endif; wp_reset_query(); ?>
 
 <?php get_footer(); ?>
