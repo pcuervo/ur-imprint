@@ -118,49 +118,44 @@ function get_design_filter_classes( $post_id ){
 	$design_classes = '';
 
 	$theme_filter_terms = wp_get_post_terms( $post_id, 'theme' );
-	foreach ( $theme_filter_terms as $theme_term ) {
+	if( ! empty( $theme_filter_terms  ) ) : foreach ( $theme_filter_terms as $theme_term ) :
 		$design_classes .= $theme_term->slug . ' ';
-	}
+	endforeach; endif;
 
 	$type_filter_terms = wp_get_post_terms( $post_id, 'type' );
-	foreach ( $type_filter_terms as $type_term ) {
+	if( ! empty( $type_filter_terms  ) ) : foreach ( $type_filter_terms as $type_term ) :
 		$design_classes .= $type_term->slug . ' ';
-	}
+	endforeach; endif;
 
 	$author_filter_terms = wp_get_post_terms( $post_id, 'design-author' );
-	foreach ( $author_filter_terms as $author_term ) {
+	if( ! empty( $author_filter_terms  ) ) : foreach ( $author_filter_terms as $author_term ) :
 		$design_classes .= $author_term->slug . ' ';
-	}
+	endforeach; endif;
 
 	return $design_classes;
 
 }// get_design_filter_classes
 
 /**
- * Get product category, type, and style filters for isotope.
- * @param integer $post_id
- * @return string $design_classes
+ * Get product type and style filters for isotope.
+ * @param integer $product_id
+ * @return string $product_classes
  */
-function get_product_filter_classes( $post_id ){
+function get_product_filter_classes( $product_id ){
 
-	$design_classes = '';
+	$product_classes = '';
 
-	$theme_filter_terms = wp_get_post_terms( $post_id, 'theme' );
-	foreach ( $theme_filter_terms as $theme_term ) {
-		$design_classes .= $theme_term->slug . ' ';
-	}
+	$style_filter_terms = get_the_terms( $product_id, 'pa_style' );
+	if( ! empty( $style_filter_terms  ) ) : foreach ( $style_filter_terms as $style_term ) :
+		$product_classes .= $style_term->slug . ' ';
+	endforeach; endif;
 
-	$type_filter_terms = wp_get_post_terms( $post_id, 'type' );
-	foreach ( $type_filter_terms as $type_term ) {
-		$design_classes .= $type_term->slug . ' ';
-	}
+	$product_type_filter_terms = get_the_terms( $product_id, 'pa_product-type' );
+	if( ! empty( $product_type_filter_terms  ) ) : foreach ( $product_type_filter_terms as $product_type_term ) :
+		$product_classes .= $product_type_term->slug . ' ';
+	endforeach; endif;
 
-	$author_filter_terms = wp_get_post_terms( $post_id, 'design-author' );
-	foreach ( $author_filter_terms as $author_term ) {
-		$design_classes .= $author_term->slug . ' ';
-	}
-
-	return $design_classes;
+	return $product_classes;
 
 }// get_product_filter_classes
 

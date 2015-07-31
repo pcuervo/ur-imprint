@@ -22,10 +22,10 @@ function footer_scripts(){
 			imgToSvg();
 			toggleActionButtons();
 
-
 			/**
 			 * Triggered events
 			**/
+
 			$(window).scroll(function(){
 				toggleActionButtons();
 			});
@@ -47,7 +47,6 @@ function footer_scripts(){
 			/*------------------------------------*\
 				#HOME
 			\*------------------------------------*/
-
 			<?php if ( is_home() ){ ?>
 
 				/**
@@ -63,7 +62,6 @@ function footer_scripts(){
 			/*------------------------------------*\
 				#NOT HOME
 			\*------------------------------------*/
-
 			<?php if ( ! is_home() ){ ?>
 
 				/**
@@ -71,6 +69,40 @@ function footer_scripts(){
 				**/
 
 				setMainPaddingTop();
+
+			<?php } ?>
+
+
+
+			/*------------------------------------*\
+				#CATALOGUE
+			\*------------------------------------*/
+
+			<?php if ( is_page( 'Catalogue' ) ){ ?>
+
+				/**
+				 * On load
+				**/
+
+				runIsotope( '.designs-isotope-container', '.column' );
+				runIsotope( '.products-isotope-container', '.column' );
+				filterIsotope('.designs-isotope-container', '.column', '.design-filters' );
+
+				/**
+				 * Triggered events
+				**/
+
+				$('.js-btn-designs').on('click', function(e){
+					if( $(this).hasClass('active') ) return;
+
+					toggleCatalogueCategory( 'designs' );
+				});
+
+				$('.js-btn-products').on('click', function(e){
+					if( $(this).hasClass('active') ) return;
+					
+					toggleCatalogueCategory( 'products' );
+				});
 
 			<?php } ?>
 

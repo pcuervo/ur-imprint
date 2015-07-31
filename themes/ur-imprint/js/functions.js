@@ -4,7 +4,69 @@ var $=jQuery.noConflict();
 	#GENERAL FUNCTIONS
 \*------------------------------------*/
 
+/**
+ * Run Isotope plugin
+ * @container element cointaining items
+ * @item element inside the container
+**/
+function runIsotope(container, item){
+	var $container = $(container);
+	$container.imagesLoaded( function(){
+		$container.isotope({
+			itemSelector : item,
+			layoutMode: 'fitRows'
+		});
+	});
+}// runIsotope
 
+/**
+ * Filter in Isotope plugin
+ * @container element cointaining items
+ * @item element inside the container
+**/
+function filterIsotope(container, item, filterSelector){
+
+	var $grid = $(container).isotope({
+		itemSelector: item
+	});
+
+	// store filter for each group
+	var filters = {};
+
+	$( filterSelector ).on( 'click', '.button-group .button', function() {
+		var $this = $(this);
+		// get group key
+		var $buttonGroup = $this.parents('.button-group');
+		var filterGroup = $buttonGroup.attr('data-filter-group');
+		// set filter for group
+		filters[ filterGroup ] = $this.attr('data-filter');
+		// combine filters
+		var filterValue = concatValues( filters );
+		// set filter for Isotope
+		$grid.isotope({ filter: filterValue });
+	});
+
+	// change is-checked class on buttons
+	$('.button-group').each( function( i, buttonGroup ) {
+		var $buttonGroup = $( buttonGroup );
+		$buttonGroup.on( 'click', 'button', function() {
+			$buttonGroup.find('.active').removeClass('active');
+			$( this ).addClass('active');
+		});
+	});
+}// filterIsotope
+
+/**
+ * Flatten object by concatenating values
+ * @param Object obj 
+**/
+function concatValues( obj ) {
+	var value = '';
+	for ( var prop in obj ) {
+		value += obj[ prop ];
+	}
+	return value;
+}// concatValues
 
 /*------------------------------------*\
 	#GET/SET FUNCTIONS
@@ -100,6 +162,48 @@ function toggleModal(element){
 function toggleVisibility(element){
 	$(element).toggleClass('opened');
 }// toggleVisibility
+
+/**
+ * Toggle catalogue filters and results
+**/
+function toggleCatalogueCategory( catalogueCategory ){
+
+	toggleCatalogueDesigns();
+	toggleCatalogueProducts();
+	
+}// toggleCatalogueCategory
+
+/**
+ * Toggle catalogue designs' filters and results
+**/
+function toggleCatalogueDesigns(){
+
+	if( $('.js-btn-designs').hasClass('active') ){
+		$('.design-filters').addClass('hidden');
+		$('.designs').addClass('hidden');
+		return;
+	}
+	$('.design-filters').removeClass('hidden');
+	$('.designs').removeClass('hidden');
+
+}// toggleCatalogueDesigns
+
+/**
+ * Toggle catalogue products' filters and results
+**/
+function toggleCatalogueProducts(){
+	
+	if( $('.js-btn-products').hasClass('active') ){
+		$('.product-filters').addClass('hidden');
+		$('.products').addClass('hidden');
+		return;
+	}
+	$('.product-filters').removeClass('hidden');
+	$('.products').removeClass('hidden');
+	console.log('filtering...');
+	filterIsotope('.products-isotope-container', '.column', '.product-filters' );
+
+}// toggleCatalogueProducts
 
 
 
