@@ -139,12 +139,18 @@
 \*------------------------------------*/
 
 .button--hollow{
-	border: 3px solid darken(@light, 10%);
+	border: 1px solid darken(@light, 10%);
 	background: transparent;
 }
 
 .button--rounded{
 	.border-radius(20px;);
+}
+
+.button--circle{
+	padding: 12px 7px; .border-radius(50%);
+	font-size: 20px;
+	.drop-shadow(0 2px 4px 1px rgba(0,0,0,.3));
 }
 
 
@@ -167,8 +173,9 @@
 }
 
 .button--hollow.button--light{
-	border-color: darken(@light, 10%);
-	color: @dark;
+	border-color: @light;
+	color: @light;
+	background: fade(@light, 10%);
 
 	&:hover{
 		background-color: darken(@light, 10%);
@@ -241,8 +248,25 @@
 }
 
 /**
- * Hollow - Colors
+ * Rounded - Colors
 **/
+
+
+/**
+ * Ink - Colors
+**/
+
+.button--ink.button{ color: @dark; }
+.button--ink.button--light{ color: @light; }
+.button--ink.button--intermediate{ color: @intermediate; }
+.button--ink.button--dark{ color: @dark; }
+.button--ink.button--primary{ color: @primary; }
+.button--ink.button--secondary{ color: @secondary; }
+.button--ink.button--danger{ color: @danger; }
+.button--ink.button--success{ color: @success; }
+.button--ink.button--warning{ color: @warning; }
+
+
 
 /*------------------------------------*\
     #ACTION BUTTONS
@@ -254,17 +278,12 @@
 	.transition;
 }
 .action-buttons--left{
-	left: 20px;
+	left: 10px;
 }
 .action-buttons--right{
-	right: 20px;
+	right: 10px;
 }
 
 .action-buttons.opened, .action-buttons.always-opened{
-	bottom: 20px;
-}
-.button--action{
-	padding: 12px 7px; .border-radius(50%);
-	font-size: 20px;
-	.drop-shadow(0 2px 4px 1px rgba(0,0,0,.3));
+	bottom: 10px;
 }

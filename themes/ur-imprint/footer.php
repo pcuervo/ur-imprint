@@ -1,3 +1,42 @@
+		</div><!-- main -->
+
+		<section class="[ action-buttons action-buttons--right ]">
+			<a href="#" class="[ button button--secondary button--circle ][ border border--light border--large ][ js-modal-opener ]" data-modal="nav">
+				<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/hamburguer.svg" alt="menu">
+			</a>
+		</section><!-- action-buttons -->
+
+		<section class="[ modal-wrapper modal-nav ][ hide ]">
+			<div class="[ modal modal--full ]">
+				<div class="[ modal-content ]">
+
+					<article class="[ center-full ][ text-center ]">
+						<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ][ margin-bottom--large ][ center ]">
+							<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="#"></a>
+						</div>
+						<nav class="[ hidden--large ]">
+							<a href="<?php echo site_url('nosotros'); ?>" class="[ button button--medium button--hollow button--light ][ uppercase ][ padding ]">Create</a>
+							<a href="<?php echo site_url('productos'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Catalogue</a>
+							<a href="<?php echo site_url('servicios'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Contact</a>
+							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Register</a>
+							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Login</a>
+							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">
+								<img class="[ svg icon icon--medium ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">
+							</a>
+						</nav><!-- categorias -->
+					</article>
+
+					<artcile class="[ initial ]">
+						<div class="[ action-buttons action-buttons--right ][ always-opened ]">
+							<a href="#" class="[ button button--secondary button--circle ][ border border--light border--large ][ js-modal-opener ]" data-modal="nav">
+								<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/close.svg" alt="close">
+							</a>
+						</div><!-- action-buttons -->
+					</artcile><!-- initial -->
+				</div><!-- modal-content -->
+			</div>
+		</section>
+
 		</div><!-- container -->
 
 		<footer class="">
