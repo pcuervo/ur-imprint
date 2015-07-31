@@ -7,13 +7,13 @@
 						<h3>Payments</h3>
 						<div class="[ row ]">
 							<div class="[ xmall-4 ]">
-								<img class="[ svg icon icon--medium ][ color-light ]" src="icons/hamburger.svg" alt="menu">
+								<img class="[ svg icon icon--medium ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/visa.svg" alt="visa">
 							</div>
 							<div class="[ xmall-4 ]">
-								<img class="[ svg icon icon--medium ][ color-light ]" src="icons/hamburger.svg" alt="menu">
+								<img class="[ svg icon icon--medium ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/mastercard.svg" alt="mastercard">
 							</div>
 							<div class="[ xmall-4 ]">
-								<img class="[ svg icon icon--medium ][ color-light ]" src="icons/hamburger.svg" alt="menu">
+								<img class="[ svg icon icon--medium ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/paypal.svg" alt="paypal">
 							</div>
 						</div>
 					</div>
@@ -33,7 +33,7 @@
 					</div>
 					<div class="[ xmall-6 large-3 ]">
 						<h3>Designed and developed by</h3>
-						<img class="[ svg icon icon--medium ][ color-light ]" src="icons/hamburger.svg" alt="menu">
+						<img class="[ svg icon icon--medium ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/little-crow.svg" alt="menu">
 					</div>
 				</div>
 				<div class="[ text-center ]">

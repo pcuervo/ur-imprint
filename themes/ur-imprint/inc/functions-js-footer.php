@@ -19,11 +19,62 @@ function footer_scripts(){
 			 * On load
 			**/
 
+			imgToSvg();
+			toggleActionButtons();
+
+
 			/**
 			 * Triggered events
 			**/
+			$(window).scroll(function(){
+				toggleActionButtons();
+			});
 
-<?php  ?>
+			$('.js-modal-opener').on('click', function(e){
+				e.preventDefault();
+				var modal = $(this).data('modal');
+				var modal = '.modal-'+modal;
+				toggleModal(modal);
+			});
+
+			$('.js-modal-closer').on('click', function(e){
+				e.preventDefault();
+				toggleModal();
+			});
+
+
+
+			/*------------------------------------*\
+				#HOME
+			\*------------------------------------*/
+
+			<?php if ( is_home() ){ ?>
+
+				/**
+				 * On load
+				**/
+
+				runHTML5Video();
+
+			<?php } ?>
+
+
+
+			/*------------------------------------*\
+				#NOT HOME
+			\*------------------------------------*/
+
+			<?php if ( ! is_home() ){ ?>
+
+				/**
+				 * On load
+				**/
+
+				setMainPaddingTop();
+
+			<?php } ?>
+
+
 		</script>
 <?php
 	endif;

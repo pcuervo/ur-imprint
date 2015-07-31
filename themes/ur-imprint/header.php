@@ -31,10 +31,8 @@
 		<meta name="msapplication-square150x150logo" content="<?php echo THEMEPATH; ?>favicon/mstile-150x150.png" />
 		<meta name="msapplication-wide310x150logo" content="<?php echo THEMEPATH; ?>favicon/mstile-310x150.png" />
 		<meta name="msapplication-square310x310logo" content="<?php echo THEMEPATH; ?>favicon/mstile-310x310.png" />
-		<!-- CSS -->
-		<link rel="stylesheet" href="css/style.min.css">
 		<!-- Google font(s) -->
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic' rel='stylesheet' type='text/css'>
 		<!-- Font awesome -->
 		<!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
 
@@ -55,20 +53,22 @@
 			<p class="chromeframe">Estás usando una versión <strong>vieja</strong> de tu explorador. Por favor <a href="http://browsehappy.com/" target="_blank"> actualiza tu explorador</a> para tener una experiencia completa.</p>
 		<![endif]-->
 		<div class="[ container ]">
-			<header class="[ xmall-12 ][ padding--top-bottom--small ][ bg-primary ]">
-				<div class="[ wrapper ]">
-					<div class="[ row ]">
-						<div class="[ column xmall-6 ][ inline-block align-middle ][ menu__item ]">
-							<div class="[ bg-logo-wrapper ]">
-								<a class="[ bg-logo ]" href="#"></a>
+			<?php if ( ! is_home() ){ ?>
+				<header class="[ xmall-12 ][ padding--top-bottom--small ][ bg-primary ]">
+					<div class="[ wrapper ]">
+						<div class="[ row ]">
+							<div class="[ column xmall-6 ][ inline-block align-middle ][ menu__item ]">
+								<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ]">
+									<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="#"></a>
+								</div>
+							</div>
+							<div class="[ column xmall-6 ][ inline-block align-middle ][ text-center ]">
+								<a class="[ block ][ button--hollow ][ pull-right ][ js-modal-opener ]" data-modal="nav" href="#">
+									<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/hamburguer.svg" alt="menu">
+								</a>
 							</div>
 						</div>
-						<div class="[ column xmall-6 ][ inline-block align-middle ][ text-center ]">
-							<a class="[ block ][ button--hollow ][ pull-right ][ js-modal-opener ]" data-modal="nav" href="#">
-								<img class="[ svg icon icon--small ][ color-light ]" src="icons/hamburger.svg" alt="menu">
-							</a>
-						</div>
 					</div>
-				</div>
-			</header>
+				</header>
+			<?php } ?>
 			<div class="[ main ]">
