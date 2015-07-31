@@ -136,6 +136,34 @@ function get_design_filter_classes( $post_id ){
 
 }// get_design_filter_classes
 
+/**
+ * Get product category, type, and style filters for isotope.
+ * @param integer $post_id
+ * @return string $design_classes
+ */
+function get_product_filter_classes( $post_id ){
+
+	$design_classes = '';
+
+	$theme_filter_terms = wp_get_post_terms( $post_id, 'theme' );
+	foreach ( $theme_filter_terms as $theme_term ) {
+		$design_classes .= $theme_term->slug . ' ';
+	}
+
+	$type_filter_terms = wp_get_post_terms( $post_id, 'type' );
+	foreach ( $type_filter_terms as $type_term ) {
+		$design_classes .= $type_term->slug . ' ';
+	}
+
+	$author_filter_terms = wp_get_post_terms( $post_id, 'design-author' );
+	foreach ( $author_filter_terms as $author_term ) {
+		$design_classes .= $author_term->slug . ' ';
+	}
+
+	return $design_classes;
+
+}// get_product_filter_classes
+
 
 
 /*------------------------------------*\
@@ -184,8 +212,6 @@ function send_email_contacto(){
 }// send_email_contacto
 add_action("wp_ajax_send_email_contacto", "send_email_contacto");
 add_action("wp_ajax_nopriv_send_email_contacto", "send_email_contacto");
-
-
 
 
 

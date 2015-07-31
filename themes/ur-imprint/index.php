@@ -53,6 +53,7 @@
 	</section>
 
 
+
 	<!-- =================================================
 	==== STEPS
 	================================================== -->
@@ -119,6 +120,7 @@
 	</section><!-- characteristics -->
 
 
+
 	<!-- =================================================
 	==== PRODUCT CATEGORIES
 	================================================== -->
@@ -150,6 +152,7 @@
 	</section><!-- product-categories -->
 
 
+
 	<!-- =================================================
 	==== TESTIMONIALS
 	================================================== -->
@@ -160,7 +163,7 @@
 	);
 	$testimonials_query = new WP_Query( $testimonials_args );
 	if( $testimonials_query->have_posts() ) : ?>
-		<section class="[ testimonials ][ bg-primary ]">
+		<section class="[ testimonials ][ bg-primary ][ color-light ]">
 			<div class="[ padding-top-bottom--large ]">
 				<div class="[ wrapper ]">
 					<?php

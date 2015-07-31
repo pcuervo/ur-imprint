@@ -29,7 +29,7 @@
 				</div>
 				<div class="[ theme-filters ][ button-group ]" data-filter-group="theme">
 					<div class="[ column xmall-9 ]">
-						<button class="[ button button--light ][ margin-bottom--small ]" data-filter="<?php echo $theme->name; ?>">
+						<button class="[ button button--light ][ margin-bottom--small ]" data-filter="">
 							<span class="[ block ][ color-primary ]">all</span>
 						</button>
 						<?php 
@@ -80,6 +80,72 @@
 			</div>
 		</div><!-- wrapper -->
 	</section><!-- design-filters -->
+
+
+
+	<!-- =================================================
+	==== PRODUCT FILTERS
+	================================================== -->
+	<section class="[ product-filters ][ bg-primary ][ margin-bottom ]">
+		<div class="[ wrapper ]">
+			<div class="[ row ][ color-light ][ padding-top-bottom ]">
+
+				<div class="[ column xmall-3 ]">
+					<p class="[ padding-top--small ]">who</p>
+				</div>
+				<div class="[ product-filters ][ button-group ]" data-filter-group="product">
+					<div class="[ column xmall-9 ]">
+						<button class="[ button button--light ][ margin-bottom--small ]" data-filter="">
+							<span class="[ block ][ color-primary ]">all</span>
+						</button>
+						<?php 
+						$theme_terms = get_terms( 'product_cat', 'orderby=name&hide_empty=0' );
+						foreach ( $theme_terms as $theme ) : ?>
+							<button class="[ button button--light button--hollow ][ margin-bottom--small ]" data-filter="<?php echo $theme->name; ?>">
+								<span class="[ block ][ color-light ]"><?php echo $theme->name; ?></span>
+							</button>
+						<?php endforeach; ?>
+					</div>
+				</div><!-- product-filters -->
+				
+				<div class="[ column xmall-3 ]">
+					<p class="[ padding-top--small ]">type</p>
+				</div>
+				<div class="[ type-filters ][ button-group ]" data-filter-group="type">
+					<div class="[ column xmall-9 ]">
+						<button class="[ button button--light ][ margin-bottom--small ]" data-filter="<?php echo $type->name; ?>">
+							<span class="[ block ][ color-primary ]">all</span>
+						</button>
+						<?php 
+						$type_terms = get_terms( 'type', 'orderby=name&hide_empty=1' );
+						foreach ( $type_terms as $type ) : ?>
+							<button class="[ button button--light button--hollow ][ margin-bottom--small ]" data-filter="<?php echo $type->name; ?>">
+								<span class="[ block ][ color-light ]"><?php echo $type->name; ?></span>
+							</button>
+						<?php endforeach; ?>
+					</div>
+				</div><!-- type-filters -->
+
+				<div class="[ column xmall-3 ]">
+					<p class="[ padding-top--small ]">author</p>
+				</div>
+				<div class="[ author-filters ][ button-group ]" data-filter-group="author">
+					<div class="[ column xmall-9 ]">
+						<button class="[ button button--light ][ margin-bottom--small ]" data-filter="<?php echo $author->name; ?>">
+							<span class="[ block ][ color-primary ]">all</span>
+						</button>
+						<?php 
+						$author_terms = get_terms( 'design-author', 'orderby=name&hide_empty=1' );
+						foreach ( $author_terms as $author ) : ?>
+							<button class="[ button button--light button--hollow ][ margin-bottom--small ]" data-filter="<?php echo $author->name; ?>">
+								<span class="[ block ][ color-light ]"><?php echo $author->name; ?></span>
+							</button>
+						<?php endforeach; ?>
+					</div>
+				</div><!-- author-filters -->
+			</div>
+		</div><!-- wrapper -->
+	</section><!-- product-filters -->
 
 
 

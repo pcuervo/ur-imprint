@@ -143,5 +143,39 @@ function insert_product_categories( $taxonomy ){
 	}
 
 }// insert_product_categories
+
+/*
+ * Insert  current stores' default categories
+ */
+function register_taxonomy_type_products( $taxonomy ){
+
+	// TYPE
+	if( ! taxonomy_exists('product-type')){
+
+		$labels = array(
+			'name'              => 'Theme',
+			'singular_name'     => 'Theme',
+			'search_items'      => 'Search',
+			'all_items'         => 'All',
+			'edit_item'         => 'Edit Theme',
+			'update_item'       => 'Update Theme',
+			'add_new_item'      => 'New Theme',
+			'new_item_name'     => 'New Theme Name',
+			'menu_name'         => 'Themes'
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'product-type' ),
+		);
+		register_taxonomy( 'product-type', 'designs', $args );
+
+	}
+
+}// register_taxonomy_type_products
 add_action( 'registered_taxonomy', 'insert_product_categories', 10, 1 );
 
