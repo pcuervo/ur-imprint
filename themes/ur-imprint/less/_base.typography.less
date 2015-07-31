@@ -82,22 +82,13 @@ h2{
 }
 
 h3{
-	.font( 22px, 1.1, 300 );
-	& small{
-		.font( 18px, 1 );
-	}
-
+	font-size: 16px; line-height: 1.1; font-weight: 400;
+	text-transform: uppercase;
 	@media (min-width: @medium){
-		.font( 24px, 1.1 );
-		& small{
-			.font( 20px, 1 );
-		}
+		font-size: 18px;
 	}
 	@media (min-width: @large){
-		.font( 28px, 1.1 );
-		& small{
-			.font( 22px, 1 );
-		}
+		font-size: 20px;
 	}
 }
 
@@ -185,7 +176,8 @@ p:last-of-type{ margin: 0; }
 .italic{ font-style: italic; }
 
 p a{
-	color: @secondary;
+	color: @primary;
+	text-decoration: none;
 }
 
 blockquote{
