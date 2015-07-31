@@ -62,6 +62,11 @@
 	**/
 	add_action( 'wp_footer', 'footer_scripts', 21 );
 
+	/**
+	* Disable admin bar
+	**/
+	show_admin_bar(false);
+
 
 
 
@@ -103,7 +108,33 @@ function print_title(){
 	#SET/GET FUNCTIONS
 \*------------------------------------*/
 
+/**
+ * Get theme, type and author filters for isotope.
+ * @param integer $post_id
+ * @return string $design_classes
+ */
+function get_design_filter_classes( $post_id ){
 
+	$design_classes = '';
+
+	$theme_filter_terms = wp_get_post_terms( $post_id, 'theme' );
+	foreach ( $theme_filter_terms as $theme_term ) {
+		$design_classes .= $theme_term->slug . ' ';
+	}
+
+	$type_filter_terms = wp_get_post_terms( $post_id, 'type' );
+	foreach ( $type_filter_terms as $type_term ) {
+		$design_classes .= $type_term->slug . ' ';
+	}
+
+	$author_filter_terms = wp_get_post_terms( $post_id, 'design-author' );
+	foreach ( $author_filter_terms as $author_term ) {
+		$design_classes .= $author_term->slug . ' ';
+	}
+
+	return $design_classes;
+
+}// get_design_filter_classes
 
 
 
@@ -150,9 +181,39 @@ function send_email_contacto(){
 		echo json_encode($message , JSON_FORCE_OBJECT);
 		exit();
 
-	}// send_email_contacto
-	add_action("wp_ajax_send_email_contacto", "send_email_contacto");
-	add_action("wp_ajax_nopriv_send_email_contacto", "send_email_contacto");
+}// send_email_contacto
+add_action("wp_ajax_send_email_contacto", "send_email_contacto");
+add_action("wp_ajax_nopriv_send_email_contacto", "send_email_contacto");
+
+
+
+
+
+/*------------------------------------*\
+	WOOCOMMERCE FUNCTIONS / ACTIONS
+\*------------------------------------*/
+
+/*
+ * Add WooCommerce support to current theme.
+ */
+function woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'woocommerce_support' );
+
+/*
+ * Replace WooCommerce default wrapper with ours
+ */
+function my_theme_wrapper_start() {
+	echo '<section id="main">';
+}
+function my_theme_wrapper_end() {
+	echo '</section>';
+}
+add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
 
 

@@ -37,7 +37,7 @@
 					</div>
 				</div>
 				<div class="[ text-center ]">
-					<p>© Copyright 2015 UR Imprint Design Studio and Designs for Business</p>
+					<p>© Copyright <?php echo date('Y'); ?> UR Imprint Design Studio and Designs for Business</p>
 					<p><a href="#">Privacy Policy</a></p>
 					<p><a href="#">Terms and conditions</a></p>
 				</div>

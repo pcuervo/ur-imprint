@@ -7,19 +7,19 @@
 add_action( 'init', 'custom_taxonomies_callback', 0 );
 function custom_taxonomies_callback(){
 
-	// BRANDS
-	if( ! taxonomy_exists('marcas')){
+	// THEME
+	if( ! taxonomy_exists('theme')){
 
 		$labels = array(
-			'name'              => 'Marca',
-			'singular_name'     => 'Marca',
-			'search_items'      => 'Buscar',
-			'all_items'         => 'Todos',
-			'edit_item'         => 'Editar marca',
-			'update_item'       => 'Actualizar marca',
-			'add_new_item'      => 'Nueva marca',
-			'new_item_name'     => 'Nombre nuevo marca',
-			'menu_name'         => 'Marcas'
+			'name'              => 'Theme',
+			'singular_name'     => 'Theme',
+			'search_items'      => 'Search',
+			'all_items'         => 'All',
+			'edit_item'         => 'Edit Theme',
+			'update_item'       => 'Update Theme',
+			'add_new_item'      => 'New Theme',
+			'new_item_name'     => 'New Theme Name',
+			'menu_name'         => 'Themes'
 		);
 		$args = array(
 			'hierarchical'      => true,
@@ -28,56 +28,120 @@ function custom_taxonomies_callback(){
 			'show_admin_column' => true,
 			'show_in_nav_menus' => true,
 			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'marca' ),
+			'rewrite'           => array( 'slug' => 'theme' ),
 		);
+		register_taxonomy( 'theme', 'designs', $args );
 
-		register_taxonomy( 'marcas', 'productos', $args );
 	}
 
-	// Insert taxonomy terms
-	// insert_taxonomy_terms();
+	// TYPE
+	if( ! taxonomy_exists('type')){
+
+		$labels = array(
+			'name'              => 'Type',
+			'singular_name'     => 'Type',
+			'search_items'      => 'Search',
+			'all_items'         => 'All',
+			'edit_item'         => 'Edit Type',
+			'update_item'       => 'Update Type',
+			'add_new_item'      => 'New Type',
+			'new_item_name'     => 'New Type Name',
+			'menu_name'         => 'Types'
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'type' ),
+		);
+		register_taxonomy( 'type', 'designs', $args );
+		
+	}
+
+	// AUTHOR
+	if( ! taxonomy_exists('design-author')){
+
+		$labels = array(
+			'name'              => 'Author',
+			'singular_name'     => 'Author',
+			'search_items'      => 'Search',
+			'all_items'         => 'All',
+			'edit_item'         => 'Edit Author',
+			'update_item'       => 'Update Author',
+			'add_new_item'      => 'New Author',
+			'new_item_name'     => 'New Author Name',
+			'menu_name'         => 'Authors'
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'design-author' ),
+		);
+		register_taxonomy( 'design-author', 'designs', $args );
+		
+	}
+
+	insert_design_taxonomy_terms();
 
 }// custom_taxonomies_callback
 
-// /*
-//  * Insert dynamic taxonomy terms after a post has been created/saved.
-//  */
-// function update_taxonomies(){
-// 	global $post;
+/*
+ * Insert default taxonomy terms for UR Imprint designs.
+ */
+function insert_design_taxonomy_terms(){
 
-// 	// Exist of post doesn't exist or it has been moved to trash
-// 	if( NULL === $post || 'trash' === get_post_status( $post->ID ) ) {
-// 		return;
-// 	}
+	$theme = array( 'other', 'inspirational', 'motivational', 'funny', 'cultural', 'art' );
+	foreach ( $theme as $theme ) {
+		insert_dynamic_taxonomy_term( $theme, 'theme' );
+	}
 
-// 	switch ( $post->post_type ) {
-// 		case 'marcas':
-// 			insert_dynamic_taxonomy_term( $post->post_title, 'marcas' );
-// 			break;
-// 		case 'productos':
-// 			insert_dynamic_taxonomy_term( $post->post_title, 'productos-receta' );
-// 			break;
-// 		default:
-// 			# code...
-// 			break;
-// 	}
-	
-// }// update_taxonomies
-// add_action('save_post', 'update_taxonomies');
+	$types = array( 'photo', 'text' );
+	foreach ( $types as $type ) {
+		insert_dynamic_taxonomy_term( $type, 'type' );
+	}
 
-// /*
-//  * Insert  $new_term to $taxonomy based on the title of new post
-//  *
-//  * @param string $new_term
-//  * @param string $taxonomy
-//  */
-// function insert_dynamic_taxonomy_term( $new_term, $taxonomy ){
+	$authors = array( 'UR Imprint', 'Maw' );
+	foreach ( $authors as $author ) {
+		insert_dynamic_taxonomy_term( $author, 'design-author' );
+	}
 
-// 	$term = term_exists( $new_term, $taxonomy );
-// 	if ( FALSE !== $term && NULL !== $term ) {
-// 		return;
-// 	}
-// 	wp_insert_term( $new_term, $taxonomy );
+}// insert_design_taxonomy_terms
 
-// }// insert_dynamic_taxonomy_term
+/*
+ * Insert  $new_term to $taxonomy based on the title of new post
+ *
+ * @param string $new_term
+ * @param string $taxonomy
+ */
+function insert_dynamic_taxonomy_term( $new_term, $taxonomy ){
+
+	$term = term_exists( $new_term, $taxonomy );
+	if ( FALSE !== $term && NULL !== $term ) {
+		return;
+	}
+	wp_insert_term( $new_term, $taxonomy );
+}// insert_dynamic_taxonomy_term
+
+/*
+ * Insert  current stores' default categories
+ */
+function insert_product_categories( $taxonomy ){
+
+	if ( 'product_cat' == $taxonomy ) {
+
+		$product_cat = array( 'Kids', 'Women', 'Men');
+		foreach ( $product_cat as $cat ) {
+			insert_dynamic_taxonomy_term( $cat, $taxonomy );
+		}
+	}
+
+}// insert_product_categories
+add_action( 'registered_taxonomy', 'insert_product_categories', 10, 1 );
 

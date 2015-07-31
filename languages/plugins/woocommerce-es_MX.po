@@ -9,13 +9,14 @@
 # orlandobp31 <orlando_bp31@outlook.com>, 2014
 # Pablo Aguilar-Lliguin <pablo@arriba.ec>, 2015
 # EnigmaSAC <sergioantonio60@gmail.com>, 2015
+# Stephen Elliott <gbh_swreg@wavestation.co.uk>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/woocommerce/issues\n"
-"POT-Creation-Date: 2015-06-10 17:29:07+00:00\n"
-"PO-Revision-Date: 2015-06-09 14:49+0000\n"
-"Last-Translator: Claudio Sanches <contato@claudiosmweb.com>\n"
+"POT-Creation-Date: 2015-07-07 16:47:13+00:00\n"
+"PO-Revision-Date: 2015-07-01 18:38+0000\n"
+"Last-Translator: Stephen Elliott <gbh_swreg@wavestation.co.uk>\n"
 "Language-Team: Spanish (Mexico) (http://www.transifex.com/projects/p/woocommerce/language/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +27,7 @@ msgstr ""
 
 #: i18n/countries.php:18
 msgid "Afghanistan"
-msgstr ""
+msgstr "Afganistán"
 
 #: i18n/countries.php:19
 msgid "&#197;land Islands"
@@ -5058,20 +5059,20 @@ msgstr "(Incluye %s)"
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
-#: includes/abstracts/abstract-wc-order.php:2136
+#: includes/abstracts/abstract-wc-order.php:2143
 msgid "Order status changed from %s to %s."
 msgstr "El estado del pedido ha cambiado de %s a %s."
 
-#: includes/abstracts/abstract-wc-order.php:2398
+#: includes/abstracts/abstract-wc-order.php:2405
 msgid "Item's #%s variation #%s stock reduced from %s to %s."
 msgstr "Las existencias del artículo #%s han sido reducidas de %s a %s."
 
-#: includes/abstracts/abstract-wc-order.php:2400
+#: includes/abstracts/abstract-wc-order.php:2407
 #: includes/class-wc-ajax.php:1264 includes/class-wc-ajax.php:1265
 msgid "Item #%s stock reduced from %s to %s."
 msgstr "Existencias del artículo #%s reducidas de %s a %s."
 
-#: includes/abstracts/abstract-wc-order.php:2412
+#: includes/abstracts/abstract-wc-order.php:2419
 msgid "Order item stock reduced successfully."
 msgstr "Existencia del artículo reducida con éxito."
 
@@ -5142,7 +5143,7 @@ msgstr "Disponible sobre pedido"
 #: includes/class-wc-ajax.php:681 includes/class-wc-product-variation.php:559
 #: includes/class-wc-product-variation.php:563
 msgid "Out of stock"
-msgstr "Sin existencias"
+msgstr "Agotado"
 
 #: includes/abstracts/abstract-wc-product.php:1114
 #: templates/single-product/rating.php:27
@@ -6084,7 +6085,7 @@ msgstr "El cupón no es válido."
 
 #: includes/class-wc-coupon.php:709
 msgid "Coupon \"%s\" does not exist!"
-msgstr ""
+msgstr "¡El cupón %s no existe!"
 
 #: includes/class-wc-coupon.php:712
 msgid ""
@@ -6176,7 +6177,7 @@ msgstr "Debes haber iniciado sesión para descargar archivos."
 #: templates/global/form-login.php:39 templates/myaccount/form-login.php:28
 #: templates/myaccount/form-login.php:47
 msgid "Login"
-msgstr "Identificarse"
+msgstr "Iniciar Sesión"
 
 #: includes/class-wc-download-handler.php:136
 msgid "Log in to Download Files"
@@ -6233,7 +6234,7 @@ msgstr "Producto agotado"
 
 #: includes/class-wc-emails.php:410
 msgid "%s is out of stock."
-msgstr "%s no cuenta con existencias."
+msgstr "%s está agotado."
 
 #: includes/class-wc-emails.php:439
 msgid "Product Backorder"
@@ -6276,7 +6277,7 @@ msgid "Please re-enter your password."
 msgstr "Por favor vuelve a escribir tu contraseña."
 
 #: includes/class-wc-form-handler.php:203
-#: includes/class-wc-form-handler.php:852
+#: includes/class-wc-form-handler.php:854
 msgid "Passwords do not match."
 msgstr "Las contraseñas no coinciden."
 
@@ -6349,7 +6350,7 @@ msgstr "Por favor, elige un producto para agregar al carrito&hellip;"
 #: includes/class-wc-form-handler.php:766
 #: includes/class-wc-form-handler.php:770
 #: includes/class-wc-form-handler.php:779
-#: includes/class-wc-form-handler.php:908
+#: includes/class-wc-form-handler.php:910
 msgid "Error"
 msgstr "Error"
 
@@ -6365,15 +6366,15 @@ msgstr "Se requiere contraseña."
 msgid "A user could not be found with this email address."
 msgstr "No hay ningún usuario registrado con esa dirección de correo electrónico."
 
-#: includes/class-wc-form-handler.php:804
+#: includes/class-wc-form-handler.php:806
 msgid "You are now logged in as <strong>%s</strong>"
 msgstr "Estas autenticado como <strong>%s</ strong>"
 
-#: includes/class-wc-form-handler.php:848
+#: includes/class-wc-form-handler.php:850
 msgid "Please enter your password."
 msgstr "Por favor, introduce tu contraseña."
 
-#: includes/class-wc-form-handler.php:891
+#: includes/class-wc-form-handler.php:893
 msgid "Anti-spam field was filled in."
 msgstr "El campo Anti-spam fue rellenado."
 
@@ -7647,7 +7648,7 @@ msgstr "Por favor, escribe tu dirección de correo electrónico de PayPal, se ne
 
 #: includes/gateways/paypal/includes/settings-paypal.php:40
 msgid "PayPal Sandbox"
-msgstr ""
+msgstr "PayPal Sandbox"
 
 #: includes/gateways/paypal/includes/settings-paypal.php:42
 msgid "Enable PayPal sandbox"
@@ -8456,7 +8457,7 @@ msgstr "Tu contraseña ha sido restablecida."
 
 #: includes/shortcodes/class-wc-shortcode-my-account.php:206
 msgid "Log in"
-msgstr "Ingresar"
+msgstr "Iniciar Sesión"
 
 #: includes/shortcodes/class-wc-shortcode-my-account.php:226
 msgid "Enter a username or e-mail address."
@@ -9909,7 +9910,7 @@ msgstr "Buscar por:"
 msgid "Clear selection"
 msgstr "Limpiar selección"
 
-#: templates/single-product/add-to-cart/variable.php:93
+#: templates/single-product/add-to-cart/variable.php:96
 msgid "This product is currently out of stock and unavailable."
 msgstr "No existe disponibilidad de este producto ni está disponible."
 
