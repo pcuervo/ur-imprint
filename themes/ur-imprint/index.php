@@ -38,12 +38,10 @@
 						</p>
 					</video>
 					<!-- Video Controls -->
-					<div id="video-controls">
-						<button type="button" id="play-pause">Play</button>
-						<input type="range" id="seek-bar" value="0">
-						<button type="button" id="mute">Mute</button>
-						<input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
-						<button type="button" id="full-screen">Full-Screen</button>
+					<div id="video-controls" class="[ gradient-transparent-to-black ]">
+						<button class="[ center-full ][ button button--circle button--secondary ][ bordered--large ]" type="button" id="play-pause">
+							<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/play.svg" alt="play">
+						</button>
 					</div>
 				</div>
 				<h2>UR Imprint Design Studio</h2>

@@ -1,3 +1,50 @@
+		</div><!-- main -->
+
+		<section class="[ action-buttons action-buttons--right ]">
+			<a href="#" class="[ button button--primary button--circle ][ js-modal-opener ]" data-modal="nav"><i class="[ icon-menu ]"></i></a>
+		</section><!-- action-buttons -->
+
+		<section class="[ modal-wrapper modal-nav ][ hide ]">
+			<div class="[ modal modal--full ]">
+				<div class="[ modal-content ]">
+					<article class="[ menu ]">
+						<div class="[ row ][ bg-dark ]">
+							<?php /*<a href="<?php echo site_url(''); ?>" class="[ span xmall-6 ][ border ][ button button--light button--ink ][ padding ]"><i class="[ icon-sillones ]"></i>quiero comprar</a>
+							<?php /* <a href="<?php echo site_url('');?>" class="[ span xmall-6 ][ border ][ button button--light button--ink ][ padding ]"><i class="[ icon-vender ]"></i>quiero vender</a> */ ?>
+							<a href="<?php echo site_url('como-funciona');?>" class="[ span xmall-6 ][ border ][ button button--light button--ink ][ padding--medium ]"><i class="[ icon-graph ]"></i>¿cómo funciona?</a>
+							<a href="<?php echo site_url('');?>" class="[ span xmall-6 ][ border ][ button button--light button--ink ][ padding--medium ]"><i class="[ icon-messages ]"></i>blog</a>
+							<?php if( is_user_logged_in() ) {  ?>
+								<a href="<?php echo site_url('mi-cuenta');?>" class="[ span xmall-12 ][ border ][ button button--light button--ink ][ bg-primary ][ padding--medium ]"><i class="[ icon-user ]"></i>mi cuenta</a>
+								<a href="<?php echo wp_logout_url( site_url() ) ?>" class="[ span xmall-12 ][ border ][ button button--light button--ink ][ bg-highlight ][ padding--medium ]"><i class="[ icon ]"></i>Logout</a>
+							<?php } else { ?>
+								<a href="<?php echo site_url('mi-cuenta');?>" class="[ span xmall-12 ][ border ][ button button--light button--ink ][ bg-primary ][ padding--medium ]"><i class="[ icon-user ]"></i>log in o registrate</a>
+							<?php } ?>
+						</div>
+					</article><!-- menu -->
+
+					<article class="[ search ]">
+						<div class="[ padding ][ border ]">
+							<?php get_product_search_form(); ?>
+						</div><!-- padding -->
+					</article><!-- search -->
+
+					<article class="[ categorias ]">
+						<div class="[ padding ]">
+							<h3 class="[ text-center ][ no-margin ]">Categorías</h3>
+						</div>
+						<div class="[ row ]">
+							<a href="#" class="[ span xmall-6 ][ border ][ button button--primary button--ink ][ padding ]"><img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/hamburguer.svg" alt="menu">category</a>
+						</div>
+					</article><!-- categorias -->
+					<artcile class="[ initial ]">
+						<div class="[ action-buttons action-buttons--right ][ always-opened ]">
+							<a href="#" class="[ button button--primary button--action ][ pull-right ][ js-modal-closer ]"><i class="[ icon-close ]"></i></a>
+						</div><!-- action-buttons -->
+					</artcile><!-- action-buttons -->
+				</div><!-- modal-content -->
+			</div>
+		</section>
+
 		</div><!-- container -->
 
 		<footer class="">
