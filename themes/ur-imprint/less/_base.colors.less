@@ -49,19 +49,58 @@
 /**
  * Backgrounds
 **/
-.bg-light{ background-color: @light; }
+.bg-light{
+	background-color: @light;
+	color: @primary;
+}
 .bg-light-hover{ background-color: darken(@light, 10%); }
-.bg-intermediate{ background-color: @intermediate; }
+
+.bg-intermediate{
+	background-color: @intermediate;
+	color: @dark;
+}
 .bg-intermediate-hover{ background-color: darken(@intermediate, 10%); }
-.bg-dark{ background-color: @dark; }
+
+.bg-dark{
+	background-color: @dark;
+	color: @light;
+}
 .bg-dark-hover{ background-color: darken(@dark, 10%); }
-.bg-primary{ background-color: @primary; }
+
+.bg-primary{
+	background-color: @primary;
+	color: @light;
+}
 .bg-primary-hover{ background-color: darken(@primary, 10%); }
-.bg-secondary{ background-color: @secondary; }
+
+.bg-secondary{
+	background-color: @secondary;
+	color: @light;
+}
 .bg-secondary-hover{ background-color: darken(@secondary, 10%); }
-.bg-danger{ background-color: @danger; }
+
+.bg-danger{
+	background-color: @danger;
+	color: @light;
+}
 .bg-danger-hover{ background-color: darken(@danger, 10%); }
-.bg-warning{ background-color: @warning; }
+
+.bg-warning{
+	background-color: @warning;
+	color: @light;
+}
 .bg-warning-hover{ background-color: darken(@warning, 10%); }
-.bg-success{ background-color: @success; }
+
+.bg-success{
+	background-color: @success;
+	color: @light;
+}
 .bg-success-hover{ background-color: darken(@success, 10%); }
+
+
+/**
+ * Backgrounds shades
+**/
+.bg-primary--darken-10{
+	background-color: darken(@primary, 10%);
+}

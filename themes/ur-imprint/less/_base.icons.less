@@ -12,8 +12,20 @@
 \*------------------------------------*/
 
 .icon--small{ width: 25px !important; }
-.icon--medium{ width: 40px !important; }
-.icon--large{ width: 70px !important; }
+.icon--medium{
+	width: 40px;
+	@media (min-width: @small){ width: 60px;}
+	@media (min-width: @medium){ width: 90px;}
+	@media (min-width: @large){ width: 110px;}
+	@media (min-width: @xlarge){ width: 130px;}
+}
+.icon--large{
+	width: 100px;
+	@media (min-width: @small){ width: 140px;}
+	@media (min-width: @medium){ width: 80px;}
+	@media (min-width: @large){ width: 130px;}
+	@media (min-width: @xlarge){ width: 150px;}
+}
 .icon--xlarge{ width: 130px !important; }
 .icon--xxlarge{ width: 170px !important; }
 

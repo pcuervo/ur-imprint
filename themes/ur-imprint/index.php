@@ -26,7 +26,7 @@
 	================================================== -->
 	<section class="[ video ][ bg-primary ]">
 		<div class="[ wrapper ]">
-			<div class="[ padding-top-bottom--large ][ text-center color-light ]">
+			<div class="[ padding-top-bottom--large ][ text-center ]">
 				<div class="[ margin-bottom ][ xmall-12 ][ center ][ relative ]">
 					<video id="video" class="[ xmall-12 ]">
 						<source src="<?php echo THEMEPATH; ?>videos/video1.webm" type="video/webm">
@@ -98,29 +98,29 @@
 	================================================== -->
 	<section class="[ characteristics ][ bg-primary ]">
 		<div class="[ wrapper--large ]">
-			<div class="[ row ]">
+			<div class="[ row ][ text-center ]">
 				<article class="[ square ][ bg-primary--darken-10 ]">
 					<div class="[ square-content ][ color-light ]">
-						<img class="[ svg icon icon--xxlarge ]" src="<?php echo THEMEPATH; ?>icons/badge.svg" alt="menu">
-						<p class="[ ]"><small>Premium quality</small></p>
+						<img class="[ svg icon icon--large ][ center ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/badge.svg" alt="menu">
+						<p class="[ ]">Premium quality</p>
 					</div><!-- square-content -->
 				</article><!-- square -->
 				<article class="[ square ][ bg-primary ]">
 					<div class="[ square-content ][ color-light ]">
-						<img class="[ svg icon icon--xxlarge ]" src="<?php echo THEMEPATH; ?>icons/lightning.svg" alt="menu">
-						<p class="[ ]"><small>Fast service</small></p>
-					</div><!-- square-content -->
-				</article><!-- square -->
-				<article class="[ square ][ bg-primary--darken-10 ]">
-					<div class="[ square-content ][ color-light ]">
-						<img class="[ svg icon icon--xxlarge ]" src="<?php echo THEMEPATH; ?>icons/shirts.svg" alt="menu">
-						<p class="[ ]"><small>Product variety</small></p>
+						<img class="[ svg icon icon--large ][ center ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/lightning.svg" alt="menu">
+						<p class="[ ]">Fast service</p>
 					</div><!-- square-content -->
 				</article><!-- square -->
 				<article class="[ square ][ bg-primary ]">
 					<div class="[ square-content ][ color-light ]">
-						<img class="[ svg icon icon--xxlarge ]" src="<?php echo THEMEPATH; ?>icons/face.svg" alt="menu">
-						<p class="[ ]"><small>Client satisfaction</small></p>
+						<img class="[ svg icon icon--large ][ center ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/shirts.svg" alt="menu">
+						<p class="[ ]">Product variety</p>
+					</div><!-- square-content -->
+				</article><!-- square -->
+				<article class="[ square ][ bg-primary--darken-10 ]">
+					<div class="[ square-content ][ color-light ]">
+						<img class="[ svg icon icon--large ][ center ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/face.svg" alt="menu">
+						<p class="[ ]">Client satisfaction</p>
 					</div><!-- square-content -->
 				</article><!-- square -->
 			</div>
