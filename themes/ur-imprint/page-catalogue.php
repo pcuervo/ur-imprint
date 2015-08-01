@@ -158,8 +158,8 @@
 
 				<?php 
 				$designs_args = array(
-					'post_type' => 'designs',
-					'posts_per_page' => -1,
+					'post_type'			=> 'designs',
+					'posts_per_page'	=> -1,
 				);
 				$designs_query = new WP_Query( $designs_args );
 				if( $designs_query->have_posts() ) : while ( $designs_query->have_posts() ) : $designs_query->the_post(); 
@@ -190,6 +190,13 @@
 				$products_args = array(
 					'post_type' => 'product',
 					'posts_per_page' => -1,
+					'tax_query'			=> array(
+				    	array(
+							'taxonomy' 	=> 'pa_garment',
+				            'field' 	=> 'slug',
+				            'terms'		=> 'blank',
+						)
+	        		),
 				);
 				$products_query = new WP_Query( $products_args );
 
