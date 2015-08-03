@@ -27,6 +27,7 @@
 	require_once('inc/users.php');
 	require_once('inc/functions-admin.php');
 	require_once('inc/functions-js-footer.php');
+	require_once('inc/ui-hooks.php');
 	include 'inc/extra-metaboxes.php';
 
 
@@ -145,6 +146,11 @@ function get_product_filter_classes( $product_id ){
 
 	$product_classes = '';
 
+	$product_cat_terms = get_the_terms( $post->ID, 'product_cat' );
+	if( ! empty( $product_cat_terms  ) ) : foreach ( $product_cat_terms as $cat_term ) :
+		$product_classes .= $cat_term->slug . ' ';
+	endforeach; endif;
+
 	$style_filter_terms = get_the_terms( $product_id, 'pa_style' );
 	if( ! empty( $style_filter_terms  ) ) : foreach ( $style_filter_terms as $style_term ) :
 		$product_classes .= $style_term->slug . ' ';
@@ -159,6 +165,53 @@ function get_product_filter_classes( $product_id ){
 
 }// get_product_filter_classes
 
+/**
+ * Get contact email from metabox in Contact page
+ * @return string $contact_email
+ */
+function get_contact_email(){
+
+	$contact_info_query = new WP_Query( 'pagename=contact' );
+	$contact_info_query->the_post();
+	$contact_email = get_post_meta( get_the_ID(), '_email_meta', TRUE );
+	wp_reset_query();
+
+	return $contact_email;
+
+}// get_contact_email
+
+/**
+ * Get contact phone from metabox in Contact page
+ * @return string $contact_phone
+ */
+function get_contact_phone(){
+
+	$contact_info_query = new WP_Query( 'pagename=contact' );
+	$contact_info_query->the_post();
+	$contact_phone = get_post_meta( get_the_ID(), '_phone_meta', TRUE );
+	wp_reset_query();
+
+	return $contact_phone;
+
+}// get_contact_phone
+
+/**
+ * Get FAQ category for given post
+ * @param integer $post_id
+ * @return string $faq_cat
+ */
+function get_faq_category( $post_id ){
+
+	$design_classes = '';
+
+	$faq_cat_terms = wp_get_post_terms( $post_id, 'faq-categories' );
+	if( ! empty( $faq_cat_terms  ) ) : 
+		return $faq_cat_terms[0]->name;
+	endif;
+
+	return 'Other';
+
+}// get_faq_category
 
 
 /*------------------------------------*\
@@ -166,9 +219,9 @@ function get_product_filter_classes( $product_id ){
 \*------------------------------------*/
 
 /**
- * Send contact email to PMI.
+ * Send contact email to UR Imprint.
  */
-function send_email_contacto(){
+function send_contact_email(){
 
 	$name = $_POST['name'];
 	$email = $_POST['email'];
@@ -191,22 +244,22 @@ function send_email_contacto(){
 	if( ! $mail ) {
 		$message = array(
 		'error'		=> 1,
-		'message'	=> 'No se pudo enviar el correo.',
+		'message'	=> 'An error has ocurred. Please try again later.',
 		);
 		echo json_encode($message , JSON_FORCE_OBJECT);
 		exit;
 	}
 
-		$message = array(
-			'error'		=> 0,
-			'message'	=> 'Gracias por tu mensaje ' . $name . '. En breve nos pondremos en contacto contigo.',
-		);
-		echo json_encode($message , JSON_FORCE_OBJECT);
-		exit();
+	$message = array(
+		'error'		=> 0,
+		'message'	=> 'Thanks for your message ' . $name . '! We will get back to you shortly.',
+	);
+	echo json_encode($message , JSON_FORCE_OBJECT);
+	exit();
 
-}// send_email_contacto
-add_action("wp_ajax_send_email_contacto", "send_email_contacto");
-add_action("wp_ajax_nopriv_send_email_contacto", "send_email_contacto");
+}// send_contact_email
+add_action("wp_ajax_send_contact_email", "send_contact_email");
+add_action("wp_ajax_nopriv_send_contact_email", "send_contact_email");
 
 
 

@@ -88,7 +88,35 @@ function custom_taxonomies_callback(){
 		
 	}
 
+	// FAQ CATEGORY
+	if( ! taxonomy_exists('faq-categories')){
+
+		$labels = array(
+			'name'              => 'FAQ Category',
+			'singular_name'     => 'FAQ Category',
+			'search_items'      => 'Search',
+			'all_items'         => 'All',
+			'edit_item'         => 'Edit FAQ Category',
+			'update_item'       => 'Update FAQ Category',
+			'add_new_item'      => 'New FAQ Category',
+			'new_item_name'     => 'New FAQ Category Name',
+			'menu_name'         => 'FAQ Categories'
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'faq-categories' ),
+		);
+		register_taxonomy( 'faq-categories', 'faq', $args );
+		
+	}
+
 	insert_design_taxonomy_terms();
+	insert_faq_taxonomy_terms();
 
 }// custom_taxonomies_callback
 
@@ -113,6 +141,18 @@ function insert_design_taxonomy_terms(){
 	}
 
 }// insert_design_taxonomy_terms
+
+/*
+ * Insert default taxonomy terms for FAQ categories.
+ */
+function insert_faq_taxonomy_terms(){
+
+	$faq_categories = array( 'General', 'Artwork', 'Design Tips', 'Delivery', 'Products (garments & sizes)' );
+	foreach ( $faq_categories as $faq_cat ) {
+		insert_dynamic_taxonomy_term( $faq_cat, 'faq-categories' );
+	}
+
+}// insert_faq_taxonomy_terms
 
 /*
  * Insert  $new_term to $taxonomy based on the title of new post

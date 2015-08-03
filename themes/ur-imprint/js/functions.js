@@ -68,6 +68,24 @@ function concatValues( obj ) {
 	return value;
 }// concatValues
 
+/**
+ * Run Validation plugin
+ * @form to validate
+**/
+function runValidation(form){
+	$(form).validate({
+		submitHandler:function(){
+			switch(form){
+				case '.js-contact':
+					sendContactEmail( form );
+					break;
+				default:
+					$(form).submit();
+			}
+		}
+	});
+}// runValidation
+
 /*------------------------------------*\
 	#GET/SET FUNCTIONS
 \*------------------------------------*/
@@ -108,11 +126,54 @@ function setMainPaddingTop(){
 	$('.main').css('padding-top', headerHeight + 20);
 }// setMainPaddingTop
 
+/**
+ * Show HTML if contact form was sent succesfully.
+ * @param string message
+ * @return successHTML
+**/
+function getContactSuccessHTML( message ){
+	return '<h3 class="[ text-center ][ primary ]">' + message + '</h3>';
+}// getContactSuccessHTML
+
+/**
+ * Show HTML if contact form was not sent succesfully.
+ * @param string message
+ * @return errorHTML
+**/
+function showContactErrorHTML( message ){
+	return '<p>' + message + '</p>';
+}// showContactErrorHTML
+
+
+
 
 
 /*------------------------------------*\
 	#AJAX FUNCTIONS
 \*------------------------------------*/
+
+/**
+ * Send email requesting more information.
+ */
+function sendContactEmail( form ){
+
+	var data = $( form ).serialize();
+	$.post(
+		ajax_url,
+		data,
+		function( response ){
+			var jsonResponse = $.parseJSON( response );
+
+			if( jsonResponse.error === 1) {
+				showContactErrorHTML( jsonResponse.message );
+				return;
+			}
+
+			$( form ).empty();
+			$( form ).append( getContactSuccessHTML( jsonResponse.message ) );
+		}
+	);
+}// sendContactEmail
 
 
 

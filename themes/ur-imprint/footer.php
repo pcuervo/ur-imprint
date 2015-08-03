@@ -60,9 +60,9 @@
 						<div class="[ column xmall-6 medium-3 ][ margin-bottom ]">
 							<h3>Contact Us</h3>
 							<p class="[ no-margin ]">Sydney, Australia</p>
-							<p class="[ no-margin ]">(0439) 959 051</p>
-							<p class="[ no-margin ]"><a href="mailto:blabla@gmail.com">Email Us</a></p>
-							<p class="[ no-margin ]"><a href="#">Facebook</a></p>
+							<p class="[ no-margin ]"><?php get_contact_phone(); ?></p>
+							<p class="[ no-margin ]"><a href="mailto:<?php get_contact_email(); ?>">Email Us</a></p>
+							<p class="[ no-margin ]"><a href="<?php get_facebook_url(); ?>">Facebook</a></p>
 						</div>
 						<div class="[ clear--xmall ]"></div>
 						<div class="[ column xmall-6 medium-3 ][ margin-bottom ]">

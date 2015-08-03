@@ -62,7 +62,7 @@ function footer_scripts(){
 			/*------------------------------------*\
 				#NOT HOME
 			\*------------------------------------*/
-			<?php if ( ! is_home() ){ ?>
+			<?php if ( ! is_home() ) : ?>
 
 				/**
 				 * On load
@@ -70,15 +70,14 @@ function footer_scripts(){
 
 				setMainPaddingTop();
 
-			<?php } ?>
+			<?php endif; ?>
 
 
 
 			/*------------------------------------*\
 				#CATALOGUE
 			\*------------------------------------*/
-
-			<?php if ( is_page( 'Catalogue' ) ){ ?>
+			<?php if ( is_page( 'Catalogue' ) ) : ?>
 
 				/**
 				 * On load
@@ -104,7 +103,16 @@ function footer_scripts(){
 					toggleCatalogueCategory( 'products' );
 				});
 
-			<?php } ?>
+			<?php endif; ?>
+
+
+
+			/*------------------------------------*\
+				#CONTACT
+			\*------------------------------------*/
+			<?php if ( is_page( 'contact' ) ): ?>
+				runValidation( '.js-contact' );
+			<?php endif; ?>
 
 
 		</script>
