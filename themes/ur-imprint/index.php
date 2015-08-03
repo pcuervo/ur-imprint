@@ -136,6 +136,7 @@
 	<section class="[ product-categories ]">
 		<div class="[ row ]">
 			<?php
+			$counter = 1;
 			$args = array(
 				'taxonomy'     => 'product_cat',
 				'hide_empty'   => 1
@@ -144,19 +145,28 @@
 			foreach ( $all_categories as $cat ) :
 				$cat_thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
 			    $cat_image_url = wp_get_attachment_url( $cat_thumbnail_id ); ?>
-				<div class="[ span xmall-12 ]">
+				<div class="[ span xmall-12 ][ bg-secondary bg-secondary--darken-<?php echo $counter; ?>0 ]">
 					<div class="[ row ]">
-						<a href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
-							<div class="[ span xmall-4 ]">
+						<div class="[ span xmall-4 ]">
+							<a href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
 								<img class="[ image-responsive ]" src="<?php echo $cat_image_url; ?>" alt="">
-							</div>
-							<div class="[ span xmall-8 ][ padding ][ bg-secondary ]">
-								<p class="[ text-center ]"><?php echo $cat->name ?></p>
-							</div>
-						</a>
+							</a>
+						</div>
+						<div class="[ span xmall-8 ][ padding ]">
+							<p class="[ text-center ]">
+								<a href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
+									<?php echo $cat->name ?>
+								</a>
+							</p>
+						</div>
 					</div>
 				</div>
-			<?php endforeach; wp_reset_query(); ?>
+			<?php
+			$counter++;
+			if ( $counter == 11 ){
+				$counter = 1;
+			}
+			endforeach; wp_reset_query(); ?>
 		</div>
 	</section><!-- product-categories -->
 
