@@ -12,12 +12,12 @@
 
 					<article class="[ center-full ][ text-center ]">
 						<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ][ margin-bottom--large ][ center ]">
-							<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="#"></a>
+							<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="<?php echo site_url(); ?>"></a>
 						</div>
 						<nav class="[ hidden--large ]">
-							<a href="<?php echo site_url('nosotros'); ?>" class="[ button button--medium button--hollow button--light ][ uppercase ][ padding ]">Create</a>
-							<a href="<?php echo site_url('productos'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Catalogue</a>
-							<a href="<?php echo site_url('servicios'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Contact</a>
+							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--medium button--hollow button--light ][ uppercase ][ padding ]">Create</a>
+							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Catalogue</a>
+							<a href="<?php echo site_url('contact'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Contact</a>
 							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Register</a>
 							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Login</a>
 							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">

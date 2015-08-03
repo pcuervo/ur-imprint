@@ -59,7 +59,7 @@
 						<div class="[ row ]">
 							<div class="[ column xmall-6 ][ inline-block align-middle ][ menu__item ]">
 								<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ]">
-									<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="#"></a>
+									<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="<?php echo site_url(); ?>"></a>
 								</div>
 							</div>
 							<div class="[ column xmall-6 ][ inline-block align-middle ][ text-center ]">
