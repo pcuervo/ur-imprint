@@ -58,7 +58,7 @@ function filterIsotope(container, item, filterSelector){
 
 /**
  * Flatten object by concatenating values
- * @param Object obj 
+ * @param Object obj
 **/
 function concatValues( obj ) {
 	var value = '';
@@ -231,7 +231,7 @@ function toggleCatalogueCategory( catalogueCategory ){
 
 	toggleCatalogueDesigns();
 	toggleCatalogueProducts();
-	
+
 }// toggleCatalogueCategory
 
 /**
@@ -253,7 +253,7 @@ function toggleCatalogueDesigns(){
  * Toggle catalogue products' filters and results
 **/
 function toggleCatalogueProducts(){
-	
+
 	if( $('.js-btn-products').hasClass('active') ){
 		$('.product-filters').addClass('hidden');
 		$('.products').addClass('hidden');
@@ -265,6 +265,21 @@ function toggleCatalogueProducts(){
 	filterIsotope('.products-isotope-container', '.column', '.product-filters' );
 
 }// toggleCatalogueProducts
+
+/**
+ * Toggle Header
+ */
+ function toggleHeader(){
+	var headerHeight = getHeaderHeight();
+	var sy = getScrollY();
+	if ( sy >= 10 ) {
+		$('header.scrolled').removeClass('hide');
+		$('header').not('header.scrolled').removeClass('shown--xlarge').addClass('hidden');
+	} else {
+		$('header.scrolled').addClass('hide');
+		$('header').not('header.scrolled').removeClass('hidden').addClass('shown--xlarge');
+	}
+}// toggleHeader
 
 
 

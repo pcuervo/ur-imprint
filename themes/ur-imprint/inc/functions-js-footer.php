@@ -20,6 +20,7 @@ function footer_scripts(){
 			**/
 
 			imgToSvg();
+			toggleHeader();
 			toggleActionButtons();
 
 			/**
@@ -28,6 +29,7 @@ function footer_scripts(){
 
 			$(window).scroll(function(){
 				toggleActionButtons();
+				toggleHeader();
 			});
 
 			$('.js-modal-opener').on('click', function(e){
@@ -99,7 +101,7 @@ function footer_scripts(){
 
 				$('.js-btn-products').on('click', function(e){
 					if( $(this).hasClass('active') ) return;
-					
+
 					toggleCatalogueCategory( 'products' );
 				});
 

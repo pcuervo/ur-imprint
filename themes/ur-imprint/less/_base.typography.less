@@ -142,32 +142,30 @@ h6{
 
 .lead-text{
 	margin: 0 0 1.2em 0;
-
-	.font( 20px, 1.4 );
+	font-size: 20px; line-height: 1.4; font-weight: 400;
 	& small{
-		.font( 18px, 1 );
+		font-size: 18px; line-height: 1;
 	}
 
 	@media (min-width: @medium){
-		.font( 24px, 1.1 );
+		font-size: 24px; line-height: 1.1;
 		& small{
-			.font( 20px, 1 );
+			font-size: 20px; line-height: 1;
 		}
 	}
 }
 
 p, li{
 	margin: 0 0 1em 0;
-
-	.font( 16px, 1.4 );
+	font-size: 16px; line-height: 1.4; font-weight: 300;
 	& small{
-		.font( 12px, 1 );
+		font-size: 14px; line-height: 1;
 	}
 
 	@media (min-width: @medium){
-		.font( 18px, 1.1 );
+		font-size: 18px; line-height: 1.1;
 		& small{
-			.font( 14px, 1 );
+			font-size: 16px; line-height: 1;
 		}
 	}
 }
@@ -175,23 +173,23 @@ p:last-of-type{ margin: 0; }
 
 .italic{ font-style: italic; }
 
-p a{
-	color: inherit;
+p a, a{
+	color: @primary;
 	text-decoration: none;
 }
 
 blockquote{
-	padding: 0 0 0 40px; border-left: 3px solid @secondary; margin: 0;
+	padding: 0; margin: 0;
 	font-style: italic;
-	.font( 16px, 1.4 );
+	font-size: 20px; line-height: 1.4; font-weight: 300;
 	& small{
-		.font( 12px, 1 );
+		font-size: 16px; line-height: 1;
 	}
 
 	@media (min-width: @medium){
-		.font( 18px, 1.1 );
+		font-size: 24px; line-height: 1.1;
 		& small{
-			.font( 14px, 1 );
+			font-size: 20px; line-height: 1;
 		}
 	}
 }
