@@ -196,6 +196,21 @@ function get_contact_phone(){
 }// get_contact_phone
 
 /**
+ * Get Facebook URL from metabox in Contact page
+ * @return string $facebook_url
+ */
+function get_facebook_url(){
+
+	$facebook_info_query = new WP_Query( 'pagename=facebook' );
+	$facebook_info_query->the_post();
+	$facebook_url = get_post_meta( get_the_ID(), '_facebook_meta', TRUE );
+	wp_reset_query();
+
+	return $facebook_url;
+
+}// get_facebook_url
+
+/**
  * Get FAQ category for given post
  * @param integer $post_id
  * @return string $faq_cat
