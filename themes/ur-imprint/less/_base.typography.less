@@ -38,30 +38,10 @@ h1, h2, h3, h4, h5, h6{
 	margin-top: 0;
 }
 
-h1, h2{ margin-bottom: (@unit*2); }
+h1, h2{ margin-bottom: (@unit*1.2); }
 h3, h4, h5, h6{ margin-bottom: @unit; }
 
-h1{
-	font-size: 32px; line-height: 1.4; font-weight: 300;
-	& small{
-		font-size: 28px; line-height: 1.1;
-	}
-
-	@media (min-width: @medium){
-		font-size: 40px;
-		& small{
-			font-size: 30px;
-		}
-	}
-	@media (min-width: @large){
-		font-size: 48px;
-		& small{
-			font-size: 34px; line-height: 1;
-		}
-	}
-}
-
-h2{
+h1, h2{
 	font-size: 26px; line-height: 1.3; font-weight: 300;
 	& small{
 		font-size: 20px; line-height: 1;

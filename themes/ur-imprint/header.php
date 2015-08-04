@@ -54,7 +54,7 @@
 			<?php if ( ! is_home() ){ ?>
 				<!-- Mobile header
 				================================================== -->
-				<header class="[ xmall-12 ][ padding-top-bottom--small ][ bg-light ][ hidden--xlarge ]">
+				<header class="[ xmall-12 ][ padding-top-bottom--small ][ bg-light ][ drop-shadow ][ hidden--xlarge ]">
 					<div class="[ wrapper ]">
 						<div class="[ text-center color-light ]">
 							<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ][ no-margin ][ hidden--xlarge-inline ]">
@@ -67,7 +67,7 @@
 
 			<!-- Desktop header on top
 			================================================== -->
-			<header class="[ xmall-12 ][ shown--xlarge ][ padding-top-bottom--small ]">
+			<header class="[ xmall-12 ][ shown--xlarge ][ padding-top-bottom--small ]<?php echo ( is_home() ? '' : '[ drop-shadow ]'); ?>">
 				<div class="[ wrapper ]">
 					<div class="[ xmall-2 ][ inline-block align-middle ][ menu__item ]">
 						<div class="[ bg-image-placeholder__wrapper <?php echo ( is_home() ? 'bg-image-placeholder__wrapper__logo--white' : 'bg-image-placeholder__wrapper__logo'); ?> ]">
@@ -91,7 +91,7 @@
 
 			<!-- Desktop header when scrolled
 			================================================== -->
-			<header class="[ xmall-12 ][ shown--xlarge ][ padding-top-bottom--small ][ scrolled ][ hide ]">
+			<header class="[ xmall-12 ][ shown--xlarge ][ padding-top-bottom--small ][ drop-shadow ][ scrolled ][ hide ]">
 				<div class="[ wrapper ]">
 					<div class="[ xmall-2 ][ inline-block align-middle ][ menu__item ]">
 						<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ]">

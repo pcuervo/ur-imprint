@@ -3,7 +3,7 @@
 \*------------------------------------*/
 .button{
 	display: inline-block;
-	padding: 8px 20px; border: 2px solid transparent; margin: 8px;
+	padding: 8px 20px; border: 1px solid transparent; margin: 8px;
 	.border-radius(3px);
 	.font( 16px, 1.1, 300 ); text-align: center; text-decoration: none; text-transform: uppercase;
 	background-color: darken(@light, 10%); color: @dark;
@@ -167,7 +167,7 @@
 	border-color: darken(@light, 20%);
 	color: @dark;
 
-	&:hover{
+	&:hover, &.active{
 		background-color: darken(@light, 20%);
 		color: @light;
 	}
@@ -178,9 +178,9 @@
 	color: @light;
 	background: fade(@light, 10%);
 
-	&:hover{
-		background-color: darken(@light, 10%);
-		color: @dark;
+	&:hover, &.active{
+		background-color: @light;
+		color: @primary;
 	}
 }
 
@@ -188,7 +188,7 @@
 	border-color: @intermediate;
 	color: @intermediate;
 
-	&:hover{
+	&:hover, &.active{
 		background-color: @intermediate;
 	}
 }
@@ -198,7 +198,7 @@
 	color: @dark;
 
 
-	&:hover{
+	&:hover, &.active{
 		background-color: @dark;
 	}
 }
@@ -207,7 +207,7 @@
 	border-color: @primary;
 	color: @primary;
 
-	&:hover{
+	&:hover, &.active{
 		background-color: @primary;
 	}
 }
@@ -216,7 +216,7 @@
 	border-color: @secondary;
 	color: @secondary;
 
-	&:hover{
+	&:hover, &.active{
 		background-color: @secondary;
 	}
 }
@@ -225,7 +225,7 @@
 	border-color: @danger;
 	color: @danger;
 
-	&:hover{
+	&:hover, &.active{
 		background-color: @danger;
 	}
 }
@@ -234,7 +234,7 @@
 	border-color: @success;
 	color: @success;
 
-	&:hover{
+	&:hover, &.active{
 		background-color: @success;
 	}
 }
@@ -243,7 +243,7 @@
 	border-color: @warning;
 	color: @warning;
 
-	&:hover{
+	&:hover, &.active{
 		background-color: @warning;
 	}
 }
@@ -287,4 +287,24 @@
 
 .action-buttons.opened, .action-buttons.always-opened{
 	bottom: 10px;
+}
+
+
+/*------------------------------------*\
+    #BUTTON GROUPS
+\*------------------------------------*/
+
+.button-group{}
+
+.button-group .button{
+	margin-left: -2px; margin-right: -2px;
+	.border-radius(0);
+}
+
+.button-group .button:first-of-type{
+	.border-radiuses(0, 0, 3px, 3px);
+}
+
+.button-group .button:last-of-type{
+	.border-radiuses(3px, 3px, 0, 0);
 }

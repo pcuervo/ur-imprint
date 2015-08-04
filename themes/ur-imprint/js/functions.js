@@ -33,10 +33,10 @@ function filterIsotope(container, item, filterSelector){
 	// store filter for each group
 	var filters = {};
 
-	$( filterSelector ).on( 'click', '.button-group .button', function() {
+	$( filterSelector ).on( 'click', '.button-filter-group .button', function() {
 		var $this = $(this);
 		// get group key
-		var $buttonGroup = $this.parents('.button-group');
+		var $buttonGroup = $this.parents('.button-filter-group');
 		var filterGroup = $buttonGroup.attr('data-filter-group');
 		// set filter for group
 		filters[ filterGroup ] = $this.attr('data-filter');
@@ -47,7 +47,7 @@ function filterIsotope(container, item, filterSelector){
 	});
 
 	// change is-checked class on buttons
-	$('.button-group').each( function( i, buttonGroup ) {
+	$('.button-filter-group').each( function( i, buttonGroup ) {
 		var $buttonGroup = $( buttonGroup );
 		$buttonGroup.on( 'click', 'button', function() {
 			$buttonGroup.find('.active').removeClass('active');
@@ -123,7 +123,7 @@ function getScrollY() {
  */
 function setMainPaddingTop(){
 	var headerHeight = getHeaderHeight();
-	$('.main').css('padding-top', headerHeight + 20);
+	$('.main').css('padding-top', headerHeight);
 }// setMainPaddingTop
 
 /**
