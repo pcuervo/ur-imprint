@@ -47,13 +47,13 @@
 							<h3>Payments</h3>
 							<div class="[ row ]">
 								<div class="[ column xmall-4 ]">
-									<img class="[ icon icon--medium ][ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/visa.svg" alt="visa">
+									<img class="[ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/visa.svg" alt="visa">
 								</div>
 								<div class="[ column xmall-4 ]">
-									<img class="[ icon icon--medium ][ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/mastercard.svg" alt="mastercard">
+									<img class="[ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/mastercard.svg" alt="mastercard">
 								</div>
 								<div class="[ column xmall-4 ]">
-									<img class="[ icon icon--medium ][ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/paypal.svg" alt="paypal">
+									<img class="[ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/paypal.svg" alt="paypal">
 								</div>
 							</div>
 						</div>
