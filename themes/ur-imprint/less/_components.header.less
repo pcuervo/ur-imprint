@@ -1,3 +1,7 @@
+/*------------------------------------*\
+	#MOBILE
+\*------------------------------------*/
+
 header{
 	height: 70px;
 	position: fixed; top: 0; left: 0;
@@ -7,6 +11,20 @@ header{
 	@media (min-width: @xlarge){ height: 90px; }
 
 }
+
+header .bg-image-placeholder__wrapper__logo{
+	width: 100px;
+	.img-retina('images/logo-mobile--black.png'; 'images/logo-mobile--black@2x.png';);
+
+	@media (min-width: @xlarge){ width: 140px; }
+
+}
+
+
+
+/*------------------------------------*\
+	#DESKTOP
+\*------------------------------------*/
 
 /**
  * Header once user scrolls
@@ -30,4 +48,9 @@ header.scrolled{
 			.img-retina('images/logo-mobile--black.png'; 'images/logo-mobile--black@2x.png';);
 		}
 	}
+}
+
+.bg-image-placeholder__wrapper__logo--white{
+	width: 140px;
+	.img-retina('images/logo-mobile--white.png'; 'images/logo-mobile--white@2x.png';);
 }

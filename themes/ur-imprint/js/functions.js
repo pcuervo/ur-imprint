@@ -274,10 +274,10 @@ function toggleCatalogueProducts(){
 	var sy = getScrollY();
 	if ( sy >= 10 ) {
 		$('header.scrolled').removeClass('hide');
-		$('header').not('header.scrolled').removeClass('shown--xlarge').addClass('hidden');
+		$('header').not('header.scrolled, header.hidden--xlarge').removeClass('shown--xlarge').addClass('hidden');
 	} else {
 		$('header.scrolled').addClass('hide');
-		$('header').not('header.scrolled').removeClass('hidden').addClass('shown--xlarge');
+		$('header').not('header.scrolled, header.hidden--xlarge').removeClass('hidden').addClass('shown--xlarge');
 	}
 }// toggleHeader
 

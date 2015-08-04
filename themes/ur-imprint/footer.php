@@ -1,6 +1,6 @@
 		</div><!-- main -->
 
-		<section class="[ action-buttons action-buttons--right ][ hidden--xlarge ]">
+		<section class="[ action-buttons action-buttons--right ][ hidden--xlarge ][ always-opened ]">
 			<a href="#" class="[ button button--secondary button--circle ][ border border--light border--large ][ js-modal-opener ]" data-modal="nav">
 				<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/hamburguer.svg" alt="menu">
 			</a>

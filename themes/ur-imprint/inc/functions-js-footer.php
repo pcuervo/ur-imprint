@@ -21,14 +21,12 @@ function footer_scripts(){
 
 			imgToSvg();
 			toggleHeader();
-			toggleActionButtons();
 
 			/**
 			 * Triggered events
 			**/
 
 			$(window).scroll(function(){
-				toggleActionButtons();
 				toggleHeader();
 			});
 
