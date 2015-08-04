@@ -201,7 +201,7 @@ function get_contact_phone(){
  */
 function get_facebook_url(){
 
-	$facebook_info_query = new WP_Query( 'pagename=facebook' );
+	$facebook_info_query = new WP_Query( 'pagename=contact' );
 	$facebook_info_query->the_post();
 	$facebook_url = get_post_meta( get_the_ID(), '_facebook_meta', TRUE );
 	wp_reset_query();
