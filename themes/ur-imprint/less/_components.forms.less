@@ -18,8 +18,7 @@ fieldset{
 
 /* @form wrappers
 ---------------------------------- */
-.form { }
-
+.form {}
 .smart-container{}
 
 /* @form container width
@@ -81,21 +80,21 @@ fieldset{
 .form ::-webkit-search-cancel-button { -webkit-appearance: none; }
 .form input:invalid { -moz-box-shadow: none; box-shadow: none;  }
 .form input::-webkit-input-placeholder,
-.form textarea::-webkit-input-placeholder { color: @secondary; }
+.form textarea::-webkit-input-placeholder { color: @light; }
 .form input:focus::-webkit-input-placeholder,
-.form textarea:focus::-webkit-input-placeholder { color: @secondary; }
+.form textarea:focus::-webkit-input-placeholder { color: @light; }
 .form input:-moz-placeholder,
-.form textarea:-moz-placeholder {  color: @secondary; }
+.form textarea:-moz-placeholder {  color: @light; }
 .form input:focus:-moz-placeholder,
-.form textarea:focus:-moz-placeholder { color: @secondary; }
+.form textarea:focus:-moz-placeholder { color: @light; }
 .form input::-moz-placeholder,
-.form textarea::-moz-placeholder {  color: @secondary; opacity: 1; }
+.form textarea::-moz-placeholder {  color: @light; opacity: 1; }
 .form input:focus::-moz-placeholder,
-.form textarea:focus::-moz-placeholder { color: @secondary; opacity: 1; }
+.form textarea:focus::-moz-placeholder { color: @light; opacity: 1; }
 .form input:-ms-input-placeholder,
-.form textarea:-ms-input-placeholder {  color: @secondary; }
+.form textarea:-ms-input-placeholder {  color: @light; }
 .form input:focus:-ms-input-placeholder,
-.form textarea:focus:-ms-input-placeholder { color: @secondary; }
+.form textarea:focus:-ms-input-placeholder { color: @light; }
 
 /* @element general styling :: fonts :: adjust accordingly
 ------------------------------------------------------------- */
@@ -188,24 +187,21 @@ fieldset{
 .form .gui-textarea,
 .form .select > select,
 .form .select-multiple select{
-	background: @light;
+	display: -moz-inline-stack; display: inline-block; *display: inline;
+	width: 100%; height: 42px;
+	border: 1px solid @light;
+	background: fade(@light, 10%);
+	color:  @light;
+	outline:none;
 	position: relative;
 	vertical-align: top;
-	border: 1px solid @primary;
-	display: -moz-inline-stack;
-	display: inline-block;
-	*display: inline;
-	color:  @primary;
-	outline:none;
-	height: 42px;
-	width: 100%;
 	*zoom: 1;
 }
 
 /* @styling inputs and textareas
 ------------------------------------------- */
 .form .gui-input,
-.form .gui-textarea { padding:10px; }
+.form .gui-textarea { padding:10px; .border-radius(3px); }
 .form .gui-textarea {
 	resize: none;
 	line-height: 19px;
@@ -465,7 +461,6 @@ fieldset{
 	background: @danger;
 	border: 2px solid @danger;
 	text-transform: uppercase;
-	font-family:Helvetica, Arial, sans-serif;
 	-webkit-transition: 0.3s ease-out;
 	-moz-transition: 0.3s ease-out;
 	-o-transition: 0.3s ease-out;
@@ -626,7 +621,6 @@ fieldset{
 }
 
 .form .rating label span{
-	font-family:Arial, Helvetica, sans-serif;
 	text-shadow: 0 1px rgba(255, 255, 255, 0);
 	.transition(margin 0.6s);
 	.border-radius(3px);
@@ -994,7 +988,6 @@ fieldset{
 	display: block!important;
 	margin-top: 6px;
 	padding: 0 3px;
-	font-family:Arial, Helvetica, sans-serif;
 	font-style: normal;
 	line-height: normal;
 	color: #E46B66;
@@ -1369,21 +1362,15 @@ fieldset{
 }
 
 .ui-autocomplete {
-	position: absolute;
-	top: 0;
-	left: 0;
+	display: block;
+	padding: 0; margin: 0; border:1px solid #000; border-top:0;
+	background:#333;
+	font-size:14px;
+	position: absolute; top: 0; left: 0;
+	outline: none;
 	cursor: default;
 	z-index: 10000000;
 	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: block;
-	outline: none;
-	font-family:  "Roboto", Arial, Helvetica, sans-serif;
-	font-size:14px;
-	border:1px solid #000;
-	border-top:0;
-	background:#333;
 }
 
 .ui-autocomplete .ui-menu { position: absolute; }
@@ -1573,7 +1560,6 @@ fieldset{
 	text-align:center;
 	position:relative;
 	border:1px solid #484848;
-	font-family:Arial, Helvetica, sans-serif;
 	-webkit-box-shadow:  0px 2px 0px 0px rgba(0, 0, 0, 0.05);
 	-moz-box-shadow:  0px 2px 0px 0px rgba(0, 0, 0, 0.05);
 	-o-box-shadow:  0px 2px 0px 0px rgba(0, 0, 0, 0.05);
@@ -1603,7 +1589,6 @@ fieldset{
 }
 
 .form .ribbon-inner{
-	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
 	-webkit-box-shadow:  0px 2px 0px 0px rgba(0, 0, 0, 0.15);
 	-moz-box-shadow:  0px 2px 0px 0px rgba(0, 0, 0, 0.15);
 	-o-box-shadow:  0px 2px 0px 0px rgba(0, 0, 0, 0.15);

@@ -70,6 +70,16 @@ function footer_scripts(){
 
 				setMainPaddingTop();
 
+				/**
+				 * Triggered events
+				**/
+				$(window).scroll(function(){
+					setMainPaddingTop();
+				});
+				$(window).resize(function(){
+					setMainPaddingTop();
+				});
+
 			<?php endif; ?>
 
 
