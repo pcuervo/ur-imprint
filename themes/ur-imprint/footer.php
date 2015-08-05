@@ -62,7 +62,7 @@
 							<p class="[ no-margin ]">Sydney, Australia</p>
 							<p class="[ no-margin ]"><?php echo get_contact_phone(); ?></p>
 							<p class="[ no-margin ]"><a href="mailto:<?php echo get_contact_email(); ?>">Email Us</a></p>
-							<p class="[ no-margin ]"><a href="<?php echo get_facebook_url(); ?>">Facebook</a></p>
+							<p class="[ no-margin ]"><a href="<?php echo get_facebook_url(); ?>" target="_blank">Facebook</a></p>
 						</div>
 						<div class="[ clear--xmall ]"></div>
 						<div class="[ column xmall-6 medium-3 ][ margin-bottom ]">
