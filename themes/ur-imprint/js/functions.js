@@ -244,8 +244,12 @@ function toggleCatalogueDesigns(){
 		$('.designs').addClass('hidden');
 		return;
 	}
+	$('.js-btn-designs').addClass('active');
+	$('.js-btn-products').removeClass('active');
 	$('.design-filters').removeClass('hidden');
 	$('.designs').removeClass('hidden');
+	console.log('filtering designs...');
+	filterIsotope('.products-isotope-container', '.column', '.product-designs' );
 
 }// toggleCatalogueDesigns
 
@@ -259,9 +263,11 @@ function toggleCatalogueProducts(){
 		$('.products').addClass('hidden');
 		return;
 	}
+	$('.js-btn-products').addClass('active');
+	$('.js-btn-designs').removeClass('active');
 	$('.product-filters').removeClass('hidden');
 	$('.products').removeClass('hidden');
-	console.log('filtering...');
+	console.log('filtering products...');
 	filterIsotope('.products-isotope-container', '.column', '.product-filters' );
 
 }// toggleCatalogueProducts

@@ -39,7 +39,7 @@
 
 		</div><!-- container -->
 
-		<footer class="">
+		<footer class="<?php echo ( is_home() ? 'bg-light' : 'bg-dark'); ?>">
 			<div class="[ wrapper ]">
 				<div class="[ padding-top-bottom ]">
 					<div class="[ row ]">

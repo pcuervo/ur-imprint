@@ -8,7 +8,7 @@
 			<div class="[ text-center ][ padding-top ]">
 				<h1 class="[ ]">Catalogue</h1>
 				<div class="[ button-group ]">
-					<button class="[ button button--primary ][ lowercase ][ js-btn-designs ][ active ]">designs</button>
+					<button class="[ button button--primary button--hollow ][ lowercase ][ js-btn-designs ][ active ]">designs</button>
 					<button class="[ button button--primary button--hollow ][ lowercase ][ js-btn-products ]">products</button>
 				</div>
 			</div>
@@ -153,14 +153,12 @@
 				if( $designs_query->have_posts() ) : while ( $designs_query->have_posts() ) : $designs_query->the_post();
 					$design_filter_classes = get_design_filter_classes( $post->ID );
 				?>
-					<div class="[ column xmall-6 ][ <?php echo $design_filter_classes; ?>]">
+					<div class="[ column xmall-6 medium-4 xlarge-3 ][ <?php echo $design_filter_classes; ?>]">
 						<a href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail( 'thumb', array( 'class' => '[ image-responsive ]' ) ); ?>
 						</a>
 					</div>
-
 				<?php endwhile; endif; wp_reset_query(); ?>
-
 			</div><!-- row -->
 		</div><!-- wrapper -->
 	</section><!-- designs -->
@@ -192,7 +190,7 @@
 					global $product;
 					$product_filter_classes = get_product_filter_classes( $product->ID );
 				?>
-					<div class="[ column xmall-6 ][ <?php echo $product_filter_classes; ?>]">
+					<div class="[ column xmall-6 medium-4 xlarge-3 ] <?php echo $product_filter_classes; ?>]">
 						<a href="<?php the_permalink(); ?>">
 							<?php echo get_the_post_thumbnail( $products_query->post->ID, 'thumb', array( 'class' => '[ image-responsive ]' ) );  ?>
 						</a>

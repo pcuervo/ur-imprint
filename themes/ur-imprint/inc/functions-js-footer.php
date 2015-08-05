@@ -91,16 +91,10 @@ function footer_scripts(){
 				 * Triggered events
 				**/
 
-				$('.js-btn-designs').on('click', function(e){
+				$('.js-btn-designs, .js-btn-products').on('click', function(e){
 					if( $(this).hasClass('active') ) return;
 
-					toggleCatalogueCategory( 'designs' );
-				});
-
-				$('.js-btn-products').on('click', function(e){
-					if( $(this).hasClass('active') ) return;
-
-					toggleCatalogueCategory( 'products' );
+					toggleCatalogueCategory();
 				});
 
 			<?php endif; ?>
