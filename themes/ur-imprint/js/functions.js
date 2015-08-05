@@ -33,10 +33,10 @@ function filterIsotope(container, item, filterSelector){
 	// store filter for each group
 	var filters = {};
 
-	$( filterSelector ).on( 'click', '.button-group .button', function() {
+	$( filterSelector ).on( 'click', '.button-filter-group .button', function() {
 		var $this = $(this);
 		// get group key
-		var $buttonGroup = $this.parents('.button-group');
+		var $buttonGroup = $this.parents('.button-filter-group');
 		var filterGroup = $buttonGroup.attr('data-filter-group');
 		// set filter for group
 		filters[ filterGroup ] = $this.attr('data-filter');
@@ -47,7 +47,7 @@ function filterIsotope(container, item, filterSelector){
 	});
 
 	// change is-checked class on buttons
-	$('.button-group').each( function( i, buttonGroup ) {
+	$('.button-filter-group').each( function( i, buttonGroup ) {
 		var $buttonGroup = $( buttonGroup );
 		$buttonGroup.on( 'click', 'button', function() {
 			$buttonGroup.find('.active').removeClass('active');
@@ -58,7 +58,7 @@ function filterIsotope(container, item, filterSelector){
 
 /**
  * Flatten object by concatenating values
- * @param Object obj 
+ * @param Object obj
 **/
 function concatValues( obj ) {
 	var value = '';
@@ -123,7 +123,7 @@ function getScrollY() {
  */
 function setMainPaddingTop(){
 	var headerHeight = getHeaderHeight();
-	$('.main').css('padding-top', headerHeight + 20);
+	$('.main').css('padding-top', headerHeight);
 }// setMainPaddingTop
 
 /**
@@ -231,7 +231,7 @@ function toggleCatalogueCategory( catalogueCategory ){
 
 	toggleCatalogueDesigns();
 	toggleCatalogueProducts();
-	
+
 }// toggleCatalogueCategory
 
 /**
@@ -244,8 +244,12 @@ function toggleCatalogueDesigns(){
 		$('.designs').addClass('hidden');
 		return;
 	}
+	$('.js-btn-designs').addClass('active');
+	$('.js-btn-products').removeClass('active');
 	$('.design-filters').removeClass('hidden');
 	$('.designs').removeClass('hidden');
+	console.log('filtering designs...');
+	filterIsotope('.products-isotope-container', '.column', '.product-designs' );
 
 }// toggleCatalogueDesigns
 
@@ -253,18 +257,35 @@ function toggleCatalogueDesigns(){
  * Toggle catalogue products' filters and results
 **/
 function toggleCatalogueProducts(){
-	
+
 	if( $('.js-btn-products').hasClass('active') ){
 		$('.product-filters').addClass('hidden');
 		$('.products').addClass('hidden');
 		return;
 	}
+	$('.js-btn-products').addClass('active');
+	$('.js-btn-designs').removeClass('active');
 	$('.product-filters').removeClass('hidden');
 	$('.products').removeClass('hidden');
-	console.log('filtering...');
+	console.log('filtering products...');
 	filterIsotope('.products-isotope-container', '.column', '.product-filters' );
 
 }// toggleCatalogueProducts
+
+/**
+ * Toggle Header
+ */
+ function toggleHeader(){
+	var headerHeight = getHeaderHeight();
+	var sy = getScrollY();
+	if ( sy >= 10 ) {
+		$('header.scrolled').removeClass('hide');
+		$('header').not('header.scrolled, header.hidden--xlarge').removeClass('shown--xlarge').addClass('hidden');
+	} else {
+		$('header.scrolled').addClass('hide');
+		$('header').not('header.scrolled, header.hidden--xlarge').removeClass('hidden').addClass('shown--xlarge');
+	}
+}// toggleHeader
 
 
 

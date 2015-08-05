@@ -20,14 +20,14 @@ function footer_scripts(){
 			**/
 
 			imgToSvg();
-			toggleActionButtons();
+			toggleHeader();
 
 			/**
 			 * Triggered events
 			**/
 
 			$(window).scroll(function(){
-				toggleActionButtons();
+				toggleHeader();
 			});
 
 			$('.js-modal-opener').on('click', function(e){
@@ -70,6 +70,16 @@ function footer_scripts(){
 
 				setMainPaddingTop();
 
+				/**
+				 * Triggered events
+				**/
+				$(window).scroll(function(){
+					setMainPaddingTop();
+				});
+				$(window).resize(function(){
+					setMainPaddingTop();
+				});
+
 			<?php endif; ?>
 
 
@@ -91,16 +101,10 @@ function footer_scripts(){
 				 * Triggered events
 				**/
 
-				$('.js-btn-designs').on('click', function(e){
+				$('.js-btn-designs, .js-btn-products').on('click', function(e){
 					if( $(this).hasClass('active') ) return;
 
-					toggleCatalogueCategory( 'designs' );
-				});
-
-				$('.js-btn-products').on('click', function(e){
-					if( $(this).hasClass('active') ) return;
-					
-					toggleCatalogueCategory( 'products' );
+					toggleCatalogueCategory();
 				});
 
 			<?php endif; ?>

@@ -3,13 +3,13 @@
 	<!-- =================================================
 	==== MAIN FILTERS
 	================================================== -->
-	<section class="[ main-filters ][ padding ][ margin-bottom ]">
+	<section class="[ main-filters ][ margin-bottom ]">
 		<div class="[ wrapper ]">
-			<div class="[ text-center ]">
-				<h2 class="[ ]">Catalogue</h2>
-				<div class="[ button-group ][ color-light ]">
-					<button class="[ button button--primary ][ js-btn-designs ][ active ]">designs</button>
-					<button class="[ button button--primary button--hollow ][ js-btn-products ]">products</button>
+			<div class="[ text-center ][ padding-top ]">
+				<h1 class="[ ]">Catalogue</h1>
+				<div class="[ button-group ]">
+					<button class="[ button button--primary button--hollow ][ lowercase ][ js-btn-designs ][ active ]">designs</button>
+					<button class="[ button button--primary button--hollow ][ lowercase ][ js-btn-products ]">products</button>
 				</div>
 			</div>
 		</div><!-- wrapper -->
@@ -24,58 +24,52 @@
 		<div class="[ wrapper ]">
 			<div class="[ row ][ color-light ][ padding-top-bottom ]">
 
-				<div class="[ column xmall-3 ]">
+				<div class="[ column xmall-3 small-2 xlarge-1 ]">
 					<p class="[ padding-top--small ]">theme</p>
 				</div>
-				<div class="[ theme-filters ][ button-group ]" data-filter-group="theme">
-					<div class="[ column xmall-9 ]">
-						<button class="[ button button--light ][ margin-bottom--small ]" data-filter="">
-							<span class="[ block ]">all</span>
+				<div class="[ column xmall-9 small-10 xlarge-11 ][ theme-filters ][ button-filter-group ]" data-filter-group="theme">
+					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
+						all
+					</button>
+					<?php
+					$theme_terms = get_terms( 'theme', 'orderby=name&hide_empty=1' );
+					foreach ( $theme_terms as $theme ) : ?>
+						<button class="[ button button--light button--hollow ][ margin-bottom--small ][ lowercase ]" data-filter=".<?php echo $theme->slug; ?>">
+							<?php echo $theme->name; ?>
 						</button>
-						<?php 
-						$theme_terms = get_terms( 'theme', 'orderby=name&hide_empty=1' );
-						foreach ( $theme_terms as $theme ) : ?>
-							<button class="[ button button--light button--hollow ][ margin-bottom--small ]" data-filter=".<?php echo $theme->slug; ?>">
-								<span class="[ block ]"><?php echo $theme->name; ?></span>
-							</button>
-						<?php endforeach; ?>
-					</div>
+					<?php endforeach; ?>
 				</div><!-- theme-filters -->
-				
-				<div class="[ column xmall-3 ]">
+
+				<div class="[ column xmall-3 small-2 xlarge-1 ]">
 					<p class="[ padding-top--small ]">type</p>
 				</div>
-				<div class="[ type-filters ][ button-group ]" data-filter-group="type">
-					<div class="[ column xmall-9 ]">
-						<button class="[ button button--light ][ margin-bottom--small ]" data-filter="">
-							<span class="[ block ][ color-primary ]">all</span>
+				<div class="[ column xmall-9 small-10 xlarge-11 ][ type-filters ][ button-filter-group ]" data-filter-group="type">
+					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
+						all
+					</button>
+					<?php
+					$type_terms = get_terms( 'type', 'orderby=name&hide_empty=1' );
+					foreach ( $type_terms as $type ) : ?>
+						<button class="[ button button--light button--hollow ][ margin-bottom--small ][ lowercase ]" data-filter=".<?php echo $type->slug; ?>">
+							<?php echo $type->slug; ?>
 						</button>
-						<?php 
-						$type_terms = get_terms( 'type', 'orderby=name&hide_empty=1' );
-						foreach ( $type_terms as $type ) : ?>
-							<button class="[ button button--light button--hollow ][ margin-bottom--small ]" data-filter=".<?php echo $type->slug; ?>">
-								<span class="[ block ][ color-light ]"><?php echo $type->slug; ?></span>
-							</button>
-						<?php endforeach; ?>
-					</div>
+					<?php endforeach; ?>
 				</div><!-- type-filters -->
 
-				<div class="[ column xmall-3 ]">
+				<div class="[ column xmall-3 small-2 xlarge-1 ]">
 					<p class="[ padding-top--small ]">author</p>
 				</div>
-				<div class="[ author-filters ][ button-group ]" data-filter-group="author">
-					<div class="[ column xmall-9 ]">
-						<button class="[ button button--light ][ margin-bottom--small ]" data-filter="">
-							<span class="[ block ][ color-primary ]">all</span>
+				<div class="[ column xmall-9 small-10 xlarge-11 ][ author-filters ][ button-filter-group ]" data-filter-group="author">
+					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
+						all
+					</button>
+					<?php
+					$author_terms = get_terms( 'design-author', 'orderby=name&hide_empty=1' );
+					foreach ( $author_terms as $author ) : ?>
+						<button class="[ button button--light button--hollow ][ margin-bottom--small ][ lowercase ]" data-filter=".<?php echo $author->slug; ?>">
+							<?php echo $author->name; ?>
 						</button>
-						<?php 
-						$author_terms = get_terms( 'design-author', 'orderby=name&hide_empty=1' );
-						foreach ( $author_terms as $author ) : ?>
-							<button class="[ button button--light button--hollow ][ margin-bottom--small ]" data-filter=".<?php echo $author->slug; ?>">
-								<span class="[ block ][ color-light ]"><?php echo $author->name; ?></span>
-							</button>
-						<?php endforeach; ?>
-					</div>
+					<?php endforeach; ?>
 				</div><!-- author-filters -->
 			</div>
 		</div><!-- wrapper -->
@@ -90,58 +84,52 @@
 		<div class="[ wrapper ]">
 			<div class="[ row ][ color-light ][ padding-top-bottom ]">
 
-				<div class="[ column xmall-3 ]">
+				<div class="[ column xmall-3 small-2 xlarge-1 ]">
 					<p class="[ padding-top--small ]">who</p>
 				</div>
-				<div class="[ product-filters ][ button-group ]" data-filter-group="product-cat">
-					<div class="[ column xmall-9 ]">
-						<button class="[ button button--light ][ margin-bottom--small ]" data-filter="">
-							<span class="[ block ][ color-primary ]">all</span>
+				<div class="[ column xmall-9 small-10 xlarge-11 ][ product-filters ][ button-filter-group ]" data-filter-group="product-cat">
+					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
+						all
+					</button>
+					<?php
+					$product_cat_terms = get_terms( 'product_cat', 'orderby=name&hide_empty=0' );
+					foreach ( $product_cat_terms as $product_cat ) : ?>
+						<button class="[ button button--light button--hollow ][ margin-bottom--small ][ lowercase ]" data-filter=".<?php echo $product_cat->slug; ?>">
+							<?php echo $product_cat->name; ?>
 						</button>
-						<?php 
-						$product_cat_terms = get_terms( 'product_cat', 'orderby=name&hide_empty=0' );
-						foreach ( $product_cat_terms as $product_cat ) : ?>
-							<button class="[ button button--light button--hollow ][ margin-bottom--small ]" data-filter=".<?php echo $product_cat->slug; ?>">
-								<span class="[ block ][ color-light ]"><?php echo $product_cat->name; ?></span>
-							</button>
-						<?php endforeach; ?>
-					</div>
+					<?php endforeach; ?>
 				</div><!-- product-filters -->
-				
-				<div class="[ column xmall-3 ]">
+
+				<div class="[ column xmall-3 small-2 xlarge-1 ]">
 					<p class="[ padding-top--small ]">type</p>
 				</div>
-				<div class="[ type-filters ][ button-group ]" data-filter-group="product-type">
-					<div class="[ column xmall-9 ]">
-						<button class="[ button button--light ][ margin-bottom--small ]" data-filter="">
-							<span class="[ block ][ color-primary ]">all</span>
+				<div class="[ column xmall-9 small-10 xlarge-11 ][ type-filters ][ button-filter-group ]" data-filter-group="product-type">
+					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
+						all
+					</button>
+					<?php
+					$product_type_terms = get_terms( 'pa_product-type', 'orderby=name&hide_empty=1' );
+					foreach ( $product_type_terms as $product_type ) : ?>
+						<button class="[ button button--light button--hollow ][ margin-bottom--small ][ lowercase ]" data-filter=".<?php echo $product_type->slug; ?>">
+							<?php echo $product_type->name; ?>
 						</button>
-						<?php 
-						$product_type_terms = get_terms( 'pa_product-type', 'orderby=name&hide_empty=1' );
-						foreach ( $product_type_terms as $product_type ) : ?>
-							<button class="[ button button--light button--hollow ][ margin-bottom--small ]" data-filter=".<?php echo $product_type->slug; ?>">
-								<span class="[ block ][ color-light ]"><?php echo $product_type->name; ?></span>
-							</button>
-						<?php endforeach; ?>
-					</div>
+					<?php endforeach; ?>
 				</div><!-- type-filters -->
 
-				<div class="[ column xmall-3 ]">
+				<div class="[ column xmall-3 small-2 xlarge-1 ]">
 					<p class="[ padding-top--small ]">author</p>
 				</div>
-				<div class="[ author-filters ][ button-group ]" data-filter-group="style">
-					<div class="[ column xmall-9 ]">
-						<button class="[ button button--light ][ margin-bottom--small ]" data-filter="">
-							<span class="[ block ][ color-primary ]">all</span>
+				<div class="[ column xmall-9 small-10 xlarge-11 ][ author-filters ][ button-filter-group ]" data-filter-group="style">
+					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
+						all
+					</button>
+					<?php
+					$style_terms = get_terms( 'pa_style', 'orderby=name&hide_empty=1' );
+					foreach ( $style_terms as $style ) : ?>
+						<button class="[ button button--light button--hollow ][ margin-bottom--small ][ lowercase ]" data-filter=".<?php echo $style->slug; ?>">
+							<?php echo $style->name; ?>
 						</button>
-						<?php 
-						$style_terms = get_terms( 'pa_style', 'orderby=name&hide_empty=1' );
-						foreach ( $style_terms as $style ) : ?>
-							<button class="[ button button--light button--hollow ][ margin-bottom--small ]" data-filter=".<?php echo $style->slug; ?>">
-								<span class="[ block ][ color-light ]"><?php echo $style->name; ?></span>
-							</button>
-						<?php endforeach; ?>
-					</div>
+					<?php endforeach; ?>
 				</div><!-- author-filters -->
 			</div>
 		</div><!-- wrapper -->
@@ -156,23 +144,21 @@
 		<div class="[ wrapper ]">
 			<div class="[ row ][ designs-isotope-container ]">
 
-				<?php 
+				<?php
 				$designs_args = array(
 					'post_type'			=> 'designs',
 					'posts_per_page'	=> -1,
 				);
 				$designs_query = new WP_Query( $designs_args );
-				if( $designs_query->have_posts() ) : while ( $designs_query->have_posts() ) : $designs_query->the_post(); 
+				if( $designs_query->have_posts() ) : while ( $designs_query->have_posts() ) : $designs_query->the_post();
 					$design_filter_classes = get_design_filter_classes( $post->ID );
-				?>	
-					<div class="[ column xmall-6 ][ <?php echo $design_filter_classes; ?>]">
+				?>
+					<div class="[ column xmall-6 medium-4 xlarge-3 ][ <?php echo $design_filter_classes; ?>]">
 						<a href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail( 'thumb', array( 'class' => '[ image-responsive ]' ) ); ?>
 						</a>
 					</div>
-					
 				<?php endwhile; endif; wp_reset_query(); ?>
-
 			</div><!-- row -->
 		</div><!-- wrapper -->
 	</section><!-- designs -->
@@ -186,7 +172,7 @@
 		<div class="[ wrapper ]">
 			<div class="[ row ]">
 
-				<?php 
+				<?php
 				$products_args = array(
 					'post_type' => 'product',
 					'posts_per_page' => -1,
@@ -201,15 +187,15 @@
 				$products_query = new WP_Query( $products_args );
 
 				if( $products_query->have_posts() ) : while ( $products_query->have_posts() ) : $products_query->the_post();
-					global $product; 
+					global $product;
 					$product_filter_classes = get_product_filter_classes( $product->ID );
-				?>	
-					<div class="[ column xmall-6 ][ <?php echo $product_filter_classes; ?>]">
+				?>
+					<div class="[ column xmall-6 medium-4 xlarge-3 ] <?php echo $product_filter_classes; ?>]">
 						<a href="<?php the_permalink(); ?>">
 							<?php echo get_the_post_thumbnail( $products_query->post->ID, 'thumb', array( 'class' => '[ image-responsive ]' ) );  ?>
 						</a>
 					</div>
-					
+
 				<?php endwhile; endif; wp_reset_query(); ?>
 
 			</div><!-- row -->

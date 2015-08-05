@@ -144,6 +144,8 @@ function get_design_filter_classes( $post_id ){
  */
 function get_product_filter_classes( $product_id ){
 
+	global $post;
+
 	$product_classes = '';
 
 	$product_cat_terms = get_the_terms( $post->ID, 'product_cat' );
@@ -220,7 +222,7 @@ function get_faq_category( $post_id ){
 	$design_classes = '';
 
 	$faq_cat_terms = wp_get_post_terms( $post_id, 'faq-categories' );
-	if( ! empty( $faq_cat_terms  ) ) : 
+	if( ! empty( $faq_cat_terms  ) ) :
 		return $faq_cat_terms[0]->name;
 	endif;
 

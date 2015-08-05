@@ -1,12 +1,12 @@
 		</div><!-- main -->
 
-		<section class="[ action-buttons action-buttons--right ]">
+		<section class="[ action-buttons action-buttons--right ][ hidden--xlarge ][ always-opened ]">
 			<a href="#" class="[ button button--secondary button--circle ][ border border--light border--large ][ js-modal-opener ]" data-modal="nav">
 				<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/hamburguer.svg" alt="menu">
 			</a>
 		</section><!-- action-buttons -->
 
-		<section class="[ modal-wrapper modal-nav ][ hide ]">
+		<section class="[ modal-wrapper modal-nav ][ hide ][ hidden--xlarge ]">
 			<div class="[ modal modal--full ]">
 				<div class="[ modal-content ]">
 
@@ -14,13 +14,13 @@
 						<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ][ margin-bottom--large ][ center ]">
 							<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="<?php echo site_url(); ?>"></a>
 						</div>
-						<nav class="[ hidden--large ]">
-							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--medium button--hollow button--light ][ uppercase ][ padding ]">Create</a>
-							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Catalogue</a>
-							<a href="<?php echo site_url('contact'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Contact</a>
-							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Register</a>
-							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">Login</a>
-							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ uppercase ][ padding ]">
+						<nav class="">
+							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--medium button--hollow button--light ][ padding ]">Create</a><br/>
+							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Catalogue</a><br/>
+							<a href="<?php echo site_url('contact'); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Contact</a><br/>
+							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Register</a><br/>
+							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Login</a><br/>
+							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ padding ]">
 								<img class="[ svg icon icon--medium ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">
 							</a>
 						</nav><!-- categorias -->
@@ -39,7 +39,7 @@
 
 		</div><!-- container -->
 
-		<footer class="">
+		<footer class="<?php echo ( is_home() ? 'bg-light' : 'bg-dark'); ?>">
 			<div class="[ wrapper ]">
 				<div class="[ padding-top-bottom ]">
 					<div class="[ row ]">
@@ -47,13 +47,13 @@
 							<h3>Payments</h3>
 							<div class="[ row ]">
 								<div class="[ column xmall-4 ]">
-									<img class="[ icon icon--medium ][ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/visa.svg" alt="visa">
+									<img class="[ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/visa.svg" alt="visa">
 								</div>
 								<div class="[ column xmall-4 ]">
-									<img class="[ icon icon--medium ][ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/mastercard.svg" alt="mastercard">
+									<img class="[ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/mastercard.svg" alt="mastercard">
 								</div>
 								<div class="[ column xmall-4 ]">
-									<img class="[ icon icon--medium ][ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/paypal.svg" alt="paypal">
+									<img class="[ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/paypal.svg" alt="paypal">
 								</div>
 							</div>
 						</div>
@@ -74,7 +74,11 @@
 						</div>
 						<div class="[ column xmall-6 medium-3 ][ margin-bottom ]">
 							<h3>Designed and developed by</h3>
-							<img class="[ icon icon--medium ]" src="<?php echo THEMEPATH; ?>icons/little-crow.svg" alt="Little Crow">
+							<div class="[ row ]">
+								<div class="[ span xmall-10 small-6 medium-8 large-7 ]">
+									<img class="[ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/little-crow.svg" alt="Little Crow">
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="[ text-center ]">

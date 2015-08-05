@@ -1,14 +1,55 @@
+/*------------------------------------*\
+	#MOBILE
+\*------------------------------------*/
+
 header{
+	height: 70px;
 	position: fixed; top: 0; left: 0;
 	.z-index-10;
 	.transition();
+
+	@media (min-width: @xlarge){ height: 90px; }
+
 }
 
-.bg-logo-wrapper{
+header .bg-image-placeholder__wrapper__logo{
 	width: 100px;
-	.img-retina('../images/cuervo-logo.png'; '../images/cuervo-logo@2x.png';);
+	.img-retina('images/logo-mobile--black.png'; 'images/logo-mobile--black@2x.png';);
+
+	@media (min-width: @xlarge){ width: 140px; }
+
 }
 
-.bg-logo{
-	padding-bottom: 34.7058824%;  // height/width of image
+
+
+/*------------------------------------*\
+	#DESKTOP
+\*------------------------------------*/
+
+/**
+ * Header once user scrolls
+**/
+
+header.scrolled.hide{
+	top: -70px;
+}
+
+header.scrolled{
+	top: 0;
+	background: @light;
+
+	@media (min-width: @xlarge){
+		height: 70px;
+		padding: 5px 0;
+
+		.bg-image-placeholder__wrapper__logo{
+			width: 100px;
+			.img-retina('images/logo-mobile--black.png'; 'images/logo-mobile--black@2x.png';);
+		}
+	}
+}
+
+.bg-image-placeholder__wrapper__logo--white{
+	width: 140px;
+	.img-retina('images/logo-mobile--white.png'; 'images/logo-mobile--white@2x.png';);
 }

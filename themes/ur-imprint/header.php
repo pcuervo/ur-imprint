@@ -33,8 +33,6 @@
 		<meta name="msapplication-square310x310logo" content="<?php echo THEMEPATH; ?>favicon/mstile-310x310.png" />
 		<!-- Google font(s) -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic' rel='stylesheet' type='text/css'>
-		<!-- Font awesome -->
-		<!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
 
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 		<!--[if lt IE 9]>
@@ -54,21 +52,65 @@
 		<![endif]-->
 		<div class="[ container ]">
 			<?php if ( ! is_home() ){ ?>
-				<header class="[ xmall-12 ][ padding--top-bottom--small ][ bg-primary ]">
+				<!-- Mobile header
+				================================================== -->
+				<header class="[ xmall-12 ][ padding-top-bottom--small ][ bg-light ][ drop-shadow ][ hidden--xlarge ]">
 					<div class="[ wrapper ]">
-						<div class="[ row ]">
-							<div class="[ column xmall-6 ][ inline-block align-middle ][ menu__item ]">
-								<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ]">
-									<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="<?php echo site_url(); ?>"></a>
-								</div>
-							</div>
-							<div class="[ column xmall-6 ][ inline-block align-middle ][ text-center ]">
-								<a class="[ block ][ button--hollow ][ pull-right ][ js-modal-opener ]" data-modal="nav" href="#">
-									<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/hamburguer.svg" alt="menu">
-								</a>
+						<div class="[ text-center color-light ]">
+							<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ][ no-margin ][ hidden--xlarge-inline ]">
+								<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="<?php echo site_url(); ?>"></a>
 							</div>
 						</div>
 					</div>
 				</header>
 			<?php } ?>
+
+			<!-- Desktop header on top
+			================================================== -->
+			<header class="[ xmall-12 ][ shown--xlarge ][ padding-top-bottom--small ]<?php echo ( is_home() ? '' : '[ drop-shadow ]'); ?>">
+				<div class="[ wrapper ]">
+					<div class="[ xmall-2 ][ inline-block align-middle ][ menu__item ]">
+						<div class="[ bg-image-placeholder__wrapper <?php echo ( is_home() ? 'bg-image-placeholder__wrapper__logo--white' : 'bg-image-placeholder__wrapper__logo'); ?> ]">
+							<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="<?php echo site_url(); ?>"></a>
+						</div>
+					</div><div
+					class="[ xmall-10 ][ inline-block align-middle ][ text-center ]">
+						<nav class="[ text-right ]">
+							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--hollow <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Create</a>
+							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Catalogue</a>
+							<a href="<?php echo site_url('contact'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Contact</a>
+							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Register</a>
+							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Login</a>
+							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">
+								<img class="[ svg icon icon--small ][ <?php echo ( is_home() ? 'color-light' : 'color-primary'); ?> ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">
+							</a>
+						</nav><!-- categorias -->
+					</div>
+				</div>
+			</header>
+
+			<!-- Desktop header when scrolled
+			================================================== -->
+			<header class="[ xmall-12 ][ shown--xlarge ][ padding-top-bottom--small ][ drop-shadow ][ scrolled ][ hide ]">
+				<div class="[ wrapper ]">
+					<div class="[ xmall-2 ][ inline-block align-middle ][ menu__item ]">
+						<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ]">
+							<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="<?php echo site_url(); ?>"></a>
+						</div>
+					</div><div
+					class="[ xmall-10 ][ inline-block align-middle ][ text-center ]">
+						<nav class="[ text-right ]">
+							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--hollow button--primary ][ inline-block align-middle ]">Create</a>
+							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Catalogue</a>
+							<a href="<?php echo site_url('contact'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Contact</a>
+							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Register</a>
+							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Login</a>
+							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">
+								<img class="[ svg icon icon--small ][ color-primary ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">
+							</a>
+						</nav><!-- categorias -->
+					</div>
+				</div>
+			</header>
+
 			<div class="[ main ]">

@@ -4,18 +4,20 @@
 	==== HERO
 	================================================== -->
 	<section class="[ hero hero-home ]">
-		<div class="[ screen-dark--30 ]">
-			<div class="[ padding-top-bottom--large ]">
-				<div class="[ wrapper ]">
-					<div class="[ text-center color-light ]">
-						<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ][ margin-bottom--large ]">
-							<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="#"></a>
-						</div>
-						<h1 class="[ text-shadow ]">Bring your imagination to life</h1>
-						<a href="#" class="[ button button--secondary ]">get started</a>
+		<div class="[ screen screen-dark--30 ][ z-index-1 ]"></div>
+		<div class="[ padding-top-bottom--large ][ relative z-index-2 ]">
+			<div class="[ wrapper ]">
+				<div class="[ text-center color-light ]">
+					<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ][ margin-bottom--large ][ hidden--xlarge-inline ]">
+						<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="#"></a>
 					</div>
-				</div><!-- wrapper -->
-			</div>
+					<span class="[ padding ][ shown--xlarge ]">&nbsp;</span><br />
+					<span class="[ padding ][ shown--xlarge ]">&nbsp;</span><br />
+					<span class="[ padding ][ shown--xxlarge ]">&nbsp;</span><br />
+					<h1 class="[ text-shadow ]">Bring your imagination to life</h1>
+					<a href="#" class="[ button button--secondary ]">get started</a>
+				</div>
+			</div><!-- wrapper -->
 		</div>
 	</section><!-- hero -->
 
@@ -134,7 +136,7 @@
 	==== PRODUCT CATEGORIES
 	================================================== -->
 	<section class="[ product-categories ]">
-		<div class="[ row ]">
+		<div class="[ clearfix ]">
 			<?php
 			$counter = 1;
 			$args = array(
@@ -144,22 +146,16 @@
 			$all_categories = get_categories( $args );
 			foreach ( $all_categories as $cat ) :
 				$cat_thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
-			    $cat_image_url = wp_get_attachment_url( $cat_thumbnail_id ); ?>
-				<div class="[ span xmall-12 ][ bg-secondary bg-secondary--darken-<?php echo $counter; ?>0 ]">
-					<div class="[ row ]">
-						<div class="[ span xmall-4 ]">
-							<a href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
-								<img class="[ image-responsive ]" src="<?php echo $cat_image_url; ?>" alt="">
-							</a>
+				$cat_image_url = wp_get_attachment_url( $cat_thumbnail_id ); ?>
+				<div class="[ span xmall-12 medium-4 ][ bg-secondary bg-secondary--darken-<?php echo $counter; ?>0 ]">
+					<a class="[ clearfix ][ block ]" href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
+						<div class="[ xmall-4 medium-12 ][ inline-block align-middle ]" href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
+							<img class="[ image-responsive ]" src="<?php echo $cat_image_url; ?>" alt="">
+						</div><div
+						class="[ xmall-8 medium-12 ][ inline-block align-middle ][ no-margin padding-top-bottom--large ]" href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
+							<p class="[ text-center ][ color-light italic lead-text ]"><?php echo $cat->name ?></p>
 						</div>
-						<div class="[ span xmall-8 ][ padding ]">
-							<p class="[ text-center ]">
-								<a href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
-									<?php echo $cat->name ?>
-								</a>
-							</p>
-						</div>
-					</div>
+					</a>
 				</div>
 			<?php
 			$counter++;
@@ -189,11 +185,11 @@
 					while ( $testimonials_query->have_posts() ) : $testimonials_query->the_post();
 						$company = get_post_meta($post->ID, '_company_meta', true);
 					?>
-						<div class="[ xmall-12 large-8 ][ center ]">
-							<blockquote><?php echo $post->post_content; ?></blockquote>
+						<div class="[ xmall-12 medium-8 large-6 ][ center ][ padding-top-bottom--large ]">
+							<blockquote class="[ margin-bottom ]"><?php echo $post->post_content; ?></blockquote>
 							<div class="[ text-right ]">
-								<p><strong><?php echo $post->post_title; ?></strong>,</p>
-								<p><?php echo $company; ?></p>
+								<p><strong><?php echo $post->post_title; ?></strong>,<br />
+								<?php echo $company; ?></p>
 							</div>
 						</div>
 					<?php endwhile; ?>

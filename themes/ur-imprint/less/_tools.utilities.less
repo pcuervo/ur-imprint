@@ -276,8 +276,8 @@
 /**
  * Transforms
 **/
-.uppercase{ text-transform: uppercase; }
-.lowercase{ text-transform: lowercase; }
+.uppercase{ text-transform: uppercase !important; }
+.lowercase{ text-transform: lowercase !important; }
 
 /**
  * Shadow
@@ -293,6 +293,11 @@
 /*------------------------------------*\
 	#SCREENS
 \*------------------------------------*/
+
+.screen{
+	width: 100%; height: 100%;
+	position: absolute; top: 0; left: 0;
+}
 
 /**
  * Solid
