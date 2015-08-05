@@ -242,10 +242,10 @@ function toggleCatalogueDesigns(){
 	if( $('.js-btn-designs').hasClass('active') ){
 		$('.design-filters').addClass('hidden');
 		$('.designs').addClass('hidden');
+		$('.js-btn-designs').removeClass('active')
 		return;
 	}
-	$('.js-btn-designs').addClass('active');
-	$('.js-btn-products').removeClass('active');
+	$('.js-btn-designs').addClass('active')
 	$('.design-filters').removeClass('hidden');
 	$('.designs').removeClass('hidden');
 	console.log('filtering designs...');
@@ -261,10 +261,10 @@ function toggleCatalogueProducts(){
 	if( $('.js-btn-products').hasClass('active') ){
 		$('.product-filters').addClass('hidden');
 		$('.products').addClass('hidden');
+		$('.js-btn-products').removeClass('active');
 		return;
 	}
 	$('.js-btn-products').addClass('active');
-	$('.js-btn-designs').removeClass('active');
 	$('.product-filters').removeClass('hidden');
 	$('.products').removeClass('hidden');
 	console.log('filtering products...');

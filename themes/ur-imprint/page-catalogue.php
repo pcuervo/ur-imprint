@@ -24,10 +24,10 @@
 		<div class="[ wrapper ]">
 			<div class="[ row ][ color-light ][ padding-top-bottom ]">
 
-				<div class="[ column xmall-3 small-2 xlarge-1 ]">
+				<div class="[ column xmall-12 medium-2 large-1 ]">
 					<p class="[ padding-top--small ]">theme</p>
 				</div>
-				<div class="[ column xmall-9 small-10 xlarge-11 ][ theme-filters ][ button-filter-group ]" data-filter-group="theme">
+				<div class="[ column xmall-12 medium-10 large-11 ][ theme-filters ][ button-filter-group ]" data-filter-group="theme">
 					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
 						all
 					</button>
@@ -40,10 +40,10 @@
 					<?php endforeach; ?>
 				</div><!-- theme-filters -->
 
-				<div class="[ column xmall-3 small-2 xlarge-1 ]">
+				<div class="[ column xmall-12 medium-2 large-1 ]">
 					<p class="[ padding-top--small ]">type</p>
 				</div>
-				<div class="[ column xmall-9 small-10 xlarge-11 ][ type-filters ][ button-filter-group ]" data-filter-group="type">
+				<div class="[ column xmall-12 medium-10 large-11  ][ type-filters ][ button-filter-group ]" data-filter-group="type">
 					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
 						all
 					</button>
@@ -56,10 +56,10 @@
 					<?php endforeach; ?>
 				</div><!-- type-filters -->
 
-				<div class="[ column xmall-3 small-2 xlarge-1 ]">
+				<div class="[ column xmall-12 medium-2 large-1 ]">
 					<p class="[ padding-top--small ]">author</p>
 				</div>
-				<div class="[ column xmall-9 small-10 xlarge-11 ][ author-filters ][ button-filter-group ]" data-filter-group="author">
+				<div class="[ column xmall-12 medium-10 large-11  ][ author-filters ][ button-filter-group ]" data-filter-group="author">
 					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
 						all
 					</button>
@@ -84,10 +84,10 @@
 		<div class="[ wrapper ]">
 			<div class="[ row ][ color-light ][ padding-top-bottom ]">
 
-				<div class="[ column xmall-3 small-2 xlarge-1 ]">
+				<div class="[ column xmall-12 medium-2 large-1 ]">
 					<p class="[ padding-top--small ]">who</p>
 				</div>
-				<div class="[ column xmall-9 small-10 xlarge-11 ][ product-filters ][ button-filter-group ]" data-filter-group="product-cat">
+				<div class="[ column xmall-12 medium-10 large-11  ][ product-filters ][ button-filter-group ]" data-filter-group="product-cat">
 					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
 						all
 					</button>
@@ -100,10 +100,10 @@
 					<?php endforeach; ?>
 				</div><!-- product-filters -->
 
-				<div class="[ column xmall-3 small-2 xlarge-1 ]">
+				<div class="[ column xmall-12 medium-2 large-1  ]">
 					<p class="[ padding-top--small ]">type</p>
 				</div>
-				<div class="[ column xmall-9 small-10 xlarge-11 ][ type-filters ][ button-filter-group ]" data-filter-group="product-type">
+				<div class="[ column xmall-12 medium-10 large-11  ][ type-filters ][ button-filter-group ]" data-filter-group="product-type">
 					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
 						all
 					</button>
@@ -116,10 +116,10 @@
 					<?php endforeach; ?>
 				</div><!-- type-filters -->
 
-				<div class="[ column xmall-3 small-2 xlarge-1 ]">
+				<div class="[ column xmall-12 medium-2 large-1  ]">
 					<p class="[ padding-top--small ]">author</p>
 				</div>
-				<div class="[ column xmall-9 small-10 xlarge-11 ][ author-filters ][ button-filter-group ]" data-filter-group="style">
+				<div class="[ column xmall-12 medium-10 large-11  ][ author-filters ][ button-filter-group ]" data-filter-group="style">
 					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
 						all
 					</button>
