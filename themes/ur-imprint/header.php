@@ -76,12 +76,11 @@
 					</div><div
 					class="[ xmall-10 ][ inline-block align-middle ][ text-center ]">
 						<nav class="[ text-right ]">
-							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--hollow <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Create</a>
+							<a href="<?php echo site_url('create'); ?>" class="[ button button--hollow <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Create</a>
 							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Catalogue</a>
 							<a href="<?php echo site_url('contact'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Contact</a>
-							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Register</a>
-							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Login</a>
-							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">
+							<a href="<?php echo site_url('my-ccount'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Register / Login</a>
+							<a href="<?php echo site_url('cart'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">
 								<img class="[ svg icon icon--small ][ <?php echo ( is_home() ? 'color-light' : 'color-primary'); ?> ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">
 							</a>
 						</nav><!-- categorias -->
@@ -100,12 +99,11 @@
 					</div><div
 					class="[ xmall-10 ][ inline-block align-middle ][ text-center ]">
 						<nav class="[ text-right ]">
-							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--hollow button--primary ][ inline-block align-middle ]">Create</a>
+							<a href="<?php echo site_url('create'); ?>" class="[ button button--hollow button--primary ][ inline-block align-middle ]">Create</a>
 							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Catalogue</a>
 							<a href="<?php echo site_url('contact'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Contact</a>
-							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Register</a>
-							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Login</a>
-							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">
+							<a href="<?php echo site_url('my-ccount'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Register / Login</a>
+							<a href="<?php echo site_url('cart'); ?>" class="[ button button--ink ][ inline-block align-middle ]">
 								<img class="[ svg icon icon--small ][ color-primary ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">
 							</a>
 						</nav><!-- categorias -->

@@ -287,6 +287,14 @@ function toggleCatalogueProducts(){
 	}
 }// toggleHeader
 
+/**
+ * Close accordion
+ */
+function closeAccordionSection() {
+	$('.accordion .accordion-section-title').removeClass('active');
+	$('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+}//closeAccordionSection
+
 
 
 /*------------------------------------*\

@@ -15,12 +15,11 @@
 							<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="<?php echo site_url(); ?>"></a>
 						</div>
 						<nav class="">
-							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--medium button--hollow button--light ][ padding ]">Create</a><br/>
+							<a href="<?php echo site_url('create'); ?>" class="[ button button--medium button--hollow button--light ][ padding ]">Create</a><br/>
 							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Catalogue</a><br/>
 							<a href="<?php echo site_url('contact'); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Contact</a><br/>
-							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Register</a><br/>
-							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Login</a><br/>
-							<a href="<?php echo site_url('contacto'); ?>" class="[ button button--medium button--ink button--light ][ padding ]">
+							<a href="<?php echo site_url('my-ccount'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Register / Login</a><br/>
+							<a href="<?php echo site_url('cart'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">
 								<img class="[ svg icon icon--medium ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">
 							</a>
 						</nav><!-- categorias -->
@@ -67,10 +66,10 @@
 						<div class="[ clear--xmall ]"></div>
 						<div class="[ column xmall-6 medium-3 ][ margin-bottom ]">
 							<h3>Quick links</h3>
-							<p class="[ no-margin ]"><a href="#">About Us</a></p>
-							<p class="[ no-margin ]"><a href="#">FAQs</a></p>
-							<p class="[ no-margin ]"><a href="#">Catalogue</a></p>
-							<p class="[ no-margin ]"><a href="#">Get started</a></p>
+							<p class="[ no-margin ]"><a href="<?php echo site_url('about-us'); ?>">About Us</a></p>
+							<p class="[ no-margin ]"><a href="<?php echo get_post_type_archive_link( 'faq' ); ?>">FAQs</a></p>
+							<p class="[ no-margin ]"><a href="<?php echo site_url('catalogue'); ?>">Catalogue</a></p>
+							<p class="[ no-margin ]"><a href="<?php echo site_url('create'); ?>">Create</a></p>
 						</div>
 						<div class="[ column xmall-6 medium-3 ][ margin-bottom ]">
 							<h3>Designed and developed by</h3>

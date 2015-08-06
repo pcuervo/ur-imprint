@@ -28,26 +28,33 @@
 	================================================== -->
 	<section class="[ video ][ bg-primary ]">
 		<div class="[ wrapper ]">
-			<div class="[ padding-top-bottom--large ][ text-center ]">
-				<div class="[ margin-bottom ][ xmall-12 ][ center ][ relative ]">
-					<video id="video" class="[ xmall-12 ]">
-						<source src="<?php echo THEMEPATH; ?>videos/video1.webm" type="video/webm">
-						<source src="<?php echo THEMEPATH; ?>videos/video1.ogv" type="video/ogv">
-						<source src="<?php echo THEMEPATH; ?>videos/video1.mp4" type="video/mp4">
-						<p>
-							Your browser doesn't support HTML5 video.
-							<a href="<?php echo THEMEPATH; ?>videos/video1.mp4">Download</a> the video instead.
-						</p>
-					</video>
-					<!-- Video Controls -->
-					<div id="video-controls" class="[ gradient-transparent-to-black ]">
-						<button class="[ center-full ][ button button--circle button--secondary ][ bordered--large ]" type="button" id="play-pause">
-							<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/play.svg" alt="play">
-						</button>
+			<div class="[ padding-top-bottom--large ]">
+				<div class="[ row ][ xmall-12 medium-10 large-10 ][ center ]">
+					<div class="[ margin-bottom ][ xmall-12 large-6 ][ relative ][ inline-block align-middle ]">
+						<video id="video" class="[ xmall-12 ]">
+							<source src="<?php echo THEMEPATH; ?>videos/video1.webm" type="video/webm">
+							<source src="<?php echo THEMEPATH; ?>videos/video1.ogv" type="video/ogv">
+							<source src="<?php echo THEMEPATH; ?>videos/video1.mp4" type="video/mp4">
+							<p>
+								Your browser doesn't support HTML5 video.
+								<a href="<?php echo THEMEPATH; ?>videos/video1.mp4">Download</a> the video instead.
+							</p>
+						</video>
+						<!-- Video Controls -->
+						<div id="video-controls" class="[ xmall-12 ][ gradient-transparent-to-black ]">
+							<button class="[ center-full ][ button button--circle button--secondary ][ bordered--large ]" type="button" id="play-pause">
+								<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/play.svg" alt="play">
+							</button>
+						</div>
+					</div><div class="[ shown-large--inline ][ large-1 ][ inline-block align-middle ]">
+						&nbsp;
+					</div><div
+					class="[ xmall-12 large-5 ][ text-center text-left--large ][ inline-block align-middle ]">
+						<h2>UR Imprint Design Studio</h2>
+						<p class="[ italic ]">Direct to garment printing technology for bright long-lasting prints.</p>
 					</div>
-				</div>
-				<h2>UR Imprint Design Studio</h2>
-				<p class="[ italic ]">Direct to garment printing technology for bright long-lasting prints.</p>
+				</div><!-- row -->
+
 			</div>
 		</div><!-- wrapper -->
 	</section>
