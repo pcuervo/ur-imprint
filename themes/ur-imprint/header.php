@@ -79,7 +79,7 @@
 							<a href="<?php echo site_url('create'); ?>" class="[ button button--hollow <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Create</a>
 							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Catalogue</a>
 							<a href="<?php echo site_url('contact'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Contact</a>
-							<a href="<?php echo site_url('my-ccount'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Register / Login</a>
+							<a href="<?php echo site_url('my-account'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Register / Login</a>
 							<a href="<?php echo site_url('cart'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">
 								<img class="[ svg icon icon--small ][ <?php echo ( is_home() ? 'color-light' : 'color-primary'); ?> ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">
 							</a>
@@ -102,7 +102,7 @@
 							<a href="<?php echo site_url('create'); ?>" class="[ button button--hollow button--primary ][ inline-block align-middle ]">Create</a>
 							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Catalogue</a>
 							<a href="<?php echo site_url('contact'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Contact</a>
-							<a href="<?php echo site_url('my-ccount'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Register / Login</a>
+							<a href="<?php echo site_url('my-account'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Register / Login</a>
 							<a href="<?php echo site_url('cart'); ?>" class="[ button button--ink ][ inline-block align-middle ]">
 								<img class="[ svg icon icon--small ][ color-primary ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">
 							</a>

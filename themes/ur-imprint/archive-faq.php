@@ -1,8 +1,5 @@
 <?php get_header(); ?>
 
-	<!-- =================================================
-	==== CONTACT HEADER
-	================================================== -->
 	<section class="[ faqs ]">
 		<div class="[ wrapper ]">
 			<div class="[ padding-top-bottom--large ][ text-center ]">
