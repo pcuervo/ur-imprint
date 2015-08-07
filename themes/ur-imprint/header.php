@@ -76,7 +76,7 @@
 					</div><div
 					class="[ xmall-10 ][ inline-block align-middle ][ text-center ]">
 						<nav class="[ text-right ]">
-							<a href="<?php echo site_url('create'); ?>" class="[ button button--hollow <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Create</a>
+							<a href="<?php echo site_url('create') ?>" class="[ button button--hollow <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Create</a>
 							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Catalogue</a>
 							<a href="<?php echo site_url('contact'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Contact</a>
 							<a href="<?php echo site_url('my-account'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">
@@ -104,7 +104,7 @@
 					</div><div
 					class="[ xmall-10 ][ inline-block align-middle ][ text-center ]">
 						<nav class="[ text-right ]">
-							<a href="<?php echo site_url('create'); ?>" class="[ button button--hollow button--primary ][ inline-block align-middle ]">Create</a>
+							<a href="<?php echo site_url('create') ?>" class="[ button button--hollow button--primary ][ inline-block align-middle ]">Create</a>
 							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Catalogue</a>
 							<a href="<?php echo site_url('contact'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Contact</a>
 							<a href="<?php echo site_url('my-account'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">

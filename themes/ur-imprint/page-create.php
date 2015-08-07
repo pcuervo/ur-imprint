@@ -1,8 +1,6 @@
 <?php  
 	get_header(); 
-
-	$create_product = get_product_by_sku( 'plain-white-t-shirt' );
-	var_dump( $create_product );
+	echo do_shortcode('[product_page id="71"]');
 ?>
 	
 

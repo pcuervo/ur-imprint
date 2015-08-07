@@ -15,7 +15,7 @@
 							<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="<?php echo site_url(); ?>"></a>
 						</div>
 						<nav class="">
-							<a href="<?php echo site_url('create'); ?>" class="[ button button--medium button--hollow button--light ][ padding ]">Create</a><br/>
+							<a href="<?php echo site_url('create') ?>" class="[ button button--medium button--hollow button--light ][ padding ]">Create</a><br/>
 							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Catalogue</a><br/>
 							<a href="<?php echo site_url('contact'); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Contact</a><br/>
 							<a href="<?php echo site_url('my-account'); ?>" class="[ button button--ink button--light ][ inline-block align-middle ]">
