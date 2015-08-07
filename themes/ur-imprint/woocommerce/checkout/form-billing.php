@@ -17,7 +17,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section class="[ my-account ]">
 	<div class="[ wrapper ]">
 
-
 		<div class="woocommerce-billing-fields">
 			<?php if ( WC()->cart->ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 

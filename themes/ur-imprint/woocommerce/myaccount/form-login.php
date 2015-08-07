@@ -88,7 +88,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 							<fieldset class="[ margin-bottom ]">
 								<label class="[ field ]">
-									<input type="text" class="[ gui-input ][ required ][ input-text ]" name="username" id="username" placeholder="<?php _e( 'Username or email address', 'woocommerce' ); ?>*" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>"  />
 									<input type="text" class="[ gui-input ][ required ][ input-text ]" name="username" id="reg_username" placeholder="<?php _e( 'Username', 'woocommerce' ); ?>*" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>" />
 								</label>
 							</fieldset>
