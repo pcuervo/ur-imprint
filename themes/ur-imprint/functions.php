@@ -306,6 +306,24 @@ add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
+/**
+ * Get Product by SKU
+ * @param string $sku
+ * @return WC_Product 
+ */
+function get_product_by_sku( $sku ) {
+
+	global $wpdb;
+
+	$product_id = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key='_sku' AND meta_value='%s' LIMIT 1", $sku ) );
+
+	if ( $product_id ) return new WC_Product( $product_id );
+
+	return null;
+
+}// get_product_by_sku
+
+
 
 
 
