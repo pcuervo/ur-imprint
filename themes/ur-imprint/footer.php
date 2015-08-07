@@ -27,7 +27,6 @@
 							<a href="<?php echo site_url('cart'); ?>" class="[ button button--ink button--light ][ inline-block align-middle ]">
 								<img class="[ svg icon icon--medium ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">
 							</a>
-
 						</nav><!-- categorias -->
 					</article>
 
