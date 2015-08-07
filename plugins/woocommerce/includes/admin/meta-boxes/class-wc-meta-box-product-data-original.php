@@ -35,33 +35,36 @@ class WC_Meta_Box_Product_Data {
 			$product_type = apply_filters( 'default_product_type', 'simple' );
 		}
 
-		// $product_type_selector = apply_filters( 'product_type_selector', array(
-		// 	'simple'   => __( 'Simple product', 'woocommerce' )
-		// ), $product_type );
+		$product_type_selector = apply_filters( 'product_type_selector', array(
+			'simple'   => __( 'Simple product', 'woocommerce' ),
+			'grouped'  => __( 'Grouped product', 'woocommerce' ),
+			'external' => __( 'External/Affiliate product', 'woocommerce' ),
+			'variable' => __( 'Variable product', 'woocommerce' )
+		), $product_type );
 
-		// $type_box = '<label for="product-type"><select id="product-type" name="product-type"><optgroup label="' . __( 'Product Type', 'woocommerce' ) . '">';
+		$type_box = '<label for="product-type"><select id="product-type" name="product-type"><optgroup label="' . __( 'Product Type', 'woocommerce' ) . '">';
 
-		// foreach ( $product_type_selector as $value => $label ) {
-		// 	$type_box .= '<option value="' . esc_attr( $value ) . '" ' . selected( $product_type, $value, false ) .'>' . esc_html( $label ) . '</option>';
-		// }
+		foreach ( $product_type_selector as $value => $label ) {
+			$type_box .= '<option value="' . esc_attr( $value ) . '" ' . selected( $product_type, $value, false ) .'>' . esc_html( $label ) . '</option>';
+		}
 
-		// $type_box .= '</optgroup></select></label>';
+		$type_box .= '</optgroup></select></label>';
 
 		$product_type_options = apply_filters( 'product_type_options', array(
-			// 'virtual' => array(
-			// 	'id'            => '_virtual',
-			// 	'wrapper_class' => 'show_if_simple',
-			// 	'label'         => __( 'Virtual', 'woocommerce' ),
-			// 	'description'   => __( 'Virtual products are intangible and aren\'t shipped.', 'woocommerce' ),
-			// 	'default'       => 'no'
-			// ),
-			// 'downloadable' => array(
-			// 	'id'            => '_downloadable',
-			// 	'wrapper_class' => 'show_if_simple',
-			// 	'label'         => __( 'Downloadable', 'woocommerce' ),
-			// 	'description'   => __( 'Downloadable products give access to a file upon purchase.', 'woocommerce' ),
-			// 	'default'       => 'no'
-			// )
+			'virtual' => array(
+				'id'            => '_virtual',
+				'wrapper_class' => 'show_if_simple',
+				'label'         => __( 'Virtual', 'woocommerce' ),
+				'description'   => __( 'Virtual products are intangible and aren\'t shipped.', 'woocommerce' ),
+				'default'       => 'no'
+			),
+			'downloadable' => array(
+				'id'            => '_downloadable',
+				'wrapper_class' => 'show_if_simple',
+				'label'         => __( 'Downloadable', 'woocommerce' ),
+				'description'   => __( 'Downloadable products give access to a file upon purchase.', 'woocommerce' ),
+				'default'       => 'no'
+			)
 		) );
 
 		foreach ( $product_type_options as $key => $option ) {
@@ -87,13 +90,18 @@ class WC_Meta_Box_Product_Data {
 							'target' => 'general_product_data',
 							'class'  => array( 'hide_if_grouped' ),
 						),
+						'inventory' => array(
+							'label'  => __( 'Inventory', 'woocommerce' ),
+							'target' => 'inventory_product_data',
+							'class'  => array( 'show_if_simple', 'show_if_variable', 'show_if_grouped' ),
+						),
 						'shipping' => array(
 							'label'  => __( 'Shipping', 'woocommerce' ),
 							'target' => 'shipping_product_data',
 							'class'  => array( 'hide_if_virtual', 'hide_if_grouped', 'hide_if_external' ),
 						),
 						'linked_product' => array(
-							'label'  => 'Link color products',
+							'label'  => __( 'Linked Products', 'woocommerce' ),
 							'target' => 'linked_product_data',
 							'class'  => array(),
 						),
@@ -102,6 +110,16 @@ class WC_Meta_Box_Product_Data {
 							'target' => 'product_attributes',
 							'class'  => array(),
 						),
+						'variations' => array(
+							'label'  => __( 'Variations', 'woocommerce' ),
+							'target' => 'variable_product_options',
+							'class'  => array( 'variations_tab', 'show_if_variable' ),
+						),
+						'advanced' => array(
+							'label'  => __( 'Advanced', 'woocommerce' ),
+							'target' => 'advanced_product_data',
+							'class'  => array(),
+						)
 					) );
 
 					foreach ( $product_data_tabs as $key => $tab ) {
@@ -128,6 +146,16 @@ class WC_Meta_Box_Product_Data {
 
 				echo '</div>';
 
+				echo '<div class="options_group show_if_external">';
+
+					// External URL
+					woocommerce_wp_text_input( array( 'id' => '_product_url', 'label' => __( 'Product URL', 'woocommerce' ), 'placeholder' => 'http://', 'description' => __( 'Enter the external URL to the product.', 'woocommerce' ) ) );
+
+					// Button text
+					woocommerce_wp_text_input( array( 'id' => '_button_text', 'label' => __( 'Button text', 'woocommerce' ), 'placeholder' => _x('Buy product', 'placeholder', 'woocommerce'), 'description' => __( 'This text will be shown on the button linking to the external product.', 'woocommerce' ) ) );
+
+				echo '</div>';
+
 				echo '<div class="options_group pricing show_if_simple show_if_external">';
 
 					// Price
@@ -149,6 +177,73 @@ class WC_Meta_Box_Product_Data {
 							</p>';
 
 					do_action( 'woocommerce_product_options_pricing' );
+
+				echo '</div>';
+
+				echo '<div class="options_group show_if_downloadable">';
+
+					?>
+					<div class="form-field downloadable_files">
+						<label><?php _e( 'Downloadable Files', 'woocommerce' ); ?>:</label>
+						<table class="widefat">
+							<thead>
+								<tr>
+									<th class="sort">&nbsp;</th>
+									<th><?php _e( 'Name', 'woocommerce' ); ?> <span class="tips" data-tip="<?php _e( 'This is the name of the download shown to the customer.', 'woocommerce' ); ?>">[?]</span></th>
+									<th colspan="2"><?php _e( 'File URL', 'woocommerce' ); ?> <span class="tips" data-tip="<?php _e( 'This is the URL or absolute path to the file which customers will get access to.', 'woocommerce' ); ?>">[?]</span></th>
+									<th>&nbsp;</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php
+								$downloadable_files = get_post_meta( $post->ID, '_downloadable_files', true );
+
+								if ( $downloadable_files ) {
+									foreach ( $downloadable_files as $key => $file ) {
+										include( 'views/html-product-download.php' );
+									}
+								}
+								?>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th colspan="5">
+										<a href="#" class="button insert" data-row="<?php
+											$file = array(
+												'file' => '',
+												'name' => ''
+											);
+											ob_start();
+											include( 'views/html-product-download.php' );
+											echo esc_attr( ob_get_clean() );
+										?>"><?php _e( 'Add File', 'woocommerce' ); ?></a>
+									</th>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+					<?php
+
+					// Download Limit
+					woocommerce_wp_text_input( array( 'id' => '_download_limit', 'label' => __( 'Download Limit', 'woocommerce' ), 'placeholder' => __( 'Unlimited', 'woocommerce' ), 'description' => __( 'Leave blank for unlimited re-downloads.', 'woocommerce' ), 'type' => 'number', 'custom_attributes' => array(
+						'step' 	=> '1',
+						'min'	=> '0'
+					) ) );
+
+					// Expirey
+					woocommerce_wp_text_input( array( 'id' => '_download_expiry', 'label' => __( 'Download Expiry', 'woocommerce' ), 'placeholder' => __( 'Never', 'woocommerce' ), 'description' => __( 'Enter the number of days before a download link expires, or leave blank.', 'woocommerce' ), 'type' => 'number', 'custom_attributes' => array(
+						'step' 	=> '1',
+						'min'	=> '0'
+					) ) );
+
+					 // Download Type
+					woocommerce_wp_select( array( 'id' => '_download_type', 'label' => __( 'Download Type', 'woocommerce' ), 'description' => sprintf( __( 'Choose a download type - this controls the <a href="%s">schema</a>.', 'woocommerce' ), 'http://schema.org/' ), 'options' => array(
+						''            => __( 'Standard Product', 'woocommerce' ),
+						'application' => __( 'Application/Software', 'woocommerce' ),
+						'music'       => __( 'Music', 'woocommerce' ),
+					) ) );
+
+					do_action( 'woocommerce_product_options_downloads' );
 
 				echo '</div>';
 
@@ -379,7 +474,7 @@ class WC_Meta_Box_Product_Data {
 
 				<div class="options_group">
 
-				<p class="form-field"><label for="upsell_ids">Other colors</label>
+				<p class="form-field"><label for="upsell_ids"><?php _e( 'Up-Sells', 'woocommerce' ); ?></label>
 				<input type="hidden" class="wc-product-search" style="width: 50%;" id="upsell_ids" name="upsell_ids" data-placeholder="<?php _e( 'Search for a product&hellip;', 'woocommerce' ); ?>" data-action="woocommerce_json_search_products" data-multiple="true" data-selected="<?php
 					$product_ids = array_filter( array_map( 'absint', (array) get_post_meta( $post->ID, '_upsell_ids', true ) ) );
 					$json_ids    = array();
@@ -394,7 +489,73 @@ class WC_Meta_Box_Product_Data {
 					echo esc_attr( json_encode( $json_ids ) );
 				?>" value="<?php echo implode( ',', array_keys( $json_ids ) ); ?>" /> <img class="help_tip" data-tip='<?php _e( 'Up-sells are products which you recommend instead of the currently viewed product, for example, products that are more profitable or better quality or more expensive.', 'woocommerce' ) ?>' src="<?php echo WC()->plugin_url(); ?>/assets/images/help.png" height="16" width="16" /></p>
 
+				<p class="form-field"><label for="crosssell_ids"><?php _e( 'Cross-Sells', 'woocommerce' ); ?></label>
+				<input type="hidden" class="wc-product-search" style="width: 50%;" id="crosssell_ids" name="crosssell_ids" data-placeholder="<?php _e( 'Search for a product&hellip;', 'woocommerce' ); ?>" data-action="woocommerce_json_search_products" data-multiple="true" data-selected="<?php
+					$product_ids = array_filter( array_map( 'absint', (array) get_post_meta( $post->ID, '_crosssell_ids', true ) ) );
+					$json_ids    = array();
+
+					foreach ( $product_ids as $product_id ) {
+						$product = wc_get_product( $product_id );
+						if ( is_object( $product ) ) {
+							$json_ids[ $product_id ] = wp_kses_post( html_entity_decode( $product->get_formatted_name() ) );
+						}
+					}
+
+					echo esc_attr( json_encode( $json_ids ) );
+				?>" value="<?php echo implode( ',', array_keys( $json_ids ) ); ?>" /> <img class="help_tip" data-tip='<?php _e( 'Cross-sells are products which you promote in the cart, based on the current product.', 'woocommerce' ) ?>' src="<?php echo WC()->plugin_url(); ?>/assets/images/help.png" height="16" width="16" /></p>
+
 				</div>
+
+				<?php
+
+				echo '<div class="options_group grouping show_if_simple show_if_external">';
+
+					// List Grouped products
+					$post_parents = array();
+					$post_parents[''] = __( 'Choose a grouped product&hellip;', 'woocommerce' );
+
+					if ( $grouped_term = get_term_by( 'slug', 'grouped', 'product_type' ) ) {
+
+						$posts_in = array_unique( (array) get_objects_in_term( $grouped_term->term_id, 'product_type' ) );
+
+						if ( sizeof( $posts_in ) > 0 ) {
+
+							$args = array(
+								'post_type'        => 'product',
+								'post_status'      => 'any',
+								'numberposts'      => -1,
+								'orderby'          => 'title',
+								'order'            => 'asc',
+								'post_parent'      => 0,
+								'suppress_filters' => 0,
+								'include'          => $posts_in,
+							);
+
+							$grouped_products = get_posts( $args );
+
+							if ( $grouped_products ) {
+
+								foreach ( $grouped_products as $product ) {
+
+									if ( $product->ID == $post->ID ) {
+										continue;
+									}
+
+									$post_parents[ $product->ID ] = $product->post_title;
+								}
+							}
+						}
+
+					}
+
+					woocommerce_wp_select( array( 'id' => 'parent_id', 'label' => __( 'Grouping', 'woocommerce' ), 'value' => absint( $post->post_parent ), 'options' => $post_parents, 'desc_tip' => true, 'description' => __( 'Set this option to make this product part of a grouped product.', 'woocommerce' ) ) );
+
+					woocommerce_wp_hidden_input( array( 'id' => 'previous_parent_id', 'value' => absint( $post->post_parent ) ) );
+
+					do_action( 'woocommerce_product_options_grouping' );
+
+				echo '</div>';
+				?>
 
 				<?php do_action( 'woocommerce_product_options_related' ); ?>
 

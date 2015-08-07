@@ -18,7 +18,12 @@
 							<a href="<?php echo site_url('create'); ?>" class="[ button button--medium button--hollow button--light ][ padding ]">Create</a><br/>
 							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Catalogue</a><br/>
 							<a href="<?php echo site_url('contact'); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Contact</a><br/>
-							<a href="<?php echo site_url('my-account'); ?>" class="[ button button--ink button--light ][ inline-block align-middle ]">Register / Login</a><br/>
+							<a href="<?php echo site_url('my-account'); ?>" class="[ button button--ink button--light ][ inline-block align-middle ]">
+								<?php echo  is_user_logged_in() ?  'My account' : 'Register / Login'  ?>	
+							</a><br/>
+							<?php if( is_user_logged_in() ) : ?>
+								<a href="<?php echo wp_logout_url(); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Logout</a><br/>
+							<?php endif ?><br />
 							<a href="<?php echo site_url('cart'); ?>" class="[ button button--ink button--light ][ inline-block align-middle ]">
 								<img class="[ svg icon icon--medium ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">
 							</a>
