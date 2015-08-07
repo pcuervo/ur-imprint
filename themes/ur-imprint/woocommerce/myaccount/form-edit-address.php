@@ -21,7 +21,7 @@ get_currentuserinfo();
 
 <?php wc_print_notices(); ?>
 
-<section class="[ my-account ]">
+<section class="[ edit-address ]">
 
 	<?php if ( ! $load_address ) : ?>
 

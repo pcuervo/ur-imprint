@@ -217,6 +217,23 @@ function toggleModal(element){
 }//toggleModal
 
 /**
+ * Toggle Lightbox
+ * @param element to be shown
+**/
+function toggleLightbox(element){
+
+	$('body').toggleClass('overflow-hidden');
+
+	if ( undefined === element ){
+		$('.image-modal').addClass('hide');
+		return;
+	}
+
+	$(element).toggleClass('hide');
+
+}//toggleModal
+
+/**
  * Toggle any element
  * @param element to be shown
 **/
