@@ -836,10 +836,10 @@ if ( ! function_exists( 'woocommerce_variable_add_to_cart' ) ) {
 
 		// Load the template
 		wc_get_template( 'single-product/add-to-cart/variable.php', array(
-				'available_variations'  => $product->get_available_variations(),
-				'attributes'   			=> $product->get_variation_attributes(),
-				'selected_attributes' 	=> $product->get_variation_default_attributes()
-			) );
+			'available_variations'  => $product->get_available_variations(),
+			'attributes'   			=> $product->get_variation_attributes(),
+			'selected_attributes' 	=> $product->get_variation_default_attributes()
+		) );
 	}
 }
 if ( ! function_exists( 'woocommerce_external_add_to_cart' ) ) {
@@ -957,15 +957,6 @@ if ( ! function_exists( 'woocommerce_default_product_tabs' ) ) {
 				'title'    => __( 'Additional Information', 'woocommerce' ),
 				'priority' => 20,
 				'callback' => 'woocommerce_product_additional_information_tab'
-			);
-		}
-
-		// Reviews tab - shows comments
-		if ( comments_open() ) {
-			$tabs['reviews'] = array(
-				'title'    => sprintf( __( 'Reviews (%d)', 'woocommerce' ), $product->get_review_count() ),
-				'priority' => 30,
-				'callback' => 'comments_template'
 			);
 		}
 

@@ -16,7 +16,7 @@ wc_print_notices(); ?>
 <section class="[ my-account ]">
 	<div class="[ wrapper ]">
 		<div class="[ padding-top-bottom--large ][ text-center ]">
-			<h2>My Account</h2>
+			<h2 class="[ no-margin ]">My Account</h2>
 		</div>
 
 		<p class="[ myaccount_user ]">

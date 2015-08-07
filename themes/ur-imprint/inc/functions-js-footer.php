@@ -103,8 +103,17 @@ function footer_scripts(){
 
 				$('.js-btn-designs, .js-btn-products').on('click', function(e){
 					if( $(this).hasClass('active') ) return;
-
 					toggleCatalogueCategory();
+				});
+
+				$('.js-lightbox-opener').on('click', function(e){
+					e.preventDefault();
+					var largeImage = $(this).siblings('.image-modal');
+					toggleLightbox(largeImage);
+				});
+
+				$('.js-lightbox-closer').on('click', function(e){
+					toggleLightbox();
 				});
 
 			<?php endif; ?>

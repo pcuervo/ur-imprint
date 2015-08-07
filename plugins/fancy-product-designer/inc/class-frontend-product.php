@@ -178,7 +178,7 @@ if(!class_exists('FPD_Frontend_Product')) {
 				$source_type = get_post_meta( $product_settings->master_id, 'fpd_source_type', true );
 
 				?>
-				<div id="<?php echo $selector; ?>" class="fpd-container <?php echo $product_settings->get_option('frame_shadow'); echo $modal_box_css; ?>" style="float: <?php echo $product_settings->get_option('designer_floating'); ?>; <?php echo $margin_styles; ?>">
+				<div id="<?php echo $selector; ?>" class="[ fpd-container ][ margin-bottom ][ column xmall-12 medium-6 ]<?php echo $product_settings->get_option('frame_shadow'); echo $modal_box_css; ?>" style="<?php echo $margin_styles; ?>">
 					<?php
 
 					foreach($fancy_content_ids as $fancy_content_id) {

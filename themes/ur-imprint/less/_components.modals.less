@@ -29,15 +29,26 @@
 	margin: 0 auto;
 }
 
-
 /*------------------------------------*\
-    #MEDIUM
+	#MODAL IMAGE
 \*------------------------------------*/
-@media (min-width: @medium) {
 
-	.modal--full .modal-content{
-		width: 50%;
-		margin: 0 auto;
-	}
+.image-modal{
+	width: 100%; height: 100%;
+	background: fade(@primary, 50%);
+	position: fixed; top: 0; left: 0;
+	z-index: @zIndex-6;
+	.transition;
+	overflow: hidden;
+}
 
+.image-modal.hide{
+	top: -100%;
+}
+
+.image-modal img{
+	max-width: 70%; height: auto;
+	background: @light;
+	.center-full;
+	.drop-shadow(0 10px 15px 3px rgba(0,0,0,.4));
 }

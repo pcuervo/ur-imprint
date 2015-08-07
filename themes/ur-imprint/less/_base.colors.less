@@ -76,6 +76,10 @@
 .bg-secondary{
 	background-color: @secondary;
 	color: @light;
+
+	&.bg-opacity--9{
+		background-color: fade(@secondary, 90%);
+	}
 }
 .bg-secondary-hover{ background-color: darken(@secondary, 10%); }
 
