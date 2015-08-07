@@ -55,7 +55,7 @@ add_action('init', function(){
 		wp_insert_post( $page, true );
 	}
 
-	// Create
+	// Checkout
 	if( ! get_page_by_path('checkout') ){
 		$page = array(
 			'post_author' => 1,
