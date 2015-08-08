@@ -14,15 +14,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<tr class="shipping">
-	<th><?php
+<div class="[ shipping ][ row ]">
+	<div class="[ column xmall-6 ]"><?php
 		if ( $show_package_details ) {
 			printf( __( 'Shipping #%d', 'woocommerce' ), $index + 1 );
 		} else {
 			_e( 'Shipping', 'woocommerce' );
 		}
-	?></th>
-	<td>
+	?></div>
+	<div class="[ column xmall-6 ][ text-right ]">
 		<?php if ( ! empty( $available_methods ) ) : ?>
 
 			<?php if ( 1 === count( $available_methods ) ) :
@@ -101,5 +101,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php if ( is_cart() ) : ?>
 			<?php woocommerce_shipping_calculator(); ?>
 		<?php endif; ?>
-	</td>
-</tr>
+	</div>
+</div>
