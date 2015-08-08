@@ -266,7 +266,7 @@ function toggleCatalogueDesigns(){
 	$('.design-filters').removeClass('hidden');
 	$('.designs').removeClass('hidden');
 	console.log('filtering designs...');
-	filterIsotope('.products-isotope-container', '.column', '.product-designs' );
+	filterIsotope('.designs-isotope-container', '.column', '.design-designs' );
 
 }// toggleCatalogueDesigns
 

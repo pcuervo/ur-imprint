@@ -246,13 +246,13 @@ function send_contact_email(){
 	$msg = $_POST['message'];
 
 	$to = $to_email;
-	$subject = $name . ' te ha contactado a través de www.pmi.com.mx: ';
+	$subject = $name . ' sent you a message - UR Imprint ';
 	$headers = 'From: My Name <' . $to_email . '>' . "\r\n";
 	$message = '<html><body>';
-	$message .= '<h3>Datos de contacto</h3>';
-	$message .= '<p>Nombre: '.$name.'</p>';
+	$message .= '<h3>Contact</h3>';
+	$message .= '<p>Name: '.$name.'</p>';
 	$message .= '<p>Email: '. $email . '</p>';
-	if( $msg != '' ) $message .= '<p>Mensaje: '. $msg . '</p>';
+	if( $msg != '' ) $message .= '<p>Message: '. $msg . '</p>';
 	$message .= '</body></html>';
 
 	add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
