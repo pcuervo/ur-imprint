@@ -144,6 +144,13 @@ function footer_scripts(){
 
 			 <?php } ?> // FAQs ARCHIVE
 
+			/*------------------------------------*\
+				#CREATE
+			\*------------------------------------*/
+			<?php if ( is_page( 'create' ) ): ?>
+				runIsotope( '.products-isotope-container', '.column' );
+				filterIsotope('.products-isotope-container', '.column', '.product-filters' );
+			<?php endif; ?>
 
 			/*------------------------------------*\
 				#CONTACT

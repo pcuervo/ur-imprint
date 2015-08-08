@@ -15,7 +15,7 @@
 					<span class="[ padding ][ shown--xlarge ]">&nbsp;</span><br />
 					<span class="[ padding ][ shown--xxlarge ]">&nbsp;</span><br />
 					<h1 class="[ text-shadow ]">Bring your imagination to life</h1>
-					<a href="#" class="[ button button--secondary ]">get started</a>
+					<a href="<?php echo site_url( 'create' ); ?>" class="[ button button--secondary ]">get started</a>
 				</div>
 			</div><!-- wrapper -->
 		</div>
@@ -165,10 +165,10 @@
 					</a>
 				</div>
 			<?php
-			$counter++;
-			if ( $counter == 11 ){
-				$counter = 1;
-			}
+				$counter++;
+				if ( $counter == 11 ){
+					$counter = 1;
+				}
 			endforeach; wp_reset_query(); ?>
 		</div>
 	</section><!-- product-categories -->
