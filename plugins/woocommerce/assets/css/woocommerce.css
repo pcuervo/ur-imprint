@@ -312,10 +312,10 @@ p.demo_store {
 .woocommerce div.product form.cart, .woocommerce div.product p.cart {
 	margin-bottom: 2em;
 }
-.woocommerce div.product form.cart div.quantity {
+/*.woocommerce div.product form.cart div.quantity {
 	float: left;
 	margin: 0 4px 0 0;
-}
+}*/
 .woocommerce div.product form.cart table {
 	border-width: 0 0 1px;
 }
@@ -350,10 +350,10 @@ p.demo_store {
 .woocommerce div.product form.cart .variations td {
 	vertical-align: top;
 }
-.woocommerce div.product form.cart .button {
+/*.woocommerce div.product form.cart .button {
 	vertical-align: middle;
 	float: left;
-}
+}*/
 .woocommerce div.product form.cart .group_table td.label {
 	padding-right: 1em;
 	padding-left: 1em;

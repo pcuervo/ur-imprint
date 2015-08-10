@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-	<section class="[ main-filters ][ margin-bottom ]">
+	<section class="[ single-product ][ margin-bottom ]">
 
 		<?php
 			/**

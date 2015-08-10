@@ -34,6 +34,7 @@ function filterIsotope(container, item, filterSelector){
 	var filters = {};
 
 	$( filterSelector ).on( 'click', '.button-filter-group .button', function() {
+		console.log('filtering');
 		var $this = $(this);
 		// get group key
 		var $buttonGroup = $this.parents('.button-filter-group');

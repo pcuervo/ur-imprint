@@ -87,7 +87,7 @@
 				<div class="[ column xmall-2 large-1 ]">
 					<p class="[ padding-top--small ]">who</p>
 				</div>
-				<div class="[ column xmall-9 large-11 ][ product-filters ][ button-filter-group ]" data-filter-group="product-cat">
+				<div class="[ column xmall-9 large-11 ][ button-filter-group ]" data-filter-group="product-cat">
 					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
 						all
 					</button>
@@ -117,7 +117,7 @@
 				</div><!-- type-filters -->
 
 				<div class="[ column xmall-12 medium-2 large-1  ]">
-					<p class="[ padding-top--small ]">author</p>
+					<p class="[ padding-top--small ]">style</p>
 				</div>
 				<div class="[ column xmall-9 large-11 ][ author-filters ][ button-filter-group ]" data-filter-group="style">
 					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
@@ -207,7 +207,7 @@
 	================================================== -->
 	<section class="[ products ][ products-isotope-container ][ hidden ]">
 		<div class="[ wrapper ]">
-			<div class="[ row ]">
+			<div class="[ row ][ products-isotope-container ]">
 
 				<?php
 				$products_args = array(
