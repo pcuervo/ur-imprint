@@ -6,13 +6,16 @@ html, body{
 	background: @light;
 }
 
-/**
- * These wrappers maintains the scroll and the full-height menu
-**/
 .container {
 	min-height: 100%;
 	background: @light;
 	position: relative;
+}
+
+.main { padding-top: 0;
+
+	@media (min-width: @large){ padding-top: auto; }
+	@media (min-width: @xlarge){ padding-top: auto; }
 }
 
 /**

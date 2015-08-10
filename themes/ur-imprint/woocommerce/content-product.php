@@ -58,7 +58,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 		?>
 
-		<div class="[ card-info ][ absolute ][ bg-secondary bg-opacity--9 ][ padding--small ]">
+		<div class="[ card-info ][ absolute bottom-10 ][ bg-secondary bg-opacity--9 ][ padding--small ]">
 
 			<?php
 				/**

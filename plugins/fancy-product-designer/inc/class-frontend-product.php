@@ -54,7 +54,7 @@ if(!class_exists('FPD_Frontend_Product')) {
 		public function add_to_cart_cat_text( $handler, $product ) {
 
 			if( is_fancy_product( $product->id ) ) {
-				return sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="button product_type_%s">%s</a>',
+				return sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="[ xmall-12 ][ text-center ][ no-margin ][ button button--primary ][ block ] product_type_%s">%s</a>',
 					esc_url( get_permalink($product->id) ),
 					esc_attr( $product->id ),
 					esc_attr( $product->get_sku() ),

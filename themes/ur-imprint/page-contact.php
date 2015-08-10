@@ -39,7 +39,7 @@
 							</fieldset>
 						</form>
 						<div class="[ column xmall-12 large-6 ][ color-light ]">
-							<p class="[ italic ]">You can read our FAQs <a href="<?php echo get_post_type_archive_link( 'faq' ); ?>">here</a> and send us an email at <a href="mailto:<?php echo get_contact_email(); ?>"><?php echo get_contact_email(); ?></a> or give us a call at <a href="tel:<?php echo get_contact_phone(); ?>"><?php echo get_contact_phone(); ?></a></p>
+							<p class="[ italic text-shadow ]">You can read our FAQs <a href="<?php echo get_post_type_archive_link( 'faq' ); ?>">here</a> and send us an email at <a href="mailto:<?php echo get_contact_email(); ?>"><?php echo get_contact_email(); ?></a> or give us a call at <a href="tel:<?php echo get_contact_phone(); ?>"><?php echo get_contact_phone(); ?></a></p>
 						</div>
 					</div>
 				</div><!-- row -->

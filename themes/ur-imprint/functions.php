@@ -269,7 +269,7 @@ function send_contact_email(){
 
 	$message = array(
 		'error'		=> 0,
-		'message'	=> 'Thanks for your message ' . $name . '! We will get back to you shortly.',
+		'message'	=> 'Thanks for your message ' . $name . '! <br /> We will get back to you shortly.',
 	);
 	echo json_encode($message , JSON_FORCE_OBJECT);
 	exit();
@@ -309,7 +309,7 @@ remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wra
 /**
  * Get Product by SKU
  * @param string $sku
- * @return WC_Product 
+ * @return WC_Product
  */
 function get_product_by_sku( $sku ) {
 
