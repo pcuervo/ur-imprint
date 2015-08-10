@@ -42,9 +42,13 @@
 .color-dark{ color: @dark; }
 .color-primary{ color: @primary; }
 .color-secondary{ color: @secondary; }
-.color-danger{ color: @danger; }
+.color-danger, .error{ color: @danger; }
 .color-warning{ color: @warning; }
 .color-success{ color: @success; }
+
+.error{
+	.text-shadow();
+}
 
 /**
  * Backgrounds

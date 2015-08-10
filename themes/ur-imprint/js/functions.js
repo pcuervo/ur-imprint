@@ -134,7 +134,7 @@ function setMainPaddingTop(){
  * @return successHTML
 **/
 function getContactSuccessHTML( message ){
-	return '<h3 class="[ text-center ][ primary ]">' + message + '</h3>';
+	return '<h4 class="[ text-center ][ color-light text-shadow ]">' + message + '</h4>';
 }// getContactSuccessHTML
 
 /**
