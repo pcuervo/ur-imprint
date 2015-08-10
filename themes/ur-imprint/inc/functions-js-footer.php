@@ -74,16 +74,16 @@ function footer_scripts(){
 				 * On load
 				**/
 
-				setMainPaddingTop();
+				//setMainPaddingTop();
 
 				/**
 				 * Triggered events
 				**/
 				$(window).scroll(function(){
-					setMainPaddingTop();
+					//setMainPaddingTop();
 				});
 				$(window).resize(function(){
-					setMainPaddingTop();
+					//setMainPaddingTop();
 				});
 
 			<?php endif; ?>

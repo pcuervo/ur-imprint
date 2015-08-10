@@ -126,7 +126,12 @@ function setContainerPaddingBottom(){
  */
 function setMainPaddingTop(){
 	var headerHeight = getHeaderHeight();
-	$('.main').css('padding-top', headerHeight);
+	var sy = getScrollY();
+	if ( sy >= headerHeight ) {
+		$('.main').css('padding-top', 'initial');
+	} else {
+		$('.main').css('padding-top', headerHeight);
+	}
 }// setMainPaddingTop
 
 /**
@@ -188,13 +193,8 @@ function sendContactEmail( form ){
  * Toggle action buttons
  */
  function toggleActionButtons(){
-	//Get the header height so we can now when
-	//to change the heade state
 	var headerHeight = getHeaderHeight();
-	//Scrolled pixels in Y axis
 	var sy = getScrollY();
-	//Compare the two numbers, when they are the same or less
-	//add fixed class to the header.
 	if ( sy >= headerHeight ) {
 		$('.action-buttons').addClass('opened');
 	} else {
