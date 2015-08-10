@@ -18,16 +18,19 @@ $attributes = $product->get_attributes();
 ?>
 
 <div class="[ product-attributes ]">
-	<?php 
+	<div class="[ row ]">
+		<?php
 		$skip_attributes = array( 'pa_product-type', 'pa_style', 'pa_garment' );
-		foreach ( $attributes as $attribute ) {
-
+		foreach ( $attributes as $attribute ) { ?>
+			<?php
 			if( in_array( $attribute['name'], $skip_attributes ) ) {
 				continue;
 			}
 
-			if ( $attribute['is_taxonomy'] ) {
+			if ( $attribute['is_taxonomy'] ) { ?>
 
+				<div class="[ column xmall-4 ]">
+					<?php
 					echo '<h3>' . wc_attribute_label( $attribute['name'] ) . '</h3>';
 					$values = wc_get_product_terms( $product->id, $attribute['name'], array( 'fields' => 'names' ) );
 
@@ -35,19 +38,15 @@ $attributes = $product->get_attributes();
 						echo '<div>' . $value . '</div>';
 					}
 					// echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
-
-			} else {
+					?>
+				</div>
+			<?php } else {
 
 				// Convert pipes to commas and display values
 				$values = array_map( 'trim', explode( WC_DELIMITER, $attribute['value'] ) );
 				echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
 
 			}
-
-		}
-
-	?>
-<?php
-
-
-
+		} ?>
+	</div><!-- row -->
+</div>
