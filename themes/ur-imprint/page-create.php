@@ -1,14 +1,32 @@
-<?php  
-	get_header(); 
+<?php
+	get_header();
 	echo do_shortcode('[product_page id="71"]');
 ?>
 
 	<!-- =================================================
 	==== PRODUCT FILTERS
 	================================================== -->
-	<section class="[ product-filters ][ bg-primary ][ margin-bottom ][ js-product-filters ]">
-		<div class="[ wrapper ]">
-			<div class="[ row ][ color-light ][ padding-top-bottom ]">
+	<section class="[ product-filters ][ margin-bottom ][ js-product-filters ]">
+		<div class="[ text-center ][ padding-top ]">
+			<h1 class="[ no-margin ]">Create</h1>
+		</div>
+
+		<div class="[ wrapper ][ padding-top-bottom ][ text-center--medium ]">
+			<ol class="[ row ][ italic ][  ]">
+				<li class="[ column xmall-12 medium-4 ]">
+					<p><small>Choose a product and color</small></p>
+				</li><li
+				class="[ column xmall-12 medium-4 ]">
+					<p><small>Click on the “Add layer” button</small></p>
+				</li><li
+				class="[ column xmall-12 medium-4 ]">
+					<p><small>Select from our exclusive designs or upload your own images</small></p>
+				</li>
+			</ol>
+		</div><!-- wrapper -->
+
+		<div class="[ row ][ bg-primary ][ padding-top-bottom ]">
+				<div class="[ wrapper ]">
 
 				<div class="[ column xmall-2 large-1 ]">
 					<p class="[ padding-top--small ]">who</p>
@@ -26,7 +44,7 @@
 					<?php endforeach; ?>
 				</div><!-- product-filters -->
 
-				<div class="[ column xmall-12 medium-2 large-1  ]">
+				<div class="[ column xmall-2 large-1 ]">
 					<p class="[ padding-top--small ]">type</p>
 				</div>
 				<div class="[ column xmall-9 large-11 ][ type-filters ][ button-filter-group ]" data-filter-group="product-type">
@@ -42,7 +60,7 @@
 					<?php endforeach; ?>
 				</div><!-- type-filters -->
 
-				<div class="[ column xmall-12 medium-2 large-1  ]">
+				<div class="[ column xmall-2 large-1 ]">
 					<p class="[ padding-top--small ]">author</p>
 				</div>
 				<div class="[ column xmall-9 large-11 ][ author-filters ][ button-filter-group ]" data-filter-group="style">
@@ -57,10 +75,10 @@
 						</button>
 					<?php endforeach; ?>
 				</div><!-- author-filters -->
-			</div>
-		</div><!-- wrapper -->
+			</div><!-- wrapper -->
+		</div>
 	</section><!-- product-filters -->
-	
+
 	<!-- =================================================
 	==== PRODUCTS
 	================================================== -->
@@ -89,8 +107,10 @@
 					<div class="[ card ][ column xmall-6 medium-4 xlarge-3 ][ margin-bottom--small ] <?php echo $product_filter_classes; ?>]">
 						<a class="[ relative ][ block ]" href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail( 'thumbnail', array( 'class' => '[ image-responsive ]' ) ); ?>
-							<div class="[ card-name ][ absolute ][ bg-secondary bg-opacity--9 ][ padding--small ]">
-								<p class="[ light ]"><?php the_title(); ?></p>
+							<div class="[ card-info ][ absolute ][ bg-secondary bg-opacity--9 ][ padding--small ]">
+								<div class="[ card-name ]">
+									<p class="[ light ]"><?php the_title(); ?></p>
+								</div>
 							</div>
 						</a>
 					</div>

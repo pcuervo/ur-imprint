@@ -101,7 +101,7 @@ function getHeaderHeight(){
  * Get footer's height
  */
 function getFooterHeight(){
-	return $('footer').height();
+	return $('footer').outerHeight();
 }// getFooterHeight
 
 /**
@@ -112,11 +112,13 @@ function getScrollY() {
 }// getScrollY
 
 /**
- * Get the scrolled pixels in Y axis
+ * Set conainer's padding bottom
  */
-function getScrollY() {
-	return $(window).scrollTop();
-}// getScrollY
+function setContainerPaddingBottom(){
+	var footerHeight = getFooterHeight();
+	footerHeight = footerHeight;
+	$('.main').css('padding-bottom', footerHeight );
+}// setContainerPaddingBottom
 
 /**
  * Set main's padding top
@@ -221,15 +223,18 @@ function toggleModal(element){
  * @param element to be shown
 **/
 function toggleLightbox(element){
+	console.log(element);
 
 	$('body').toggleClass('overflow-hidden');
 
 	if ( undefined === element ){
 		$('.image-modal').addClass('hide');
+		$('.action-buttons').removeClass('opened');
 		return;
 	}
 
 	$(element).toggleClass('hide');
+	$('.action-buttons').addClass('opened');
 
 }//toggleModal
 

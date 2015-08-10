@@ -153,7 +153,8 @@
 			$all_categories = get_categories( $args );
 			foreach ( $all_categories as $cat ) :
 				$cat_thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
-				$cat_image_url = wp_get_attachment_url( $cat_thumbnail_id ); ?>
+				$cat_image_url = wp_get_attachment_image_src( $cat_thumbnail_id, 'medium' );
+				$cat_image_url = $cat_image_url[0] ?>
 				<div class="[ span xmall-12 medium-4 ][ bg-secondary bg-secondary--darken-<?php echo $counter; ?>0 ]">
 					<a class="[ clearfix ][ block ]" href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
 						<div class="[ xmall-4 medium-12 ][ inline-block align-middle ]" href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
