@@ -175,7 +175,7 @@
 				?>
 					<div class="[ card ][ column xmall-6 medium-4 xlarge-3 ][ margin-bottom--small ][ <?php echo $design_filter_classes; ?>]">
 						<a class="[ relative ][ block ][ js-lightbox-opener ]" href="#">
-							<?php the_post_thumbnail( 'thumbnail', array( 'class' => '[ image-responsive ]' ) ); ?>
+							<?php the_post_thumbnail( 'medium', array( 'class' => '[ image-responsive ]' ) ); ?>
 							<div class="[ card-info ][ absolute ][ bg-secondary bg-opacity--9 ][ padding--small ]">
 								<div class="[ card-name ]">
 									<p class="[ light ]"><?php the_title(); ?></p>
@@ -229,7 +229,7 @@
 				?>
 					<div class="[ card ][ column xmall-6 medium-4 xlarge-3 ][ margin-bottom--small ] <?php echo $product_filter_classes; ?>]">
 						<a class="[ relative ][ block ]" href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail( 'thumbnail', array( 'class' => '[ image-responsive ]' ) ); ?>
+							<?php the_post_thumbnail( 'medium', array( 'class' => '[ image-responsive ]' ) ); ?>
 							<div class="[ card-info ][ absolute ][ bg-secondary bg-opacity--9 ][ padding--small ]">
 								<div class="[ card-name ]">
 									<p class="[ light ]"><?php the_title(); ?></p>
