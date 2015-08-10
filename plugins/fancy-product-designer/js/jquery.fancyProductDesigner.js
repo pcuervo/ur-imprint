@@ -5127,8 +5127,8 @@ myUploadedImgCat: "Your uploaded images"</pre>
 		customImageParameters: { //additional parameters for uploaded images, will merge with the elementParameters
 			minW: 100, //the minimum upload size width
 			minH: 100, //the minimum upload size height
-			maxW: 1500, //the maximum upload size width
-			maxH: 1500, //the maximum upload size height
+			maxW: 3500, //the maximum upload size width
+			maxH: 3500, //the maximum upload size height
 			resizeToW: 300, //resizes the uploaded image to this width, when width is larger than height
 			resizeToH: 300 //resizes the uploaded image to this height, when height is larger than width
 		},
