@@ -260,7 +260,7 @@ if( !class_exists('FPD_Settings_Default_Element_Options') ) {
 						'description' 		=> __( 'The maximum image width for uploaded designs from the customers.', 'radykal' ),
 						'id' 		=> 'fpd_uploaded_designs_parameter_maxW',
 						'css' 		=> 'width:70px;',
-						'default'	=> '1000',
+						'default'	=> '7000',
 						'type' 		=> 'number',
 						'custom_attributes' => array(
 							'min' 	=> 0,
@@ -273,7 +273,7 @@ if( !class_exists('FPD_Settings_Default_Element_Options') ) {
 						'description' 		=> __( 'The maximum image height for uploaded designs from the customers.', 'radykal' ),
 						'id' 		=> 'fpd_uploaded_designs_parameter_maxH',
 						'css' 		=> 'width:70px;',
-						'default'	=> '1000',
+						'default'	=> '7000',
 						'type' 		=> 'number',
 						'custom_attributes' => array(
 							'min' 	=> 0,

@@ -4972,8 +4972,8 @@ filter: false,
 filters: [] //'grayscale', 'sepia', 'sepia2'</pre>
 	 * @property {object}  [customImageParameters] - The default parameters for all custom added images.<pre>minW: 100, //the minimum upload size width
 minH: 100, //the minimum upload size height
-maxW: 1500, //the maximum upload size width
-maxH: 1500, //the maximum upload size height
+maxW: 1000, //the maximum upload size width
+maxH: 1000, //the maximum upload size height
 resizeToW: 300, //resizes the uploaded image to this width, when width is larger than height
 resizeToH: 300 //resizes the uploaded image to this height, when height is larger than width</pre>
 	 * @property {object}  [customTextParameters={}] - The default parameters for all custom added text elements.
