@@ -1,14 +1,15 @@
 .card{
+	position: relative;
 	overflow: hidden;
 }
-@media (min-width: @large){
+@media (min-width: @xlarge){
 	.card:hover{
-		.card-name{ bottom: 10px; }
+		.card-info{ bottom: 10px; }
 	}
 }
 
-.card-name{
+.card-info{
 	right: 10px; bottom: 10px; left: 10px;
 	.transition;
-	@media (min-width: @large){ bottom: -50px; }
+	@media (min-width: @xlarge){ bottom: -50px; }
 }

@@ -21,6 +21,7 @@ function footer_scripts(){
 
 			imgToSvg();
 			toggleHeader();
+			setContainerPaddingBottom();
 
 			/**
 			 * Triggered events
@@ -28,6 +29,11 @@ function footer_scripts(){
 
 			$(window).scroll(function(){
 				toggleHeader();
+				setContainerPaddingBottom();
+			});
+
+			$(window).resize(function(){
+				setContainerPaddingBottom();
 			});
 
 			$('.js-modal-opener').on('click', function(e){

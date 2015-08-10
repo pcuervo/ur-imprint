@@ -1,4 +1,4 @@
-<?php get_header(); ?>
++<?php get_header(); ?>
 
 	<!-- =================================================
 	==== MAIN FILTERS
@@ -142,9 +142,25 @@
 	================================================== -->
 	<section class="[ designs ]">
 		<div class="[ wrapper ]">
-			<div class="[ margin-bottom ]">
-				<p class="[ italic lead-text ]">To use the design you like go to <a href="<?php site_url('create'); ?>">Create</a> and select the design you want clicking in blah</p>
-			</div>
+			<div class="[ padding-top-bottom ][ text-center--medium ]">
+				<p class="[ margin-bottom ]">Do you want to print one of these designs? It’s very easy:</p>
+				<p></p>
+				<div class="[ row ][ italic ][  ]">
+					<div class="[ column xmall-12 medium-3 ][ margin-bottom--small ]">
+						<p><small>Go to “Products” and choose the product of your choice</small></p>
+					</div><div
+					class="[ column xmall-12 medium-3 ][ margin-bottom--small ]">
+						<p><small>Press the “Customize” button on the selected product</small></p>
+					</div><div
+					class="[ column xmall-12 medium-3 ][ margin-bottom--small ]">
+						<p><small>Once you are on the product designer, click the “Add layer” button</small></p>
+					</div>
+					<div
+					class="[ column xmall-12 medium-3 ][ margin-bottom--small ]">
+						<p><small>Click on “Choose from gallery” option and select the art you would like to use</small></p>
+					</div>
+				</div>
+			</div><!-- padding-top-bottom -->
 			<div class="[ row ][ designs-isotope-container ]">
 
 				<?php
@@ -160,8 +176,10 @@
 					<div class="[ card ][ column xmall-6 medium-4 xlarge-3 ][ margin-bottom--small ][ <?php echo $design_filter_classes; ?>]">
 						<a class="[ relative ][ block ][ js-lightbox-opener ]" href="#">
 							<?php the_post_thumbnail( 'thumbnail', array( 'class' => '[ image-responsive ]' ) ); ?>
-							<div class="[ card-name ][ absolute ][ bg-secondary bg-opacity--9 ][ padding--small ]">
-								<p class="[ light ]"><?php the_title(); ?></p>
+							<div class="[ card-info ][ absolute ][ bg-secondary bg-opacity--9 ][ padding--small ]">
+								<div class="[ card-name ]">
+									<p class="[ light ]"><?php the_title(); ?></p>
+								</div><!-- card-name -->
 							</div>
 						</a>
 						<div class="[ image-modal ][ hide ]">
@@ -169,7 +187,7 @@
 								<?php the_post_thumbnail('large'); ?>
 							</div>
 							<artcile class="[ initial ]">
-								<div class="[ action-buttons action-buttons--right ][ always-opened ]">
+								<div class="[ action-buttons action-buttons--right ]">
 									<a href="#" class="[ button button--secondary button--circle ][ border border--light border--large ][ js-lightbox-closer ]" data-modal="nav">
 										<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/close.svg" alt="close">
 									</a>
@@ -212,8 +230,10 @@
 					<div class="[ card ][ column xmall-6 medium-4 xlarge-3 ][ margin-bottom--small ] <?php echo $product_filter_classes; ?>]">
 						<a class="[ relative ][ block ]" href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail( 'thumbnail', array( 'class' => '[ image-responsive ]' ) ); ?>
-							<div class="[ card-name ][ absolute ][ bg-secondary bg-opacity--9 ][ padding--small ]">
-								<p class="[ light ]"><?php the_title(); ?></p>
+							<div class="[ card-info ][ absolute ][ bg-secondary bg-opacity--9 ][ padding--small ]">
+								<div class="[ card-name ]">
+									<p class="[ light ]"><?php the_title(); ?></p>
+								</div><!-- card-name -->
 							</div>
 						</a>
 					</div>

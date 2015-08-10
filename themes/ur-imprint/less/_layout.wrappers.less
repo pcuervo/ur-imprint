@@ -13,7 +13,6 @@ html, body{
 	min-height: 100%;
 	background: @light;
 	position: relative;
-
 }
 
 /**
@@ -24,7 +23,9 @@ html, body{
 	margin-right: auto; margin-left: auto;
 }
 
-.wrapper--large{
-	width: 90%; max-width: 1280px; min-width: 220px;
-	margin-right: auto; margin-left: auto;
+@media (min-width: @large){
+	.wrapper--large{
+		width: 90%; max-width: 1280px; min-width: 220px;
+		margin-right: auto; margin-left: auto;
+	}
 }
