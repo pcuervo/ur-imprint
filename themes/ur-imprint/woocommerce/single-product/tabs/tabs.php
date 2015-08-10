@@ -26,7 +26,7 @@ if ( ! empty( $tabs ) ) : ?>
 			<artcile class="[ row ]">
 				<?php foreach ( $tabs as $key => $tab ) : ?>
 
-					<div class="[ column xmall-12 medium-6 ][ margin-bottom ]" id="tab-<?php echo esc_attr( $key ); ?>">
+					<div class="[ column xmall-12 large-6 ][ margin-bottom ]" id="tab-<?php echo esc_attr( $key ); ?>">
 						<?php call_user_func( $tab['callback'], $key, $tab ); ?>
 					</div>
 

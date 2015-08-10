@@ -87,7 +87,7 @@
 				<div class="[ column xmall-2 large-1 ]">
 					<p class="[ padding-top--small ]">who</p>
 				</div>
-				<div class="[ column xmall-9 large-11 ][ product-filters ][ button-filter-group ]" data-filter-group="product-cat">
+				<div class="[ column xmall-9 large-11 ][ button-filter-group ]" data-filter-group="product-cat">
 					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
 						all
 					</button>
@@ -117,7 +117,7 @@
 				</div><!-- type-filters -->
 
 				<div class="[ column xmall-12 medium-2 large-1  ]">
-					<p class="[ padding-top--small ]">author</p>
+					<p class="[ padding-top--small ]">style</p>
 				</div>
 				<div class="[ column xmall-9 large-11 ][ author-filters ][ button-filter-group ]" data-filter-group="style">
 					<button class="[ button button--light button--hollow active ][ margin-bottom--small ][ lowercase ]" data-filter="">
@@ -175,7 +175,7 @@
 				?>
 					<div class="[ card ][ column xmall-6 medium-4 xlarge-3 ][ margin-bottom--small ][ <?php echo $design_filter_classes; ?>]">
 						<a class="[ relative ][ block ][ js-lightbox-opener ]" href="#">
-							<?php the_post_thumbnail( 'thumbnail', array( 'class' => '[ image-responsive ]' ) ); ?>
+							<?php the_post_thumbnail( 'medium', array( 'class' => '[ image-responsive ]' ) ); ?>
 							<div class="[ card-info ][ absolute ][ bg-secondary bg-opacity--9 ][ padding--small ]">
 								<div class="[ card-name ]">
 									<p class="[ light ]"><?php the_title(); ?></p>
@@ -207,7 +207,7 @@
 	================================================== -->
 	<section class="[ products ][ products-isotope-container ][ hidden ]">
 		<div class="[ wrapper ]">
-			<div class="[ row ]">
+			<div class="[ row ][ products-isotope-container ]">
 
 				<?php
 				$products_args = array(
@@ -229,7 +229,7 @@
 				?>
 					<div class="[ card ][ column xmall-6 medium-4 xlarge-3 ][ margin-bottom--small ] <?php echo $product_filter_classes; ?>]">
 						<a class="[ relative ][ block ]" href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail( 'thumbnail', array( 'class' => '[ image-responsive ]' ) ); ?>
+							<?php the_post_thumbnail( 'medium', array( 'class' => '[ image-responsive ]' ) ); ?>
 							<div class="[ card-info ][ absolute ][ bg-secondary bg-opacity--9 ][ padding--small ]">
 								<div class="[ card-name ]">
 									<p class="[ light ]"><?php the_title(); ?></p>

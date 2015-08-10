@@ -80,7 +80,7 @@
 							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ][ <?php echo is_page( 'catalogue' ) ? 'active' : ''; ?> ]">Catalogue</a>
 							<a href="<?php echo site_url('contact'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ][ <?php echo is_page( 'contact' ) ? 'active' : ''; ?> ]">Contact</a>
 							<a href="<?php echo site_url('my-account'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ][ <?php echo is_page( 'my-account' ) ? 'active' : ''; ?> ]">
-								<?php echo  is_user_logged_in() ?  'My account' : 'Register / Login'  ?>	
+								<?php echo  is_user_logged_in() ?  'My account' : 'Register / Login'  ?>
 							</a>
 							<?php if( is_user_logged_in() ) : ?>
 								<a href="<?php echo wp_logout_url(); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Logout</a>
@@ -121,4 +121,4 @@
 				</div>
 			</header>
 
-			<div class="[ main ]">
+			<div class="[ main ]<?php echo ( is_home() ? '[ main-home ]' : ''); ?>">
