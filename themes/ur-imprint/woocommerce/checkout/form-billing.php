@@ -15,19 +15,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <section class="[ my-account ]">
-	<div class="[ wrapper ]">
+	<!-- <div class="[ wrapper ]"> -->
 
-		<div class="woocommerce-billing-fields">
+		<div class="[ woocommerce-billing-fields ]">
 			<?php if ( WC()->cart->ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 
 				<div class="[ padding-top-bottom--large ][ text-center ]">
-					<h2><?php _e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h2>
+					<h2 class="[ no-margin ]"><?php _e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h2>
 				</div>
 
 			<?php else : ?>
 
 				<div class="[ padding-top-bottom--large ][ text-center ]">
-					<h2><?php _e( 'Billing Details', 'woocommerce' ); ?></h2>
+					<h2 class="[ no-margin ]"><?php _e( 'Billing Details', 'woocommerce' ); ?></h2>
 				</div>
 
 			<?php endif; ?>
@@ -76,5 +76,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<?php endif; ?>
 		</div>
-	</div>
+	<!-- </div> -->
 </section>
