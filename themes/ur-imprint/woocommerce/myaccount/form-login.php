@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
-		<artcile id="customer_login" class="">
+		<article id="customer_login" class="">
 
 	<?php endif; ?>
 			<div class="[ padding-top-bottom--large ][ text-center ]">
@@ -59,20 +59,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</fieldset>
 
 						<p class="[ lost_password ][ text-center ]">
-							<small><a class="[ color-light ]" href="<?php echo esc_url( wc_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'woocommerce' ); ?></small></a>
+							<small><a class="[ color-light ]" href="<?php echo esc_url( wc_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'woocommerce' ); ?></a></small>
 						</p>
 
 						<?php do_action( 'woocommerce_login_form_end' ); ?>
-
 					</form>
 				</div><!-- wrapper -->
 			</div><!-- bg-primary -->
 
 	<?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
-		</artcile>
+		</article>
 
-		<artcile class="[]">
+		<article class="[]">
 			<div class="[ padding-top-bottom--large ][ text-center ]">
 				<h2 class="[ no-margin ]"><?php _e( 'Register', 'woocommerce' ); ?></h2>
 			</div>
@@ -126,9 +125,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</form>
 				</div>
 			</div>
-		</artcile>
-
-	</div>
+		</article>
 	<?php endif; ?>
 
 	<?php do_action( 'woocommerce_after_customer_login_form' ); ?>
