@@ -22,7 +22,7 @@
 									<?php echo  is_user_logged_in() ?  'My account' : 'Register / Login'  ?>
 								</a><br/>
 								<?php if( is_user_logged_in() ) : ?>
-									<a href="<?php echo wp_logout_url(); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Logout</a><br/>
+									<a href="<?php echo wp_logout_url( home_url() ); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Logout</a><br/>
 								<?php endif ?><br />
 								<a href="<?php echo site_url('my-cart'); ?>" class="[ button button--ink button--light ][ inline-block align-middle ][ <?php echo is_page( 'my-cart' ) ? 'active' : ''; ?> ]">
 									<img class="[ svg icon icon--medium ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">
