@@ -31,7 +31,7 @@
 			<div class="[ padding-top-bottom--large ]">
 				<div class="[ row ][ xmall-12 medium-10 large-10 ][ center ]">
 					<div class="[ margin-bottom ][ xmall-12 large-6 ][ relative ][ inline-block align-middle ]">
-						<video id="video" class="[ xmall-12 ]">
+						<video poster="<?php echo THEMEPATH; ?>videos/poster.jpg" id="video" class="[ xmall-12 ]">
 							<source src="<?php echo THEMEPATH; ?>videos/video1.webm" type="video/webm">
 							<source src="<?php echo THEMEPATH; ?>videos/video1.ogv" type="video/ogv">
 							<source src="<?php echo THEMEPATH; ?>videos/video1.mp4" type="video/mp4">
@@ -108,7 +108,7 @@
 	================================================== -->
 	<section class="[ characteristics ][ bg-primary ]">
 		<div class="[ wrapper--large ]">
-			<div class="[ row ][ text-center ]">
+			<div class="[ clearfix ][ text-center ]">
 				<article class="[ square ][ bg-primary--darken-10 ]">
 					<div class="[ square-content ][ color-light ]">
 						<img class="[ svg icon icon--large ][ center ][ margin-bottom--small ]" src="<?php echo THEMEPATH; ?>icons/badge.svg" alt="menu">
@@ -189,18 +189,32 @@
 		<section class="[ testimonials ][ bg-primary ][ color-light ]">
 			<div class="[ padding-top-bottom--large ]">
 				<div class="[ wrapper ]">
-					<?php
-					while ( $testimonials_query->have_posts() ) : $testimonials_query->the_post();
-						$company = get_post_meta($post->ID, '_company_meta', true);
-					?>
-						<div class="[ xmall-12 medium-8 large-6 ][ center ][ padding-top-bottom--large ]">
-							<blockquote class="[ margin-bottom ]"><?php echo $post->post_content; ?></blockquote>
-							<div class="[ text-right ]">
-								<p><strong><?php echo $post->post_title; ?></strong>,<br />
-								<?php echo $company; ?></p>
+					<div class="[ cycle-slideshow ]"
+						data-cycle-fx="scrollHorz"
+						data-cycle-pause-on-hover="true"
+						data-cycle-timeout="4000"
+						data-cycle-speed="650"
+						data-cycle-slides="> div"
+						data-cycle-swipe="true"
+						data-cycle-center-horz="true"
+						data-cycle-center-vert="true"
+						data-cycle-auto-height="calc"
+					>
+						<?php
+						while ( $testimonials_query->have_posts() ) : $testimonials_query->the_post();
+							$company = get_post_meta($post->ID, '_company_meta', true);
+						?>
+							<div class="[ xmall-12 medium-8 large-6 ][ padding-top-bottom--large ]">
+								<div class="[ xmall-12 ]">
+									<blockquote class="[ margin-bottom ]"><?php echo $post->post_content; ?></blockquote>
+									<div class="[ text-right ]">
+										<p><strong><?php echo $post->post_title; ?></strong>,<br />
+										<?php echo $company; ?></p>
+									</div>
+								</div>
 							</div>
-						</div>
-					<?php endwhile; ?>
+						<?php endwhile; ?>
+					</div>
 				</div>
 			</div>
 		</section><!-- testimonials -->

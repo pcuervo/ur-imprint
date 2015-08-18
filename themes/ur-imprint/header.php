@@ -69,12 +69,12 @@
 			================================================== -->
 			<header class="[ xmall-12 ][ shown--xlarge ][ padding-top-bottom--small ]<?php echo ( is_home() ? '' : '[ drop-shadow ]'); ?>">
 				<div class="[ wrapper ]">
-					<div class="[ xmall-2 ][ inline-block align-middle ][ menu__item ]">
+					<div class="[ xmall-1 ][ inline-block align-middle ][ menu__item ]">
 						<div class="[ bg-image-placeholder__wrapper <?php echo ( is_home() ? 'bg-image-placeholder__wrapper__logo--white' : 'bg-image-placeholder__wrapper__logo'); ?> ]">
 							<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="<?php echo site_url(); ?>"></a>
 						</div>
 					</div><div
-					class="[ xmall-10 ][ inline-block align-middle ][ text-center ]">
+					class="[ xmall-11 ][ inline-block align-middle ][ text-center ]">
 						<nav class="[ text-right ]">
 							<a href="<?php echo site_url('create') ?>" class="[ button button--hollow <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ][ <?php echo is_page( 'create' ) ? 'active' : ''; ?> ]">Create</a>
 							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ][ <?php echo is_page( 'catalogue' ) ? 'active' : ''; ?> ]">Catalogue</a>
@@ -97,12 +97,12 @@
 			================================================== -->
 			<header class="[ xmall-12 ][ shown--xlarge ][ padding-top-bottom--small ][ drop-shadow ][ scrolled ][ hide ]">
 				<div class="[ wrapper ]">
-					<div class="[ xmall-2 ][ inline-block align-middle ][ menu__item ]">
+					<div class="[ xmall-1 ][ inline-block align-middle ][ menu__item ]">
 						<div class="[ bg-image-placeholder__wrapper bg-image-placeholder__wrapper__logo ]">
 							<a class="[ bg-image-placeholder bg-image-placeholder__logo ]" href="<?php echo site_url(); ?>"></a>
 						</div>
 					</div><div
-					class="[ xmall-10 ][ inline-block align-middle ][ text-center ]">
+					class="[ xmall-11 ][ inline-block align-middle ][ text-center ]">
 						<nav class="[ text-right ]">
 							<a href="<?php echo site_url('create') ?>" class="[ button button--hollow button--primary ][ inline-block align-middle ][ <?php echo is_page( 'create' ) ? 'active' : ''; ?> ]">Create</a>
 							<a href="<?php echo site_url('catalogue'); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ][ <?php echo is_page( 'catalogue' ) ? 'active' : ''; ?> ]">Catalogue</a>

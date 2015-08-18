@@ -48,14 +48,17 @@
 							<div class="[ column xmall-6 medium-3 ][ margin-bottom ]">
 								<h3>Payments</h3>
 								<div class="[ row ]">
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-3 medium-6 large-3 ]">
 										<img class="[ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/visa.svg" alt="visa">
 									</div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-3 medium-6 large-3 ]">
 										<img class="[ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/mastercard.svg" alt="mastercard">
 									</div>
-									<div class="[ column xmall-4 ]">
+									<div class="[ column xmall-3 medium-6 large-3 ]">
 										<img class="[ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/paypal.svg" alt="paypal">
+									</div>
+									<div class="[ column xmall-3 medium-6 large-3 ]">
+										<img class="[ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/amex.svg" alt="paypal">
 									</div>
 								</div>
 							</div>
@@ -85,8 +88,8 @@
 						</div>
 						<div class="[ text-center ]">
 							<p>© Copyright <?php echo date('Y'); ?> UR Imprint Design Studio and Designs for Business</p>
-							<p class="[ no-margin ]"><a href="#">Privacy Policy</a></p>
-							<p class="[ no-margin ]"><a href="#">Terms and conditions</a></p>
+							<p class="[ no-margin ]"><a target="_blank" href="<?php echo THEMEPATH; ?>pdf/Privacypolicy.pdf">Privacy Policy</a></p>
+							<p class="[ no-margin ]"><a target="_blank" href="<?php echo THEMEPATH; ?>pdf/Termsofservice.pdf">Terms and conditions</a></p>
 						</div>
 					</div><!-- padding-top-bottom -->
 				</div><!-- wrapper -->
