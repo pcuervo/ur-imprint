@@ -83,7 +83,7 @@
 								<?php echo  is_user_logged_in() ?  'My account' : 'Register / Login'  ?>
 							</a>
 							<?php if( is_user_logged_in() ) : ?>
-								<a href="<?php echo wp_logout_url(); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Logout</a>
+								<a href="<?php echo wp_logout_url( home_url() ); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ]">Logout</a>
 							<?php endif ?>
 							<a href="<?php echo site_url('my-cart'); ?>" class="[ button button--ink <?php echo ( is_home() ? 'button--light' : 'button--primary'); ?> ][ inline-block align-middle ][ <?php echo is_page( 'my-cart' ) ? 'active' : ''; ?> ]">
 								<img class="[ svg icon icon--small ][ <?php echo ( is_home() ? 'color-light' : 'color-primary'); ?> ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">
@@ -111,7 +111,7 @@
 								<?php echo  is_user_logged_in() ?  'My account' : 'Register / Login'  ?>
 							</a>
 							<?php if( is_user_logged_in() ) : ?>
-								<a href="<?php echo wp_logout_url(); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Logout</a>
+								<a href="<?php echo wp_logout_url( home_url() ); ?>" class="[ button button--ink button--primary ][ inline-block align-middle ]">Logout</a>
 							<?php endif; ?>
 							<a href="<?php echo site_url('my-cart'); ?>" class="[ button button--ink ][ inline-block align-middle ][ <?php echo is_page( 'catalogue' ) ? 'active' : ''; ?> ]">
 								<img class="[ svg icon icon--small ][ color-primary ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">

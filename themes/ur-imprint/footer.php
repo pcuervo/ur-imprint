@@ -22,7 +22,7 @@
 									<?php echo  is_user_logged_in() ?  'My account' : 'Register / Login'  ?>
 								</a><br/>
 								<?php if( is_user_logged_in() ) : ?>
-									<a href="<?php echo wp_logout_url(); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Logout</a><br/>
+									<a href="<?php echo wp_logout_url( home_url() ); ?>" class="[ button button--medium button--ink button--light ][ padding ]">Logout</a><br/>
 								<?php endif ?><br />
 								<a href="<?php echo site_url('my-cart'); ?>" class="[ button button--ink button--light ][ inline-block align-middle ][ <?php echo is_page( 'my-cart' ) ? 'active' : ''; ?> ]">
 									<img class="[ svg icon icon--medium ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/cart.svg" alt="cart">
@@ -86,7 +86,7 @@
 						<div class="[ text-center ]">
 							<p>© Copyright <?php echo date('Y'); ?> UR Imprint Design Studio and Designs for Business</p>
 							<p class="[ no-margin ]"><a href="#">Privacy Policy</a></p>
-							<p class="[ no-margin ]"><a href="#">Terms and conditions</a></p>
+							<p class="[ no-margin ]"><a href="<?php echo THEMEPATH; ?>docs/term_of_service.pdf" target="_blank">Terms of service</a></p>
 						</div>
 					</div><!-- padding-top-bottom -->
 				</div><!-- wrapper -->
