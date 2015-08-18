@@ -38,38 +38,41 @@ $col = 1;
 <p></p>
 
 <?php if ( ! wc_ship_to_billing_address_only() && get_option( 'woocommerce_calc_shipping' ) !== 'no' ) echo '<div class="[ addresses ]">'; ?>
+	<div class="[ row ]">
 
-<?php foreach ( $get_addresses as $name => $title ) : ?>
+		<?php foreach ( $get_addresses as $name => $title ) : ?>
 
-	<div class="[ address ][ margin-bottom ]">
-		<div class="[ title ]">
-			<h3 class="[ text-center ]"><?php echo $title; ?></h3>
-			<a href="<?php echo wc_get_endpoint_url( 'edit-address', $name ); ?>" class="[ edit ]"><?php _e( 'Edit', 'woocommerce' ); ?></a>
-		</div>
-		<address>
-			<?php
-				$address = apply_filters( 'woocommerce_my_account_my_address_formatted_address', array(
-					'first_name'  => get_user_meta( $customer_id, $name . '_first_name', true ),
-					'last_name'   => get_user_meta( $customer_id, $name . '_last_name', true ),
-					'company'     => get_user_meta( $customer_id, $name . '_company', true ),
-					'address_1'   => get_user_meta( $customer_id, $name . '_address_1', true ),
-					'address_2'   => get_user_meta( $customer_id, $name . '_address_2', true ),
-					'city'        => get_user_meta( $customer_id, $name . '_city', true ),
-					'state'       => get_user_meta( $customer_id, $name . '_state', true ),
-					'postcode'    => get_user_meta( $customer_id, $name . '_postcode', true ),
-					'country'     => get_user_meta( $customer_id, $name . '_country', true )
-				), $customer_id, $name );
+			<div class="[ address ][ margin-bottom ][ column xmall-6 ]">
+				<div class="[ title ]">
+					<h3 class="[ text-center ]"><?php echo $title; ?></h3>
+					<a href="<?php echo wc_get_endpoint_url( 'edit-address', $name ); ?>" class="[ edit ]"><?php _e( 'Edit', 'woocommerce' ); ?></a>
+				</div>
+				<address>
+					<?php
+						$address = apply_filters( 'woocommerce_my_account_my_address_formatted_address', array(
+							'first_name'  => get_user_meta( $customer_id, $name . '_first_name', true ),
+							'last_name'   => get_user_meta( $customer_id, $name . '_last_name', true ),
+							'company'     => get_user_meta( $customer_id, $name . '_company', true ),
+							'address_1'   => get_user_meta( $customer_id, $name . '_address_1', true ),
+							'address_2'   => get_user_meta( $customer_id, $name . '_address_2', true ),
+							'city'        => get_user_meta( $customer_id, $name . '_city', true ),
+							'state'       => get_user_meta( $customer_id, $name . '_state', true ),
+							'postcode'    => get_user_meta( $customer_id, $name . '_postcode', true ),
+							'country'     => get_user_meta( $customer_id, $name . '_country', true )
+						), $customer_id, $name );
 
-				$formatted_address = WC()->countries->get_formatted_address( $address );
+						$formatted_address = WC()->countries->get_formatted_address( $address );
 
-				if ( ! $formatted_address )
-					_e( 'You have not set up this type of address yet.', 'woocommerce' );
-				else
-					echo $formatted_address;
-			?>
-		</address>
+						if ( ! $formatted_address )
+							_e( 'You have not set up this type of address yet.', 'woocommerce' );
+						else
+							echo $formatted_address;
+					?>
+				</address>
+			</div>
+
+		<?php endforeach; ?>
+
 	</div>
-
-<?php endforeach; ?>
 
 <?php if ( ! wc_ship_to_billing_address_only() && get_option( 'woocommerce_calc_shipping' ) !== 'no' ) echo '</div>'; ?>

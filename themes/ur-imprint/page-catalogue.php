@@ -145,21 +145,20 @@
 			<div class="[ padding-top-bottom ][ text-center--medium ]">
 				<p class="[ margin-bottom ]">Do you want to print one of these designs? It’s very easy:</p>
 				<p></p>
-				<div class="[ row ][ italic ][  ]">
-					<div class="[ column xmall-12 medium-3 ][ margin-bottom--small ]">
+				<ol class="[ row ][ italic ][  ]">
+					<li class="[ column xmall-12 medium-3 ]">
 						<p><small>Go to “Products” and choose the product of your choice</small></p>
-					</div><div
-					class="[ column xmall-12 medium-3 ][ margin-bottom--small ]">
+					</li><li
+					class="[ column xmall-12 medium-3 ]">
 						<p><small>Press the “Customize” button on the selected product</small></p>
-					</div><div
-					class="[ column xmall-12 medium-3 ][ margin-bottom--small ]">
+					</li><li
+					class="[ column xmall-12 medium-3 ]">
 						<p><small>Once you are on the product designer, click the “Add layer” button</small></p>
-					</div>
-					<div
-					class="[ column xmall-12 medium-3 ][ margin-bottom--small ]">
+					</li><li
+					class="[ column xmall-12 medium-3 ]">
 						<p><small>Click on “Choose from gallery” option and select the art you would like to use</small></p>
-					</div>
-				</div>
+					</li>
+				</ol>
 			</div><!-- padding-top-bottom -->
 			<div class="[ row ][ designs-isotope-container ]">
 

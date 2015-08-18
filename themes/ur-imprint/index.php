@@ -31,7 +31,7 @@
 			<div class="[ padding-top-bottom--large ]">
 				<div class="[ row ][ xmall-12 medium-10 large-10 ][ center ]">
 					<div class="[ margin-bottom ][ xmall-12 large-6 ][ relative ][ inline-block align-middle ]">
-						<video poster="<?php echo THEMEPATH; ?>videos/poster.jpg" id="video" class="[ xmall-12 ]">
+						<video poster="<?php echo THEMEPATH; ?>videos/poster.jpg" id="video" controls class="[ xmall-12 ]">
 							<source src="<?php echo THEMEPATH; ?>videos/video1.webm" type="video/webm">
 							<source src="<?php echo THEMEPATH; ?>videos/video1.ogv" type="video/ogv">
 							<source src="<?php echo THEMEPATH; ?>videos/video1.mp4" type="video/mp4">
@@ -40,12 +40,6 @@
 								<a href="<?php echo THEMEPATH; ?>videos/video1.mp4">Download</a> the video instead.
 							</p>
 						</video>
-						<!-- Video Controls -->
-						<div id="video-controls" class="[ xmall-12 ][ gradient-transparent-to-black ]">
-							<button class="[ center-full ][ button button--circle button--secondary ][ bordered--large ]" type="button" id="play-pause">
-								<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/play.svg" alt="play">
-							</button>
-						</div>
 					</div><div class="[ shown-large--inline ][ large-1 ][ inline-block align-middle ]">
 						&nbsp;
 					</div><div
