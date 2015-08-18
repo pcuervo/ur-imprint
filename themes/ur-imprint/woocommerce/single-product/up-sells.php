@@ -38,20 +38,21 @@ $woocommerce_loop['columns'] = $columns;
 
 if ( $products->have_posts() ) : ?>
 
-	<div class="upsells products">
+	<div class="[ padding-top-bottom--large ]">
+		<div class="[ wrapper ]">
+			<h2>Available colors</h2>
+			<artcile class="">
+				<?php woocommerce_product_loop_start(); ?>
 
-		<h2>Available colors</h2>
+					<?php while ( $products->have_posts() ) : $products->the_post(); ?>
 
-		<?php woocommerce_product_loop_start(); ?>
+						<?php wc_get_template_part( 'content', 'product' ); ?>
 
-			<?php while ( $products->have_posts() ) : $products->the_post(); ?>
+					<?php endwhile; // end of the loop. ?>
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
-
-			<?php endwhile; // end of the loop. ?>
-
-		<?php woocommerce_product_loop_end(); ?>
-
+				<?php woocommerce_product_loop_end(); ?>
+			</artcile>
+		</div><!-- wrapper -->
 	</div>
 
 <?php endif;
