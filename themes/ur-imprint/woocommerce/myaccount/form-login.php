@@ -24,13 +24,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<article id="customer_login" class="">
 
 	<?php endif; ?>
+
 			<div class="[ padding-top-bottom--large ][ text-center ]">
 				<h2 class="[ no-margin ]"><?php _e( 'Login', 'woocommerce' ); ?></h2>
 			</div>
-
 			<div class="[ bg-primary ][ padding-top-bottom--large ]">
 				<div class="[ wrapper ]">
-					<form method="post" class="[ form ][ xmall-12 medium-8 large-6 ][ center ]">
+					<form method="post" class="[ form ][ xmall-12 large-6 ][ center block ]">
 
 						<?php do_action( 'woocommerce_login_form_start' ); ?>
 

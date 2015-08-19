@@ -23,7 +23,7 @@ if ( ! empty( $tabs ) ) : ?>
 
 	<div class="[ bg-primary ][ padding-top-bottom--large ]">
 		<div class="[ wrapper ]">
-			<artcile class="[ row ]">
+			<article class="[ row ]">
 				<?php foreach ( $tabs as $key => $tab ) : ?>
 
 					<div class="[ column xmall-12 large-6 ][ margin-bottom ]" id="tab-<?php echo esc_attr( $key ); ?>">
@@ -31,7 +31,7 @@ if ( ! empty( $tabs ) ) : ?>
 					</div>
 
 				<?php endforeach; ?>
-			</artcile>
+			</article>
 		</div><!-- wrapper -->
 	</div>
 

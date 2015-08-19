@@ -35,7 +35,7 @@ get_currentuserinfo();
 
 		<div class="[ bg-primary ][ padding-top-bottom--large ]">
 			<div class="[ wrapper ]">
-				<form class="[ form ]" method="post">
+				<form class="[ form ][ xmall-12 large-6 ][ block center ]" method="post">
 
 					<?php do_action( "woocommerce_before_edit_address_form_{$load_address}" ); ?>
 

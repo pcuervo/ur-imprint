@@ -59,8 +59,6 @@ function footer_scripts(){
 				 * On load
 				**/
 
-				runHTML5Video();
-
 			<?php } ?>
 
 

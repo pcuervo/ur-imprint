@@ -30,13 +30,13 @@
 							</nav><!-- categorias -->
 						</article>
 
-						<artcile class="[ initial ]">
+						<article class="[ initial ]">
 							<div class="[ action-buttons action-buttons--right ][ always-opened ]">
 								<a href="#" class="[ button button--secondary button--circle ][ border border--light border--large ][ js-modal-opener ]" data-modal="nav">
 									<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/close.svg" alt="close">
 								</a>
 							</div><!-- action-buttons -->
-						</artcile><!-- initial -->
+						</article><!-- initial -->
 					</div><!-- modal-content -->
 				</div>
 			</section>
@@ -88,7 +88,7 @@
 						</div>
 						<div class="[ text-center ]">
 							<p>© Copyright <?php echo date('Y'); ?> UR Imprint Design Studio and Designs for Business</p>
-							<p class="[ no-margin ]"><a target="_blank" href="<?php echo THEMEPATH; ?>pdf/Privacypolicy.pdf">Privacy Policy</a></p>
+							<p class="[ no-margin ]"><a target="_blank" href="<?php echo THEMEPATH; ?>pdf/PrivacyPolicy.pdf">Privacy Policy</a></p>
 							<p class="[ no-margin ]"><a target="_blank" href="<?php echo THEMEPATH; ?>pdf/Termsofservice.pdf">Terms and conditions</a></p>
 						</div>
 					</div><!-- padding-top-bottom -->

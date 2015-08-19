@@ -185,13 +185,13 @@
 							<div class="[ wrapper ]">
 								<?php the_post_thumbnail('large'); ?>
 							</div>
-							<artcile class="[ initial ]">
+							<article class="[ initial ]">
 								<div class="[ action-buttons action-buttons--right ]">
 									<a href="#" class="[ button button--secondary button--circle ][ border border--light border--large ][ js-lightbox-closer ]" data-modal="nav">
 										<img class="[ svg icon icon--small ][ color-light ]" src="<?php echo THEMEPATH; ?>icons/close.svg" alt="close">
 									</a>
 								</div><!-- action-buttons -->
-							</artcile><!-- initial -->
+							</article><!-- initial -->
 						</div>
 					</div>
 				<?php endwhile; endif; wp_reset_query(); ?>

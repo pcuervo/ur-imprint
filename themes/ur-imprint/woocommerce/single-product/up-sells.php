@@ -41,7 +41,7 @@ if ( $products->have_posts() ) : ?>
 	<div class="[ padding-top-bottom--large ]">
 		<div class="[ wrapper ]">
 			<h2>Available colors</h2>
-			<artcile class="">
+			<article class="">
 				<?php woocommerce_product_loop_start(); ?>
 
 					<?php while ( $products->have_posts() ) : $products->the_post(); ?>
@@ -51,7 +51,7 @@ if ( $products->have_posts() ) : ?>
 					<?php endwhile; // end of the loop. ?>
 
 				<?php woocommerce_product_loop_end(); ?>
-			</artcile>
+			</article>
 		</div><!-- wrapper -->
 	</div>
 

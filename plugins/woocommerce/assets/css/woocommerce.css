@@ -1013,6 +1013,7 @@ p.demo_store {
 	margin: 0;
 	outline: 0;
 	line-height: 1;
+	color: #444;
 }
 .woocommerce form .form-row textarea {
 	height: 4em;

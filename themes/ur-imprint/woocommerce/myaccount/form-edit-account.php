@@ -15,11 +15,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php wc_print_notices(); ?>
 
+<div class="[ padding-top-bottom--large ][ text-center ]">
+	<h2 class="[ no-margin ]">Edit</h2>
+</div>
+
 <section class="[ form-login ]">
 	<div class="[ bg-primary ][ padding-top-bottom--large ]">
 		<div class="[ wrapper ]">
 
-			<form action="" method="post">
+			<form class="[ form ][ xmall-12 large-6 ][ center block ]" action="" method="post">
 
 				<?php do_action( 'woocommerce_edit_account_form_start' ); ?>
 

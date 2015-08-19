@@ -31,7 +31,7 @@ if ( ! $product->is_purchasable() ) {
 
 	<?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
-	<form class="[ cart ][ form ][ column xmall-12 ]" method="post" enctype='multipart/form-data'>
+	<form class="[ cart ][ form ][ column xmall-12 ][ margin-bottom ]" method="post" enctype='multipart/form-data'>
 	 	<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
 	 	<?php
@@ -52,6 +52,14 @@ if ( ! $product->is_purchasable() ) {
 
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	</form>
+
+	<div class="[ text-center ][ margin-bottom ]">
+	<article>
+		<p class="[ italic ][ color-primary ]"><small>*Including pre-treatment required for all T-shirts excluding white.</small></p>
+		<p class="[ italic ]"><small>Please read our <a target="_blank" href="<?php echo THEMEPATH; ?>pdf/ArtworkSpecifications.pdf">artwork requirements</a> to make sure your file is the right size/type/resolution for a clear and quality print.</small></p>
+	</article>
+
+</div>
 
 	<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
 
