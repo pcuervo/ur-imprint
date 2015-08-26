@@ -137,34 +137,36 @@
 	==== PRODUCT CATEGORIES
 	================================================== -->
 	<section class="[ product-categories ]">
-		<div class="[ clearfix ]">
-			<?php
-			$counter = 1;
-			$args = array(
-				'taxonomy'     => 'product_cat',
-				'hide_empty'   => 1
-				);
-			$all_categories = get_categories( $args );
-			foreach ( $all_categories as $cat ) :
-				$cat_thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
-				$cat_image_url = wp_get_attachment_image_src( $cat_thumbnail_id, 'medium' );
-				$cat_image_url = $cat_image_url[0] ?>
-				<div class="[ span xmall-12 medium-4 ][ bg-secondary bg-secondary--darken-<?php echo $counter; ?>0 ]">
-					<a class="[ clearfix ][ block ]" href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
-						<div class="[ xmall-4 medium-12 ][ inline-block align-middle ]" href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
-							<img class="[ image-responsive ]" src="<?php echo $cat_image_url; ?>" alt="">
-						</div><div
-						class="[ xmall-8 medium-12 ][ inline-block align-middle ][ no-margin padding-top-bottom--large ]" href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
-							<p class="[ text-center ][ color-light italic lead-text ]"><?php echo $cat->name ?></p>
-						</div>
-					</a>
-				</div>
-			<?php
-				$counter++;
-				if ( $counter == 11 ){
-					$counter = 1;
-				}
-			endforeach; wp_reset_query(); ?>
+		<div class="[ wrapper--large ]">
+			<div class="[ clearfix ]">
+				<?php
+				$counter = 1;
+				$args = array(
+					'taxonomy'     => 'product_cat',
+					'hide_empty'   => 1
+					);
+				$all_categories = get_categories( $args );
+				foreach ( $all_categories as $cat ) :
+					$cat_thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+					$cat_image_url = wp_get_attachment_image_src( $cat_thumbnail_id, 'medium' );
+					$cat_image_url = $cat_image_url[0] ?>
+					<div class="[ span xmall-12 medium-3 ][ bg-secondary bg-secondary--darken-<?php echo $counter; ?>0 ]">
+						<a class="[ clearfix ][ block ]" href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
+							<div class="[ xmall-4 medium-12 ][ inline-block align-middle ]" href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
+								<img class="[ image-responsive ]" src="<?php echo $cat_image_url; ?>" alt="">
+							</div><div
+							class="[ xmall-8 medium-12 ][ inline-block align-middle ][ no-margin padding-top-bottom--large ]" href="<?php echo get_term_link( $cat->slug, 'product_cat' ); ?>">
+								<p class="[ text-center ][ color-light italic lead-text ]"><?php echo $cat->name ?></p>
+							</div>
+						</a>
+					</div>
+				<?php
+					$counter++;
+					if ( $counter == 11 ){
+						$counter = 1;
+					}
+				endforeach; wp_reset_query(); ?>
+			</div>
 		</div>
 	</section><!-- product-categories -->
 
