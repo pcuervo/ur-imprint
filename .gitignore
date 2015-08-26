@@ -31,3 +31,6 @@ themes/ur-imprint/videos
 
 # wordpress uploads
 uploads/
+
+# DS STORE
+.DS_Store
