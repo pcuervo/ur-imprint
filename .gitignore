@@ -28,3 +28,6 @@ node_modules
 
 # videos
 themes/ur-imprint/videos
+
+# wordpress uploads
+uploads/
