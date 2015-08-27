@@ -29,13 +29,26 @@ $attributes = $product->get_attributes();
 
 			if ( $attribute['is_taxonomy'] ) { ?>
 
-				<div class="[ column xmall-4 ]">
+				<div class="[ column xmall-12 ]">
+					<h3 class="[ column xmall-4 ][ text-center ]">Size</h3>
+					<h3 class="[ column xmall-4 ][ text-center ]">Width</h3>
+					<h3 class="[ column xmall-4 ][ text-center ]">Length</h3>
 					<?php
-					echo '<h3>' . wc_attribute_label( $attribute['name'] ) . '</h3>';
-					$values = wc_get_product_terms( $product->id, $attribute['name'], array( 'fields' => 'names' ) );
+					//echo '<h3>' . wc_attribute_label( $attribute['name'] ) . '</h3>';
+					$values = wc_get_product_terms( $product->id, $attribute['name'], array( 'fields' => 'names', 'orderby' => 'id' ) );
 
 					foreach ( $values as $value ) {
-						echo '<div>' . $value . '</div>';
+						$size_width_length_arr = explode( ',', $value );
+
+						echo '<div class="[ column xmall-4 ]">';
+						echo '<p class="[ text-center ]">' . $size_width_length_arr[0] . '</p>';
+						echo '</div>';
+						echo '<div class="[ column xmall-4 ]">';
+						echo '<p class="[ text-center ]">' . $size_width_length_arr[1] . '</p>';
+						echo '</div>';
+						echo '<div class="[ column xmall-4 ]">';
+						echo '<p class="[ text-center ]">' . $size_width_length_arr[2] . '</p>';
+						echo '</div>';
 					}
 					// echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
 					?>
