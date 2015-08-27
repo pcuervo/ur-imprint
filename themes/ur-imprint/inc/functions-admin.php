@@ -103,14 +103,10 @@
 if ( function_exists('add_image_size') ){
 	// add_image_size( 'size_name', 200, 200, true );
 
-	// cambiar el tamaño del thumbnail
-	/*
-	update_option( 'thumbnail_size_h', 100 );
-	update_option( 'thumbnail_size_w', 200 );
-	update_option( 'thumbnail_crop', false );
-	*/
-
+	// cambiar el tamaño de medium
 	//cambiar el crop del medium
+	update_option( 'medium_size_h', 250 );
+	update_option( 'medium_size_w', 250 );
 	update_option( 'medium_crop', true );
 
 }

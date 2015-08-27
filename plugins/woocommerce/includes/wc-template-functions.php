@@ -596,7 +596,7 @@ if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
 	 * @param int $deprecated2 Deprecated since WooCommerce 2.0 (default: 0)
 	 * @return string
 	 */
-	function woocommerce_get_product_thumbnail( $size = 'shop_catalog', $deprecated1 = 0, $deprecated2 = 0 ) {
+	function woocommerce_get_product_thumbnail( $size = 'medium', $deprecated1 = 0, $deprecated2 = 0 ) {
 		global $post;
 
 		if ( has_post_thumbnail() ) {
