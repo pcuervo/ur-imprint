@@ -72,16 +72,13 @@ function footer_scripts(){
 				 * On load
 				**/
 
-				//setMainPaddingTop();
-
 				/**
 				 * Triggered events
 				**/
 				$(window).scroll(function(){
-					//setMainPaddingTop();
 				});
+
 				$(window).resize(function(){
-					//setMainPaddingTop();
 				});
 
 			<?php endif; ?>
@@ -97,9 +94,9 @@ function footer_scripts(){
 				 * On load
 				**/
 
-				runIsotope( '.designs-isotope-container', '.column' );
-				runIsotope( '.products-isotope-container', '.column' );
-				filterIsotope('.designs-isotope-container', '.column', '.design-filters' );
+				runIsotope( '.designs-isotope-container', '.card' );
+				runIsotope( '.products-isotope-container', '.card' );
+				filterIsotope('.designs-isotope-container', '.card', '.design-filters' );
 
 				/**
 				 * Triggered events
@@ -152,8 +149,8 @@ function footer_scripts(){
 				#CREATE
 			\*------------------------------------*/
 			<?php if ( is_page( 'create' ) ): ?>
-				runIsotope( '.products-isotope-container', '.column' );
-				filterIsotope('.products-isotope-container', '.column', '.product-filters' );
+				runIsotope( '.products-isotope-container', '.card' );
+				filterIsotope('.products-isotope-container', '.card', '.product-filters' );
 			<?php endif; ?>
 
 			/*------------------------------------*\

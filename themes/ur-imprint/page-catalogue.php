@@ -204,7 +204,7 @@
 	<!-- =================================================
 	==== PRODUCTS
 	================================================== -->
-	<section class="[ products ][ products-isotope-container ][ hidden ]">
+	<section class="[ products ][ hidden ]">
 		<div class="[ wrapper ]">
 			<div class="[ row ][ products-isotope-container ]">
 
