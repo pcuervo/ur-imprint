@@ -34,8 +34,7 @@ $attributes = $product->get_attributes();
 					<h3 class="[ column xmall-4 ][ text-center ]">Width</h3>
 					<h3 class="[ column xmall-4 ][ text-center ]">Length</h3>
 					<?php
-					//echo '<h3>' . wc_attribute_label( $attribute['name'] ) . '</h3>';
-					$values = wc_get_product_terms( $product->id, $attribute['name'], array( 'fields' => 'names', 'orderby' => 'id' ) );
+					$values = wc_get_product_terms( $product->id, $attribute['name'], array( 'fields' => 'names', 'orderby' => 'slug' ) );
 
 					foreach ( $values as $value ) {
 						$size_width_length_arr = explode( ',', $value );
@@ -49,6 +48,7 @@ $attributes = $product->get_attributes();
 						echo '<div class="[ column xmall-4 ]">';
 						echo '<p class="[ text-center ]">' . $size_width_length_arr[2] . '</p>';
 						echo '</div>';
+						
 					}
 					// echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
 					?>
