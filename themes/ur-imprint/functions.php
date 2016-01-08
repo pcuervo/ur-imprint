@@ -83,7 +83,6 @@
 function print_title(){
 
 	global $page, $paged;
-
 	wp_title( '|', true, 'right' );
 	bloginfo( 'name' );
 
@@ -93,9 +92,6 @@ function print_title(){
 	}
 
 }// print_title
-
-
-
 
 /*------------------------------------*\
 	#FORMAT FUNCTIONS

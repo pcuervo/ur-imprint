@@ -33,6 +33,7 @@
 		<meta name="msapplication-square310x310logo" content="<?php echo THEMEPATH; ?>favicon/mstile-310x310.png" />
 		<!-- Google font(s) -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic' rel='stylesheet' type='text/css'>
+		
 
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 		<!--[if lt IE 9]>
@@ -43,6 +44,10 @@
 		<!-- Typekit -->
 		<!-- <script src="//use.typekit.net/xxxxxx.js"></script> -->
 		<!-- <script>try{Typekit.load();}catch(e){}</script> -->
+
+		<!-- Maps, meter condición? -->
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJU0RHKbqFVKa02obBkEMlaMnCu1gndDo&signed_in=true&callback=initMap"></script>
+
 		<?php wp_head(); ?>
 	</head>
 
