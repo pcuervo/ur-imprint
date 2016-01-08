@@ -81,7 +81,9 @@
 								<h3>Designed and developed by</h3>
 								<div class="[ row ]">
 									<div class="[ span xmall-10 small-6 medium-8 large-7 ]">
-										<img class="[ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/little-crow.svg" alt="Little Crow">
+										<a href="http://www.lcrow.com/" target="_blank">
+											<img class="[ image-responsive ]" src="<?php echo THEMEPATH; ?>icons/little-crow.svg" alt="Little Crow">
+										</a>
 									</div>
 								</div>
 							</div>

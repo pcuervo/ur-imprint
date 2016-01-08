@@ -224,7 +224,6 @@ function toggleModal(element){
  * @param element to be shown
 **/
 function toggleLightbox(element){
-	console.log(element);
 
 	$('body').toggleClass('overflow-hidden');
 
