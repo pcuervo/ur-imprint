@@ -20,7 +20,7 @@ $attributes = $product->get_attributes();
 <div class="[ product-attributes ]">
 	<div class="[ row ]">
 		<?php
-		$skip_attributes = array( 'pa_product-type', 'pa_style', 'pa_garment' );
+		$skip_attributes = array( 'pa_size', 'pa_product-type', 'pa_style', 'pa_garment' );
 		foreach ( $attributes as $attribute ) { ?>
 			<?php
 			if( in_array( $attribute['name'], $skip_attributes ) ) {

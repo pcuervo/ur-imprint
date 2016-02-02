@@ -35,17 +35,18 @@ class WC_Meta_Box_Product_Data {
 			$product_type = apply_filters( 'default_product_type', 'simple' );
 		}
 
-		// $product_type_selector = apply_filters( 'product_type_selector', array(
-		// 	'simple'   => __( 'Simple product', 'woocommerce' )
-		// ), $product_type );
+		$product_type_selector = apply_filters( 'product_type_selector', array(
+			'simple'   => __( 'Simple product', 'woocommerce' ),
+			'variable' => __( 'Variable product', 'woocommerce' )
+		), $product_type );
 
-		// $type_box = '<label for="product-type"><select id="product-type" name="product-type"><optgroup label="' . __( 'Product Type', 'woocommerce' ) . '">';
+		$type_box = '<label for="product-type"><select id="product-type" name="product-type"><optgroup label="' . __( 'Product Type', 'woocommerce' ) . '">';
 
-		// foreach ( $product_type_selector as $value => $label ) {
-		// 	$type_box .= '<option value="' . esc_attr( $value ) . '" ' . selected( $product_type, $value, false ) .'>' . esc_html( $label ) . '</option>';
-		// }
+		foreach ( $product_type_selector as $value => $label ) {
+			$type_box .= '<option value="' . esc_attr( $value ) . '" ' . selected( $product_type, $value, false ) .'>' . esc_html( $label ) . '</option>';
+		}
 
-		// $type_box .= '</optgroup></select></label>';
+		$type_box .= '</optgroup></select></label>';
 
 		$product_type_options = apply_filters( 'product_type_options', array(
 			// 'virtual' => array(
@@ -101,6 +102,11 @@ class WC_Meta_Box_Product_Data {
 							'label'  => __( 'Attributes', 'woocommerce' ),
 							'target' => 'product_attributes',
 							'class'  => array(),
+						),
+						'variations' => array(
+							'label'  => __( 'Variations', 'woocommerce' ),
+							'target' => 'variable_product_options',
+							'class'  => array( 'variations_tab', 'show_if_variable' ),
 						),
 					) );
 
