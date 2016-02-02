@@ -69,12 +69,12 @@ global $product, $post;
 
 		<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
-		<div class="single_variation_wrap" style="display:none;">
+		<div class="[ single_variation_wrap ]" style="display:none;">
 			<?php do_action( 'woocommerce_before_single_variation' ); ?>
 
 			<div class="single_variation"></div>
 
-			<div class="variations_button">
+			<div class="[ variations_button ][ text-center ]">
 
 				<?php woocommerce_quantity_input( array(
 					'input_value' => ( isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 )
