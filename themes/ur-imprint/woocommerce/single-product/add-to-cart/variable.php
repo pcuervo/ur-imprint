@@ -70,7 +70,7 @@ global $product, $post;
 		<div class="single_variation_wrap" style="display:none;">
 			<?php do_action( 'woocommerce_before_single_variation' ); ?>
 
-			<div class="single_variation"></div>
+			<div class="[ single_variation ][ text-center ][ margin-bottom ]"></div>
 
 			<div class="[ variations_button ][ text-center ]">
 
